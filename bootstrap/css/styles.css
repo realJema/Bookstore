@@ -1,0 +1,21 @@
+.navbar {
+        padding: 1rem 1rem;
+    background-color: transparent !important;
+}
+
+.search-box {
+    width: 50% !important;
+        margin: auto 25% !important;
+    padding: 1.5rem !important;
+}
+
+.main-content {
+    margin-top: 100px;
+}
+
+.posts {
+    padding: 0;
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+}
