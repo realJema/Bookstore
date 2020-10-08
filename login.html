@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="bootstrap/js/bootstrap.js" type="text/css" />
+    <style>
+        body{
+            background-image: url(/bootstrap/images/background.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            
+                }
+
+        h1{
+            font-size:50px;
+            color: white;
+            margin-top: 30px;
+            margin-bottom: 60px;
+        }
+
+        .col-md-5{
+            background: rgba(0, 0, 0, 0.5);
+            margin-top: 4px;
+        }
+
+        .label{
+            font-size: 20px;
+            font-weight: normal;
+            color: gray ;
+        }
+
+        .input-group{
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .input-group-text{
+            background: transparent;
+            border-radius: 0px;
+            border: 0px;
+            border-bottom: 1px  solid white;
+            font-size: 18px;
+            color: gray;
+        }
+
+        .form-control{
+            background: transparent;
+            border-radius: 0px;
+            border: 0px;
+            border-bottom: 1px solid white;
+            padding: 15px;
+            color: white;
+            font-size: 21px;
+        }
+
+        input[type="checkbox"] {
+            height: 15px;
+            width: 15px;
+        }
+
+        small{
+            font-size: 18px;
+            color: white;
+        }
+        p{
+            font-size: 18px;
+            color: white;
+            margin-right: 10px;
+        }
+        .btn-default{
+            border-radius: 0px;
+            width: 457px;
+            background-color: white;
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        .col6 {
+           -ms-flex: 0 0 50%;
+           flex: 0 0 50%;
+            max-width: 100%;
+  }
+</style>
+
+</head>
+<body>
+    <!-- Navigation Bar  -->
+		<nav class="navbar navbar-expand-lg col-md-12 fixed-top">
+			<div class="col-xs-2 col-md-2 col-sm-2">
+				<a class="navbar-brand" href="#">NATIVE</a>
+			</div>
+		</nav>
+		<!-- End Navigation Bar -->
+
+
+    <div class="container" style="margin-top: 100px;">
+        <div class="row">
+            <div class="col-md-5 m-auto">
+                <h1 class="text-container"> Login. </h1>
+                <label class="label control-label">User name or E-mail</label>
+                <div class="input-group">
+                    <span class="input-group-text"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" class="form-control" name="mail" placeholder="E-mail">
+                </div>
+
+                
+                <label class="label control-label">Password</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="text" class="form-control" name="Password" placeholder="Password">
+                </div>
+
+                <div class="row">
+                    <div class="col6">
+                        <input type="checkbox" style="margin-left: 10px;"><small>Remember me</small>
+                    </div>
+                    <div class="col6">
+                        <a href="#"><p class="text-right">Forgot Password</p> </a>
+                    </div>
+                </div>
+
+                <a href="/index.html"><div class="btn btn-default" >SIGN IN</div></a>
+                <p class="text-center">Not a member yet? <a href="#">Sign Up</a></p>
+
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+
+</html>
