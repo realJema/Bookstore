@@ -32,9 +32,6 @@ footer {
     margin-top: 100px;
 }
 
-
-
-
 .main-section {
 	margin: 0 auto;
 	margin-top: 130px;
@@ -112,4 +109,30 @@ p{
 	font-size: 18px;
 	color: white;
 	margin-right: 10px;
+  
+  
+.topspacing {
+    padding-top: 24px;
+}
+.playbutton {
+	    width: fit-content;
+    border: 1px solid black;
+    border-radius: 13px;
+	padding: 5px;
+		font-size: .875rem;
+		    display: flex;
+    border: 1px solid #dadce0;
+    border-radius: 100px;
+    height: 32px;
+}
+.playbutton svg{
+	margin-right: 10px;
+	
+}
+.playCircle {
+	fill: white;
+    stroke: #1a73e8;
+    stroke-dasharray: 56.55;
+    stroke-dashoffset: 0;
+    transform: rotate(-90deg);
 }
