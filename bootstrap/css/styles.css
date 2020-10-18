@@ -108,8 +108,16 @@ small{
 	font-size: 18px;
 	color: white;
 }
-p{
+.textP{
 	font-size: 18px;
 	color: white;
 	margin-right: 10px;
+}
+
+.checkbox{
+	margin-left: 10px;
+}
+
+.Fpass{
+	margin-left: 120px;
 }
