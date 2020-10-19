@@ -5,95 +5,9 @@
     <title>login</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
-    <link rel="stylesheet" href="bootstrap/css/styles.css" type="text/css" />
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="bootstrap/js/bootstrap.js" type="text/css" />
-    <style>
-        body{
-            background-image: url("bootstrap/images/background.jpg");
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            
-                }
-
-        h1{
-            font-size:50px;
-            color: white;
-            margin-top: 30px;
-            margin-bottom: 60px;
-        }
-
-        .col-md-5{
-            background: rgba(0, 0, 0, 0.5);
-            margin-top: 4px;
-        }
-
-        .label{
-            font-size: 20px;
-            font-weight: normal;
-            color: gray ;
-        }
-
-        .input-group{
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-
-        .input-group-text{
-            background: transparent;
-            border-radius: 0px;
-            border: 0px;
-            border-bottom: 1px  solid white;
-            font-size: 18px;
-            color: gray;
-        }
-
-        .form-control{
-            background: transparent;
-            border-radius: 0px;
-            border: 0px;
-            border-bottom: 1px solid white;
-            padding: 15px;
-            color: white;
-            font-size: 21px;
-        }
-
-        input[type="checkbox"] {
-            height: 15px;
-            width: 15px;
-        }
-
-        small{
-            font-size: 18px;
-            color: white;
-        }
-        p{
-            font-size: 18px;
-            color: white;
-            margin-right: 10px;
-        }
-        .btn-default{
-            border-radius: 0px;
-            width: 457px;
-            background-color: white;
-            font-size: 20px;
-            margin-top: 20px;
-            margin-bottom: 30px;
-        }
-        .col6 {
-           -ms-flex: 0 0 50%;
-           flex: 0 0 50%;
-            max-width: 100%;
-  }
-</style>
-
+    <link rel="stylesheet" href="bootstrap/css/styles.css" type="text/css" >
 </head>
-<body style="
-	font-family: 'Roboto', sans-serif;
-	background: url(/bootstrap/images/background.jpg) no-repeat center center fixed;
-	background-size: cover;
-">
+<body class="bodyLS">
 <!-- Navigation Bar  -->
 <nav class="navbar navbar-expand-lg col-md-12 fixed-top">
     <div class="col-xs-2 col-md-2 col-sm-2">
@@ -125,10 +39,10 @@
 
         <div class="row">
             <div class="col6">
-                <input type="checkbox" class="checkbox"><small>Remember me</small>
+                <input type="checkbox" class="checkbox"><small class="smallP">Remember me</small>
             </div>
-            <div class="col6 Fpass" >
-                <a href="#"><p class="textP">Forgot Password</p> </a>
+            <div class="col6 Fpass">
+                <a href="#"><p class="smallP">Forgot Password</p> </a>
             </div>
         </div>
         <p class="text-center textP">Not a member yet? <a href="#">Sign Up</a></p>
@@ -142,8 +56,8 @@
         <div class="container">
             <p class="float-right">
             </p>
-            <p>Get ready to explore some great books and podcasts</p>
-            <p>Good Luck!</p>
+            <p class="smallP">Get ready to explore some great books and podcasts</p>
+            <p class="smallP">Good Luck!</p>
         </div>
     </footer>
     <!-- End footer  -->
