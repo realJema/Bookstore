@@ -101,7 +101,16 @@ footer {
 .forgot a {
 	color: #daf1ff;
 }
+.smallP{
+	font-size: 18px;
+	color: white;
+}
+.textP{
+	font-size: 18px;
+	color: white;
+	margin-right: 10px;
   
+}
 .topspacing {
     padding-top: 24px;
 }
@@ -127,3 +136,23 @@ footer {
     stroke-dashoffset: 0;
     transform: rotate(-90deg);
 }
+
+.checkbox{
+	margin-left: 10px;
+}
+
+.Fpass{
+	margin-left: 120px;
+}
+
+.bodyLS{
+	font-family: 'Roboto', sans-serif;
+	background: url(/bootstrap/images/background.jpg) no-repeat center center fixed;
+	background-size: cover;
+}
+
+input[type="checkbox"] {
+	height: 15px;
+	width: 15px;
+}
+
