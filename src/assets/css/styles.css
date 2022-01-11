@@ -26,8 +26,16 @@
   float: left;
   padding-left: 3%;
 }
-#navbar-main{
-  background-color: #172b4d !important;
+#navbar-main, #topbar-main{
+  color: black;
+  border-bottom: 1px solid #eae8e4!important;
+}
+
+#topbar-main {
+  padding: 10px;
+}
+.topbar-link {
+  padding: 0 !important;
 }
 .trending-charts:after {
     background-color: #f6f7fb;
@@ -89,8 +97,13 @@
 }
 
 .category-menu {
-  color: white;
   font-size: 150%;
 }
+
+
+.lg-icon{
+      font-size: 1.125rem;
+}
+
 
 

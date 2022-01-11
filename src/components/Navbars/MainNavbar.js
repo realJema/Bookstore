@@ -54,16 +54,16 @@ class MainNavbar extends React.Component {
       <>
         <header className="header-global">
           <Navbar
-            className="navbar-main navbar-transparent navbar-light headroom"
+            className="navbar-main headroom"
             expand="lg"
             id="navbar-main"
           >
-            <Container className="col-md-10 col-lg-12">
+            <Container className="col-md-12 col-lg-12">
               <div className="category-menu">
                 <i className="fa fa-align-left"></i>
               </div>
               <NavbarBrand className="mr-lg-5 ml-md-5" to="/" tag={Link}>
-                <h1 className="display-4 text-white logo-brand">100Pages</h1>
+                <h1 className="display-4 logo-brand">100Pages</h1>
               </NavbarBrand>
               <button className="navbar-toggler" id="navbar_global">
                 <span className="navbar-toggler-icon" />
@@ -146,7 +146,7 @@ class MainNavbar extends React.Component {
                               <i className="fa fa-search" />
                             </InputGroupText>
                           </InputGroupAddon>
-                          <input type="text" class="form-control bg-white-100 min-width-380 py-2d75 height-4 border-white-100" name="s" id="s" placeholder="Search by Keywords"></input>
+                          <Input className="searchbar" placeholder="Search" type="text" />
                         </InputGroup>
                   </NavItem>
                 </Nav>

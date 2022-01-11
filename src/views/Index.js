@@ -5,8 +5,9 @@ import React from "react";
 // import { Card, CardImg, Container, Row, Col } from "reactstrap";
 
 // core components
-import Footer from "components/Footers/Footer";
+// import Footer from "components/Footers/Footer";
 import MainNavbar from "components/Navbars/MainNavbar";
+import Topbar from "components/Navbars/Topbar";
 
 class Billboard extends React.Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class Billboard extends React.Component {
   render() {
     return (
       <>
+        <Topbar />
         <MainNavbar />
         <main ref="main">
         </main>
