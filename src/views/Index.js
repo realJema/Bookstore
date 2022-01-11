@@ -8,6 +8,7 @@ import React from "react";
 // import Footer from "components/Footers/Footer";
 import MainNavbar from "components/Navbars/MainNavbar";
 import Topbar from "components/Navbars/Topbar";
+import Adslider from "components/Elements/Slider";
 
 class Billboard extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class Billboard extends React.Component {
       <>
         <Topbar />
         <MainNavbar />
+        <Adslider />
         <main ref="main">
         </main>
       </>
