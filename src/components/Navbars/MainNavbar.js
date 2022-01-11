@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Argon Design System React - v1.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-design-system-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import { Link } from "react-router-dom";
 // JavaScript plugin that hides or shows a component based on your scroll
@@ -24,22 +7,21 @@ import {
   Button,
   UncontrolledCollapse,
   DropdownMenu,
-  DropdownItem,
   DropdownToggle,
   UncontrolledDropdown,
-  Media,
   NavbarBrand,
   Navbar,
+  Media,
   NavItem,
   NavLink,
   Nav,
   Container,
   Row,
   Col,
-  UncontrolledTooltip
+  UncontrolledTooltip,
 } from "reactstrap";
 
-class DemoNavbar extends React.Component {
+class MainNavbar extends React.Component {
   componentDidMount() {
     let headroom = new Headroom(document.getElementById("navbar-main"));
     // initialise
@@ -47,18 +29,18 @@ class DemoNavbar extends React.Component {
   }
   state = {
     collapseClasses: "",
-    collapseOpen: false
+    collapseOpen: false,
   };
 
   onExiting = () => {
     this.setState({
-      collapseClasses: "collapsing-out"
+      collapseClasses: "collapsing-out",
     });
   };
 
   onExited = () => {
     this.setState({
-      collapseClasses: ""
+      collapseClasses: "",
     });
   };
 
@@ -73,10 +55,7 @@ class DemoNavbar extends React.Component {
           >
             <Container>
               <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
-                <img
-                  alt="..."
-                  src={require("assets/img/brand/argon-react-white.png")}
-                />
+                <h1 className="display-4 text-white logo-brand">de L'Heure</h1>
               </NavbarBrand>
               <button className="navbar-toggler" id="navbar_global">
                 <span className="navbar-toggler-icon" />
@@ -110,7 +89,7 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <DropdownToggle nav>
                       <i className="ni ni-ui-04 d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Components</span>
+                      <span className="nav-link-inner--text">Charts</span>
                     </DropdownToggle>
                     <DropdownMenu className="dropdown-menu-xl">
                       <div className="dropdown-menu-inner">
@@ -124,7 +103,7 @@ class DemoNavbar extends React.Component {
                           </div>
                           <Media body className="ml-3">
                             <h6 className="heading text-primary mb-md-1">
-                              Getting started
+                              HOT MUSIC
                             </h6>
                             <p className="description d-none d-md-inline-block mb-0">
                               Learn how to use Argon compiling Scss, change
@@ -142,7 +121,7 @@ class DemoNavbar extends React.Component {
                           </div>
                           <Media body className="ml-3">
                             <h6 className="heading text-primary mb-md-1">
-                              Foundation
+                              HOT VIDEOS
                             </h6>
                             <p className="description d-none d-md-inline-block mb-0">
                               Learn more about colors, typography, icons and the
@@ -160,7 +139,7 @@ class DemoNavbar extends React.Component {
                           </div>
                           <Media body className="ml-3">
                             <h5 className="heading text-warning mb-md-1">
-                              Components
+                              HOT GENRES
                             </h5>
                             <p className="description d-none d-md-inline-block mb-0">
                               Browse our 50 beautiful handcrafted components
@@ -174,23 +153,108 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <DropdownToggle nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Examples</span>
+                      <span className="nav-link-inner--text">CHARTS</span>
                     </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem to="/landing-page" tag={Link}>
-                        Landing
-                      </DropdownItem>
-                      <DropdownItem to="/profile-page" tag={Link}>
-                        Profile
-                      </DropdownItem>
-                      <DropdownItem to="/login-page" tag={Link}>
-                        Login
-                      </DropdownItem>
-                      <DropdownItem to="/register-page" tag={Link}>
-                        Register
-                      </DropdownItem>
+                    <DropdownMenu className="large-dropdown">
+                      <Nav>
+                        <NavItem>Music</NavItem>
+                        <NavItem>
+                          <NavLink to="/" tag={Link}>
+                            Hot Music 100
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink to="/music" tag={Link}>
+                            Hot Music 200
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink to="/producers" tag={Link}>
+                            Hot Music Producers
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink to="/billboard" tag={Link}>
+                            Upcoming Artists
+                          </NavLink>
+                        </NavItem>
+                      </Nav>
+                      <Nav>
+                        <NavItem>Videos</NavItem>
+                        <NavItem>
+                          <NavLink to="/" tag={Link}>
+                            Hot Video 100
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink to="/billboard" tag={Link}>
+                            Hot Video Producers
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink to="/billboard" tag={Link}>
+                            Honorable Mentions
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink to="/billboard" tag={Link}>
+                            International
+                          </NavLink>
+                        </NavItem>
+                      </Nav>
+                      <Nav>
+                        <NavItem>Genre</NavItem>
+                        <NavItem>
+                          <NavLink to="/billboard" tag={Link}>
+                            Afrobeat
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink to="/billboard" tag={Link}>
+                            Hip Hop
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink to="/billboard" tag={Link}>
+                            Gospel
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink to="/billboard" tag={Link}>
+                            Pop
+                          </NavLink>
+                        </NavItem>
+                      </Nav>
+                      <Nav>
+                        <NavItem>Year</NavItem>
+                        <NavItem>
+                          <NavLink to="/billboard" tag={Link}>
+                            2021
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink to="/billboard" tag={Link}>
+                            2020
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink to="/billboard" tag={Link}>
+                            2019
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink to="/billboard" tag={Link}>
+                            2018
+                          </NavLink>
+                        </NavItem>
+                      </Nav>
                     </DropdownMenu>
                   </UncontrolledDropdown>
+                  <NavItem>
+                    <NavLink to="/billboard" tag={Link}>
+                      ABOUT US
+                    </NavLink>
+                  </NavItem>
                 </Nav>
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
                   <NavItem>
@@ -241,22 +305,6 @@ class DemoNavbar extends React.Component {
                       Follow us on Twitter
                     </UncontrolledTooltip>
                   </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href="https://github.com/creativetimofficial/argon-design-system-react"
-                      id="tooltip112445449"
-                      target="_blank"
-                    >
-                      <i className="fa fa-github" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Github
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip112445449">
-                      Star us on Github
-                    </UncontrolledTooltip>
-                  </NavItem>
                   <NavItem className="d-none d-lg-block ml-lg-4">
                     <Button
                       className="btn-neutral btn-icon"
@@ -264,11 +312,8 @@ class DemoNavbar extends React.Component {
                       href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-navbar"
                       target="_blank"
                     >
-                      <span className="btn-inner--icon">
-                        <i className="fa fa-cloud-download mr-2" />
-                      </span>
                       <span className="nav-link-inner--text ml-1">
-                        Download
+                        Subscribe
                       </span>
                     </Button>
                   </NavItem>
@@ -282,4 +327,4 @@ class DemoNavbar extends React.Component {
   }
 }
 
-export default DemoNavbar;
+export default MainNavbar;

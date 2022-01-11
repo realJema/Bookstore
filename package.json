@@ -1,11 +1,11 @@
 {
-  "name": "argon-design-system-react",
+  "name": "self-made",
   "version": "1.1.0",
-  "description": "React version of Argon Design System by Creative Tim",
+  "description": "Self Made, Nobody else will do it for you",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/argon-design-system-react.git"
+    "url": "https://github.com/realJema/De_lheure.git"
   },
   "keywords": [
     "react",
@@ -22,12 +22,12 @@
     "argon-design-system-react",
     "design-system-react"
   ],
-  "author": "Creative Tim",
+  "author": "realjema",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/creativetimofficial/argon-design-system-react/issues"
+    "url": "https://github.com/realJema/De_lheure.git/issues"
   },
-  "homepage": "https://demos.creative-tim.com/argon-design-system-react/",
+  "homepage": "https://github.com/realJema/De_lheure.git",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && gulp licenses",
@@ -48,8 +48,10 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "axios": "^0.21.1",
     "bootstrap": "4.3.1",
     "classnames": "2.2.6",
+    "get-youtube-title": "^1.0.1",
     "headroom.js": "0.11.0",
     "moment": "2.24.0",
     "node-sass": "4.13.1",
@@ -57,9 +59,10 @@
     "react": "16.12.0",
     "react-datetime": "2.16.3",
     "react-dom": "16.12.0",
+    "react-player": "^2.9.0",
     "react-router": "5.1.2",
     "react-router-dom": "5.1.2",
-    "react-scripts": "3.3.1",
+    "react-scripts": "3.4.0",
     "reactstrap": "8.4.1"
   },
   "devDependencies": {
@@ -69,7 +72,7 @@
     "eslint-plugin-flowtype": "3.13.0",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "typescript": "3.7.5"
   }
 }

@@ -8,7 +8,7 @@ A bookstore and e-reader application where authors can publish and sell books. U
 [] Shop 
 [] Author Dashboard 
 [] User Dashboard 
-[] Publish Book 
+[] Submit Book 
 [] contact us 
 [] authors list 
 [] cart
@@ -17,6 +17,7 @@ A bookstore and e-reader application where authors can publish and sell books. U
 ## Database 
 
 - Users 
+'--------id
 '--------username
 '--------password
 '--------email
@@ -24,10 +25,10 @@ A bookstore and e-reader application where authors can publish and sell books. U
 '--------type (reader/author)
 
 - Books 
+'--------id
 '--------title
 '--------description
 '--------price
-'--------authorid
-'--------authorid
+'--------authorid(users:id)
 '--------likes
 '--------category

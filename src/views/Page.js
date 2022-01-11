@@ -10,33 +10,36 @@ import MainNavbar from "components/Navbars/MainNavbar";
 import Jumbo from "./Jumbo";
 
 const BACKEND_API = "http://127.0.0.1:5000/dlheure/api/";
-
-class Billboard extends React.Component {
+ /* 
+Since all the pages have thesame view aside from a few things which change, I created this main page view, 
+the page title is passed through the route and stored in the state 
+the values of localstorage, api, components are generated based on this page title 
+ */
+class Page extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       postList: [],
       voted: [],
-      topVideo: {},
-      topVideos: [],
+      top: {},
+      others: [],
+      page: ''
     };
   }
 
   componentDidMount() {
-    // set state of voted from the local storage
-    const voted = localStorage.getItem("dlheure.com:voted_data");
-    if (voted) {
-      this.setState({
-        voted: voted,
-      });
-    }
+    let { page } = this.props.match.params;
     axios
-      .get(BACKEND_API + "music")
+      .get(BACKEND_API + page) // change this to page state 
       .then((res) => {
+        // fetching data
+        localStorage.setItem(this.state.page, JSON.stringify(res.data));
+        console.log(res.data);
         this.setState({
-          postList: res.data.slice(0, 100), // top 100 videos
-          topVideo: this._getThumbnail(res["data"][0]["link"]),
-          topVideos: res.data.slice(1, 7), // returns the 2nd to the 7th video from the list and skips the top video
+          postList: res.data,
+          top: this._getThumbnail(res["data"][0]["link"]),
+          others: res.data.slice(1, 7),  // returns the 2nd to the 7th video from the list and skips the top video
+          page: page,
         });
       })
       .catch((error) => {
@@ -55,7 +58,7 @@ class Billboard extends React.Component {
   */
   _vote(id, vote) {
     axios
-      .put(BACKEND_API + "votemusic", {
+      .put(BACKEND_API + "vote" + this.state.page, {
         postId: id,
         vote: vote, // true for upvote, false for downvote
       })
@@ -80,7 +83,6 @@ class Billboard extends React.Component {
           postList: tempData,
           voted: this.state.voted.concat(id),
         });
-        localStorage.setItem('dlheure.com:voted_data', this.state.voted);
       })
       .catch((error) => {
         // Error
@@ -101,11 +103,10 @@ class Billboard extends React.Component {
   _setThumbnail(link) {
     var thumb = this._getThumbnail(link);
     this.setState({
-      topVideo: thumb,
+      top: thumb,
     });
   }
   _upvote(id) {
-    console.log('got in to upvote');
     this._vote(id, true);
   }
 
@@ -114,12 +115,13 @@ class Billboard extends React.Component {
   }
   _doNothing() {}
   render() {
-    const { postList, topVideo, topVideos } = this.state;
+    const { postList, top, others, page } = this.state;
+    console.log(page);
     return (
       <>
         <MainNavbar />
         <main ref="main">
-          <Jumbo top={topVideo} others={topVideos} hot="100" />
+          <Jumbo top={top} others={others} hot={page.toUpperCase()} />
           <section className="section section-lg pt-5">
             <Container>
               <Row className="justify-content-end mb-3 mr-2">
@@ -148,9 +150,9 @@ class Billboard extends React.Component {
                             <Row className="align-items-center">
                               <Col lg="8">
                                 <h5 className="title text-warning">
-                                  {item.title}
+                                  {item.name.toUpperCase()}
                                 </h5>
-                                <p>{item.artist}</p>
+                                <p>{item.town.toUpperCase()}</p>
                               </Col>
                               <Col lg="1">{item.upvotes}</Col>
                               <Col lg="1">{item.downvotes}</Col>
@@ -203,4 +205,4 @@ class Billboard extends React.Component {
   }
 }
 
-export default Billboard;
+export default Page;

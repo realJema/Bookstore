@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "title": "Heat Waves",
+        "artist": "Galss Animals",
+        "upvotes": 1,
+        "downvotes": 20
+    },
+    {
+        "id": 2,
+        "title": "Late At Night",
+        "artist": "Roddy Rich",
+        "upvotes": 2,
+        "downvotes": 0
+    },
+    {
+        "id": 3,
+        "title": "Save Your Tears",
+        "artist": "The Weeknd",
+        "upvotes": 3,
+        "downvotes": 1
+    },
+    {
+        "id": 4,
+        "title": "Motley Crew",
+        "artist": "Post Malone",
+        "upvotes": 4,
+        "downvotes": 1
+    },
+    {
+        "id": 5,
+        "title": "Need To Know",
+        "artist": "Doja Cat",
+        "upvotes": 24,
+        "downvotes": 0
+    }
+]

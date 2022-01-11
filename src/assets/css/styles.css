@@ -1,0 +1,78 @@
+.categories {
+  color: black;
+  border-color: black;
+}
+
+.vote-up {
+  transform: rotate(270deg);
+}
+.vote-down {
+  transform: rotate(90deg);
+}
+
+.large-dropdown {
+  width: 50em;
+  padding: 65%;
+}
+
+.large-dropdown a {
+  color: black !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+.large-dropdown ul {
+  flex-direction: column;
+  width: fit-content;
+  float: left;
+  padding-left: 3%;
+}
+#navbar-main{
+  background-color: #172b4d !important;
+}
+.trending-charts:after {
+    background-color: #f6f7fb;
+    content: "";
+    display: block;
+    position: absolute;
+    left: -40px;
+    right: -40px;
+    top: 0px;
+    bottom: 80px;
+    z-index: -1;
+}
+.billboard-navbar h6 {
+  font-size: 12px;
+}
+.billboard-navbar p {
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+  padding-left: 10px;
+}
+
+.logo-brand {
+  margin: 0;
+  font-family: Brush Script MT;
+}
+
+.top-title {
+  font-weight: bolder;
+  font-family: "Arial Bold";
+}
+
+.big-shadow {
+  -webkit-box-shadow: -119px 2px 0px -59px rgba(246, 247, 251, 1);
+  -moz-box-shadow: -119px 2px 0px -59px rgba(246, 247, 251, 1);
+  box-shadow: -119px 2px 0px -59px rgba(246, 247, 251, 1);
+}
+
+.topVideo-player {
+  width: 100% !important;
+  height: 35em !important;
+}
+
+.topVideos {
+  height: 10em;
+  object-fit: cover;
+}
+

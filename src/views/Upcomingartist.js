@@ -11,32 +11,27 @@ import Jumbo from "./Jumbo";
 
 const BACKEND_API = "http://127.0.0.1:5000/dlheure/api/";
 
-class Billboard extends React.Component {
+class Upcomingartists extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       postList: [],
       voted: [],
-      topVideo: {},
-      topVideos: [],
+      topProduer: {},
+      topProduers: [],
     };
   }
 
   componentDidMount() {
-    // set state of voted from the local storage
-    const voted = localStorage.getItem("dlheure.com:voted_data");
-    if (voted) {
-      this.setState({
-        voted: voted,
-      });
-    }
     axios
-      .get(BACKEND_API + "music")
+      .get(BACKEND_API + "artists")
       .then((res) => {
+        // fetching data
+        localStorage.setItem("artists", JSON.stringify(res.data));
         this.setState({
-          postList: res.data.slice(0, 100), // top 100 videos
-          topVideo: this._getThumbnail(res["data"][0]["link"]),
-          topVideos: res.data.slice(1, 7), // returns the 2nd to the 7th video from the list and skips the top video
+          postList: res.data,
+          topArtist: this._getThumbnail(res["data"][0]["link"]),
+          topArtists: res.data.slice(1, 7),  // returns the 2nd to the 7th video from the list and skips the top video
         });
       })
       .catch((error) => {
@@ -55,7 +50,7 @@ class Billboard extends React.Component {
   */
   _vote(id, vote) {
     axios
-      .put(BACKEND_API + "votemusic", {
+      .put(BACKEND_API + "voteartist", {
         postId: id,
         vote: vote, // true for upvote, false for downvote
       })
@@ -80,7 +75,6 @@ class Billboard extends React.Component {
           postList: tempData,
           voted: this.state.voted.concat(id),
         });
-        localStorage.setItem('dlheure.com:voted_data', this.state.voted);
       })
       .catch((error) => {
         // Error
@@ -101,11 +95,10 @@ class Billboard extends React.Component {
   _setThumbnail(link) {
     var thumb = this._getThumbnail(link);
     this.setState({
-      topVideo: thumb,
+      topArtist: thumb,
     });
   }
   _upvote(id) {
-    console.log('got in to upvote');
     this._vote(id, true);
   }
 
@@ -114,12 +107,12 @@ class Billboard extends React.Component {
   }
   _doNothing() {}
   render() {
-    const { postList, topVideo, topVideos } = this.state;
+    const { postList, topArtist, topArtists } = this.state;
     return (
       <>
         <MainNavbar />
         <main ref="main">
-          <Jumbo top={topVideo} others={topVideos} hot="100" />
+          <Jumbo topArtist={topArtist} topArtists={topArtists} hot="Artists" />
           <section className="section section-lg pt-5">
             <Container>
               <Row className="justify-content-end mb-3 mr-2">
@@ -137,6 +130,7 @@ class Billboard extends React.Component {
                     (a, b) =>
                       b.upvotes - b.downvotes - (a.upvotes - a.downvotes)
                   )
+                  .filter(item => item.level == 'upcoming')
                   .map((item, i) => {
                     return (
                       <Card key={i} className="border-top ">
@@ -203,4 +197,4 @@ class Billboard extends React.Component {
   }
 }
 
-export default Billboard;
+export default Upcomingartists;
