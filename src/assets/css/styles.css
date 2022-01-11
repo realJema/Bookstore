@@ -76,3 +76,21 @@
   object-fit: cover;
 }
 
+.dropdown-chevron {
+  
+  display: inline-block;
+  font-size: 60%;
+  margin-left: 0.5rem;
+}
+
+.nav-link-inner--text{
+  align-items: center;
+    display: flex;
+}
+
+.category-menu {
+  color: white;
+  font-size: 150%;
+}
+
+
