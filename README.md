@@ -11,6 +11,7 @@ A bookstore and e-reader application where authors can publish and sell books. U
 [] Publish Book 
 [] contact us 
 [] authors list 
+[] cart
 
 
 ## Database 
