@@ -1,8 +1,32 @@
-# Bookstore
-> A Bookstore and Podcast app for Creatives to share their content with the world
+# 100pages 
+A bookstore and e-reader application where authors can publish and sell books. Users purchase the books and can read the books they purchased on the platform. 
 
-## Todo 
-[x] Homepage   
-[x] Details page  
-[] Login / signup pages   
-[] Profile page (advanced)  
+## Pages 
+[] Homepaage 
+[] Sign up / Sign in 
+[] Book Details 
+[] Shop 
+[] Author Dashboard 
+[] User Dashboard 
+[] Publish Book 
+[] contact us 
+[] authors list 
+
+
+## Database 
+
+- Users 
+'--------username
+'--------password
+'--------email
+'--------full name
+'--------type (reader/author)
+
+- Books 
+'--------title
+'--------description
+'--------price
+'--------authorid
+'--------authorid
+'--------likes
+'--------category
