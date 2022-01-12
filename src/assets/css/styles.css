@@ -105,5 +105,9 @@
       font-size: 1.125rem;
 }
 
-
+.featured-category {
+  flex: 0 0 20%; 
+  max-width: 20% !important;
+  color: black;
+}
 
