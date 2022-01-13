@@ -23,6 +23,7 @@ import {
 import MainNavbar from "components/Navbars/MainNavbar";
 import Topbar from "components/Navbars/Topbar";
 import Adslider from "components/Elements/Slider";
+import BookCard from "components/Elements/BookCard";
 
 class Billboard extends React.Component {
   constructor(props) {
@@ -38,6 +39,7 @@ class Billboard extends React.Component {
         <MainNavbar />
         <Adslider />
         <main ref="main">
+          {/* Featured Categories  */}
           <section className="section section-components pb-0 pt-0">
             <Container className="col-md-11 col-lg-11">
               <Row className="row-grid justify-content-between align-items-end">
@@ -158,7 +160,10 @@ class Billboard extends React.Component {
               </Row>
             </Container>
           </section>
-          <section className="section section-components pb-0 pt-0">
+          {/* End Featured Categories */}
+
+          {/* Best Sellers books  */}
+          <section className="section section-lg pt-lg-0">
             <Container className="col-md-11 col-lg-11">
               <Row className="row-grid justify-content-between align-items-end">
                 <h2 className="mt-md mb-5 display-4">
@@ -170,12 +175,20 @@ class Billboard extends React.Component {
               </Row>
               <Row className="justify-content-center">
                 <Col lg="12">
-                  <Row className="row-grid">
+                  <Row className="row-grid book-card-container">
+                    <BookCard />
+                    <BookCard />
+                    <BookCard />
+                    <BookCard />
+                    <BookCard />
                   </Row>
                 </Col>
               </Row>
             </Container>
           </section>
+
+          {/* End Best Sellers books  */}
+
           <br />
           <br />
           <br />
