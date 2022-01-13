@@ -15,8 +15,8 @@ import {
 class BookCard extends React.Component {
   render() {
     return (
-      <Col lg="2" className="book-card">
-        <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-5">
+      <Col lg={this.props.size? this.props.size: "2"} className="book-card">
+        <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-4">
           <CardImg
             top
             alt="..."
@@ -26,7 +26,7 @@ class BookCard extends React.Component {
 
           <CardBody className="px-0 pb-0 full-width">
             <small>
-              <span>Hardcover, Kindle, Paperback</span>
+              <span>Hardcover, Kindle, Paperback {this.props.size? this.props.size: "2"} </span>
             </small>
             <h6 className="book-card-title text-uppercase mb-0 mt-1">
               Download Argon book buy me{" "}

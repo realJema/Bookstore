@@ -110,11 +110,16 @@
   color: black;
 }
 .book-card {
-  flex: 0 0 20%;
-  max-width: 20% !important;
   padding: 0;
   border-right: 1px solid #eae8e4;
 }
+
+.featured-container > .book-card {
+  flex: 0 0 20%;
+
+  max-width: 20% !important;
+}
+
 .book-card-container {
   border: 1px solid #eae8e4;
 }
@@ -153,4 +158,9 @@
 }
 .card-body {
   font-family: "Inter", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.new-release-ad {
+height: 100%;
 }
