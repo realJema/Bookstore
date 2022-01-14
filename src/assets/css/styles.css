@@ -129,6 +129,11 @@
   box-shadow: 0 0 40px 0 rgb(22 22 25 / 10%);
   transition: all 0.2s ease-in-out;
 }
+.book-card-large:hover{
+  /* border: 1px solid #161619; */
+  box-shadow: 0 0 40px 0 rgb(22 22 25 / 10%);
+  transition: all 1s ease-in-out;
+}
 .book-card-img {
   height: 183px;
   width: 120px;

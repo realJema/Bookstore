@@ -24,6 +24,7 @@ import MainNavbar from "components/Navbars/MainNavbar";
 import Topbar from "components/Navbars/Topbar";
 import Adslider from "components/Elements/Slider";
 import BookCard from "components/Elements/BookCard";
+import BookCardLarge from "components/Elements/BookCardLarge";
 
 class Billboard extends React.Component {
   constructor(props) {
@@ -264,7 +265,7 @@ class Billboard extends React.Component {
                 </Col>
               </Row>
               <Row className="justify-content-center">
-                <Col lg="4">
+                <Col lg="5">
                   <Card className="bg-default shadow border-0 new-release-ad">
                     <CardImg
                       alt="..."
@@ -299,7 +300,7 @@ class Billboard extends React.Component {
                     </blockquote>
                   </Card>
                 </Col>
-                <Col lg="8">
+                <Col lg="7">
                   <Row className="row-grid">
                     <BookCard size="3" />
                     <BookCard size="3" />
@@ -309,6 +310,30 @@ class Billboard extends React.Component {
                     <BookCard size="3" />
                     <BookCard size="3" />
                     <BookCard size="3" />
+                  </Row>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+          {/* End New Releases*/}
+
+          {/* Biography Books*/}
+          <section className="section section-lg pt-lg-0">
+            <Container className="col-md-11 col-lg-11">
+              <Row className="row-grid justify-content-between align-items-end">
+                <h2 className="mt-md mb-5 display-4">
+                  <span>Biography Books</span>
+                </h2>
+                <h6 className="mt-lg mb-5">
+                  <span>View All</span> <i className="fa fa-chevron-right"></i>
+                </h6>
+              </Row>
+              <Row className="justify-content-center">
+                <Col lg="12">
+                  <Row className="row-grid book-card-container">
+                    <BookCardLarge size="4" />
+                    <BookCardLarge size="4" />
+                    <BookCardLarge size="4" />
                   </Row>
                 </Col>
               </Row>
