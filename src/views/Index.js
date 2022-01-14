@@ -28,6 +28,8 @@ class Billboard extends React.Component {
   }
 
   render() {
+
+    // settings for rick slider 
     return (
       <>
         <Topbar />
@@ -39,7 +41,7 @@ class Billboard extends React.Component {
             <Container className="col-md-11 col-lg-11">
               <Row className="row-grid justify-content-between align-items-end">
                 <h2 className="mt-md mb-5 display-4">
-                  <span>Featured Categories</span>
+                  Featured Categories
                 </h2>
                 <h6 className="mt-lg mb-5">
                   <span>All Categories</span>{" "}
@@ -61,10 +63,10 @@ class Billboard extends React.Component {
                           <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
                             <i className="ni ni-satisfied" />
                           </div>
-                          <h6 className="text-primary text-uppercase">
+                          <h6 className="category-title text-uppercase">
                             Arts & Photography
                           </h6>
-                          <p className="text-primary ">Shop Now</p>
+                          <p className="text-primary category-subtitle">Shop Now</p>
                         </CardBody>
                       </Card>
                     </Col>
@@ -80,10 +82,10 @@ class Billboard extends React.Component {
                           <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
                             <i className="ni ni-shop" />
                           </div>
-                          <h6 className="text-primary text-uppercase">
+                          <h6 className="category-title text-uppercase">
                             Food & Drink
                           </h6>
-                          <p className="text-primary">Shop Now</p>
+                          <p className="text-primary category-subtitle">Shop Now</p>
                         </CardBody>
                       </Card>
                     </Col>
@@ -99,10 +101,10 @@ class Billboard extends React.Component {
                           <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
                             <i className="ni ni-diamond" />
                           </div>
-                          <h6 className="text-primary text-uppercase">
+                          <h6 className="category-title text-uppercase">
                             Romance
                           </h6>
-                          <p className="text-primary text-uppercase">
+                          <p className="text-primary category-subtitle">
                             Shop Now
                           </p>
                         </CardBody>
@@ -120,10 +122,10 @@ class Billboard extends React.Component {
                           <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
                             <i className="ni ni-like-2" />
                           </div>
-                          <h6 className="text-primary text-uppercase">
+                          <h6 className="category-title text-uppercase">
                             Health
                           </h6>
-                          <p className="text-primary text-uppercase">
+                          <p className="text-primary category-subtitle">
                             Shop Now
                           </p>
                         </CardBody>
@@ -141,10 +143,10 @@ class Billboard extends React.Component {
                           <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
                             <i className="ni ni-hat-3" />
                           </div>
-                          <h6 className="text-primary text-uppercase">
+                          <h6 className="category-title text-uppercase">
                             Biography
                           </h6>
-                          <p className="text-primary text-uppercase">
+                          <p className="text-primary category-subtitle">
                             Shop Now
                           </p>
                         </CardBody>
@@ -162,7 +164,7 @@ class Billboard extends React.Component {
             <Container className="col-md-11 col-lg-11">
               <Row className="row-grid justify-content-between align-items-end">
                 <h2 className="mt-md mb-5 display-4">
-                  <span>Bestselling Books</span>
+                  Bestselling Books
                 </h2>
                 <h6 className="mt-lg mb-5">
                   <span>View All</span> <i className="fa fa-chevron-right"></i>
@@ -188,7 +190,7 @@ class Billboard extends React.Component {
             <Container className="col-md-11 col-lg-11">
               <Row className="row-grid justify-content-center align-items-center">
                 <h2 className="mt-md display-4">
-                  <span>Featured Books</span>
+                  Featured Books
                 </h2>
               </Row>
               <Row className="row-grid justify-content-center text-center mt-3 mb-5">
@@ -236,7 +238,7 @@ class Billboard extends React.Component {
               <Row className="row-grid justify-content-between align-items-end">
                 <Col lg="4">
                   <h2 className="mt-md mb-5 display-4">
-                    <span>New Releases</span>
+                    New Releases
                   </h2>
                 </Col>
                 <Col lg="3">
@@ -317,7 +319,7 @@ class Billboard extends React.Component {
             <Container className="col-md-11 col-lg-11">
               <Row className="row-grid justify-content-between align-items-end">
                 <h2 className="mt-md mb-5 display-4">
-                  <span>Biography Books</span>
+                  Biography Books
                 </h2>
                 <h6 className="mt-lg mb-5">
                   <span>View All</span> <i className="fa fa-chevron-right"></i>
@@ -341,7 +343,7 @@ class Billboard extends React.Component {
             <Container className="col-md-11 col-lg-11">
               <Row className="row-grid justify-content-between align-items-end">
                 <h2 className="mt-md mb-5 display-4">
-                  <span>Favorite Authors</span>
+                  Favorite Authors
                 </h2>
                 <h6 className="mt-lg mb-5">
                   <span>View All</span> <i className="fa fa-chevron-right"></i>

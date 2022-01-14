@@ -35,7 +35,7 @@ class Topbar extends React.Component {
       <>
         <header className="header-global">
           <Navbar expand="lg" id="topbar-main">
-            <Container className="col-md-12 col-lg-12 col-sm-12">
+            <Container className="col-md-11 col-lg-11 col-sm-11">
               <UncontrolledCollapse
                 toggler="#navbar_global"
                 navbar

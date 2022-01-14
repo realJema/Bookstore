@@ -48,7 +48,7 @@ class MainNavbar extends React.Component {
             expand="lg"
             id="navbar-main"
           >
-            <Container className="col-md-12 col-lg-12">
+            <Container className="col-md-11 col-lg-11">
               <div className="category-menu">
                 <i className="fa fa-align-left"></i>
               </div>

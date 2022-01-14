@@ -159,6 +159,18 @@
   text-align: left;
   background-color: #fff;
 }
+.category-title {
+      width: 250px;
+    font-weight: 500;
+    margin: 0;
+}
+.category-subtitle {
+  font-family: "Inter",Helvetica,Arial,sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+}
 .book-card-price {
   font-size: 1.125rem;
   font-weight: 500 !important;
