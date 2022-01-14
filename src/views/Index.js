@@ -339,7 +339,88 @@ class Billboard extends React.Component {
               </Row>
             </Container>
           </section>
-          {/* End New Releases*/}
+          {/* End Bigoraphy Books*/}
+
+          {/* Favorite Authors*/}
+          <section className="section section-lg pt-lg-0  bb-3">
+            <Container className="col-md-11 col-lg-11">
+              <Row className="row-grid justify-content-between align-items-end">
+                <h2 className="mt-md mb-5 display-4">
+                  <span>Favorite Authors</span>
+                </h2>
+                <h6 className="mt-lg mb-5">
+                  <span>View All</span> <i className="fa fa-chevron-right"></i>
+                </h6>
+              </Row>
+              <Row className="justify-content-center">
+                <Col lg="12">
+                  <Row className="row-grid justify-content-center">
+                    <Col sm="3" xs="6" md="2" className="featured-category ">
+                    <center>
+                      <img
+                        alt="..."
+                        className="img-fluid rounded-circle shadow"
+                        src={require("assets/img/theme/team-2-800x800.jpg")}
+                        style={{ width: "150px" }}
+                      />
+                      <h6 className="mt-4 mb-0">Andre Aciman</h6>
+                     <small class="d-block">2 Published Book</small>
+                    </center>
+                    </Col>
+                    <Col sm="3" xs="6" md="2" className="featured-category ">
+                    <center>
+                      <img
+                        alt="..."
+                        className="img-fluid rounded-circle shadow"
+                        src={require("assets/img/theme/team-2-800x800.jpg")}
+                        style={{ width: "150px" }}
+                      />
+                      <h6 className="mt-4 mb-0">Andre Aciman</h6>
+                     <small class="d-block">2 Published Book</small>
+                    </center>
+                    </Col>
+                    <Col sm="3" xs="6" md="2" className="featured-category ">
+                    <center>
+                      <img
+                        alt="..."
+                        className="img-fluid rounded-circle shadow"
+                        src={require("assets/img/theme/team-2-800x800.jpg")}
+                        style={{ width: "150px" }}
+                      />
+                      <h6 className="mt-4 mb-0">Andre Aciman</h6>
+                     <small class="d-block">2 Published Book</small>
+                    </center>
+                    </Col>
+                    <Col sm="3" xs="6" md="2" className="featured-category ">
+                    <center>
+                      <img
+                        alt="..."
+                        className="img-fluid rounded-circle shadow"
+                        src={require("assets/img/theme/team-2-800x800.jpg")}
+                        style={{ width: "150px" }}
+                      />
+                      <h6 className="mt-4 mb-0">Andre Aciman</h6>
+                     <small class="d-block">2 Published Book</small>
+                    </center>
+                    </Col>
+                    <Col sm="3" xs="6" md="2" className="featured-category ">
+                    <center>
+                      <img
+                        alt="..."
+                        className="img-fluid rounded-circle shadow"
+                        src={require("assets/img/theme/team-2-800x800.jpg")}
+                        style={{ width: "150px" }}
+                      />
+                      <h6 className="mt-4 mb-0">Andre Aciman</h6>
+                     <small class="d-block">2 Published Book</small>
+                    </center>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+          {/* End Favorite Authors*/}
 
           <br />
           <br />

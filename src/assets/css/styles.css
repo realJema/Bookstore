@@ -169,3 +169,7 @@
 .new-release-ad {
 height: 100%;
 }
+
+.bb-3 {
+  border-bottom: 1px solid #80808047;
+}
