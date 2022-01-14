@@ -121,7 +121,9 @@
 }
 
 .book-card-container {
-  border: 1px solid #eae8e4;
+  border-top: 1px solid #eae8e4;
+  border-bottom:  1px solid #eae8e4;
+  border-left: 1px solid #eae8e4;
 }
 
 .book-card:hover {
@@ -129,7 +131,7 @@
   box-shadow: 0 0 40px 0 rgb(22 22 25 / 10%);
   transition: all 0.2s ease-in-out;
 }
-.book-card-large:hover{
+.book-card-large:hover {
   /* border: 1px solid #161619; */
   box-shadow: 0 0 40px 0 rgb(22 22 25 / 10%);
   transition: all 1s ease-in-out;
@@ -167,7 +169,7 @@
 }
 
 .new-release-ad {
-height: 100%;
+  height: 100%;
 }
 
 .bb-3 {
@@ -175,15 +177,33 @@ height: 100%;
 }
 
 .newsletter-input {
-        border: 1px solid #ccc;
-    width: 100%;
-    line-height: 1.3;
-    height: 3.75rem;
-    padding: 0.844rem 2rem;
-    border-color: #161619;
-    border-radius: 0;
+  border: 1px solid #ccc;
+  width: 100%;
+  line-height: 1.3;
+  height: 3.75rem;
+  padding: 0.844rem 2rem;
+  border-color: #161619;
+  border-radius: 0;
 }
 
 .newsletter-submit {
-      height: 100%;
+  height: 100%;
+}
+.footer {
+      overflow: hidden;
+}
+.footer-links {
+  display: inline-block;
+  padding: 9px 0;
+  color: #161619;
+  float: left;
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+  width: 300px;
+  font-size: 14px;
+}
+.footer-links:hover {
+  padding-left: 0.75rem;
+  text-decoration: none;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
 }
