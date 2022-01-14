@@ -1,12 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 // reactstrap components
 import {
-  Badge,
   Card,
-  Button,
   CardBody,
-  Nav,
   CardImg,
   Row,
   Col,

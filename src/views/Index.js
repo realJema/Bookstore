@@ -3,16 +3,10 @@ import React from "react";
 
 // reactstrap components
 import {
-  Badge,
   Button,
   Card,
   CardBody,
   CardImg,
-  FormGroup,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
   Container,
   Row,
   Col,
@@ -25,6 +19,7 @@ import Topbar from "components/Navbars/Topbar";
 import Adslider from "components/Elements/Slider";
 import BookCard from "components/Elements/BookCard";
 import BookCardLarge from "components/Elements/BookCardLarge";
+import Footer from "components/Footers/Footer"; 
 
 class Billboard extends React.Component {
   constructor(props) {
@@ -356,64 +351,64 @@ class Billboard extends React.Component {
                 <Col lg="12">
                   <Row className="row-grid justify-content-center">
                     <Col sm="3" xs="6" md="2" className="featured-category ">
-                    <center>
-                      <img
-                        alt="..."
-                        className="img-fluid rounded-circle shadow"
-                        src={require("assets/img/theme/team-2-800x800.jpg")}
-                        style={{ width: "150px" }}
-                      />
-                      <h6 className="mt-4 mb-0">Andre Aciman</h6>
-                     <small class="d-block">2 Published Book</small>
-                    </center>
+                      <center>
+                        <img
+                          alt="..."
+                          className="img-fluid rounded-circle shadow"
+                          src={require("assets/img/theme/team-2-800x800.jpg")}
+                          style={{ width: "150px" }}
+                        />
+                        <h6 className="mt-4 mb-0">Andre Aciman</h6>
+                        <small class="d-block">2 Published Book</small>
+                      </center>
                     </Col>
                     <Col sm="3" xs="6" md="2" className="featured-category ">
-                    <center>
-                      <img
-                        alt="..."
-                        className="img-fluid rounded-circle shadow"
-                        src={require("assets/img/theme/team-2-800x800.jpg")}
-                        style={{ width: "150px" }}
-                      />
-                      <h6 className="mt-4 mb-0">Andre Aciman</h6>
-                     <small class="d-block">2 Published Book</small>
-                    </center>
+                      <center>
+                        <img
+                          alt="..."
+                          className="img-fluid rounded-circle shadow"
+                          src={require("assets/img/theme/team-2-800x800.jpg")}
+                          style={{ width: "150px" }}
+                        />
+                        <h6 className="mt-4 mb-0">Andre Aciman</h6>
+                        <small class="d-block">2 Published Book</small>
+                      </center>
                     </Col>
                     <Col sm="3" xs="6" md="2" className="featured-category ">
-                    <center>
-                      <img
-                        alt="..."
-                        className="img-fluid rounded-circle shadow"
-                        src={require("assets/img/theme/team-2-800x800.jpg")}
-                        style={{ width: "150px" }}
-                      />
-                      <h6 className="mt-4 mb-0">Andre Aciman</h6>
-                     <small class="d-block">2 Published Book</small>
-                    </center>
+                      <center>
+                        <img
+                          alt="..."
+                          className="img-fluid rounded-circle shadow"
+                          src={require("assets/img/theme/team-2-800x800.jpg")}
+                          style={{ width: "150px" }}
+                        />
+                        <h6 className="mt-4 mb-0">Andre Aciman</h6>
+                        <small class="d-block">2 Published Book</small>
+                      </center>
                     </Col>
                     <Col sm="3" xs="6" md="2" className="featured-category ">
-                    <center>
-                      <img
-                        alt="..."
-                        className="img-fluid rounded-circle shadow"
-                        src={require("assets/img/theme/team-2-800x800.jpg")}
-                        style={{ width: "150px" }}
-                      />
-                      <h6 className="mt-4 mb-0">Andre Aciman</h6>
-                     <small class="d-block">2 Published Book</small>
-                    </center>
+                      <center>
+                        <img
+                          alt="..."
+                          className="img-fluid rounded-circle shadow"
+                          src={require("assets/img/theme/team-2-800x800.jpg")}
+                          style={{ width: "150px" }}
+                        />
+                        <h6 className="mt-4 mb-0">Andre Aciman</h6>
+                        <small class="d-block">2 Published Book</small>
+                      </center>
                     </Col>
                     <Col sm="3" xs="6" md="2" className="featured-category ">
-                    <center>
-                      <img
-                        alt="..."
-                        className="img-fluid rounded-circle shadow"
-                        src={require("assets/img/theme/team-2-800x800.jpg")}
-                        style={{ width: "150px" }}
-                      />
-                      <h6 className="mt-4 mb-0">Andre Aciman</h6>
-                     <small class="d-block">2 Published Book</small>
-                    </center>
+                      <center>
+                        <img
+                          alt="..."
+                          className="img-fluid rounded-circle shadow"
+                          src={require("assets/img/theme/team-2-800x800.jpg")}
+                          style={{ width: "150px" }}
+                        />
+                        <h6 className="mt-4 mb-0">Andre Aciman</h6>
+                        <small class="d-block">2 Published Book</small>
+                      </center>
                     </Col>
                   </Row>
                 </Col>
@@ -422,22 +417,41 @@ class Billboard extends React.Component {
           </section>
           {/* End Favorite Authors*/}
 
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+          {/* Join Our Newsletter*/}
+          <section className="section section-lg pt-lg-0">
+            <Container className="col-md-11 col-lg-11">
+              <Row className="row-grid justify-content-center">
+                <h2 className="mt-lg mb-2 display-4">
+                  <span>Join Our Newsletter</span>
+                </h2>
+              </Row>
+              <Row className="row-grid justify-content-center mt-0">
+                <small class="d-block">
+                  Signup to be the first to hear about exclusive deals, special
+                  offers and upcoming collections
+                </small>
+              </Row>
+              <Row className="row-grid justify-content-center">
+                <Col lg="6">
+                 <input type="email" className="newsletter-input" placeholder="Enter email for weekly newsletter." required=""/>
+                </Col>
+                <Col lg="2">
+                    <Button
+                      block
+                      className="btn-round newsletter-submit"
+                      color="default"
+                      size="lg"
+                      type="button"
+                    >
+                      Send Message
+                    </Button>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+          {/* End Join Our Newsletter*/}
         </main>
+        <Footer />
       </>
     );
   }
