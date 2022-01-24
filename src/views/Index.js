@@ -19,6 +19,7 @@ import Topbar from "components/Navbars/Topbar";
 import Adslider from "components/Elements/Slider";
 import BookCard from "components/Elements/BookCard";
 import BookCardLarge from "components/Elements/BookCardLarge";
+import CardSlider from "components/Elements/CardSlider";
 import Footer from "components/Footers/Footer"; 
 
 class Billboard extends React.Component {
@@ -170,17 +171,7 @@ class Billboard extends React.Component {
                   <span>View All</span> <i className="fa fa-chevron-right"></i>
                 </h6>
               </Row>
-              <Row className="justify-content-center">
-                <Col lg="12">
-                  <Row className="row-grid book-card-container  featured-container">
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
-                  </Row>
-                </Col>
-              </Row>
+              <CardSlider />
             </Container>
           </section>
           {/* End Best Sellers books  */}

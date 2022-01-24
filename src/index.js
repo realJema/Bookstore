@@ -12,6 +12,9 @@ import "normalize.css/normalize.css";
 import "assets/css/slider-animations.css";
 import "assets/css/slider-styles.css";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import Index from "views/Index.js";
 import Page from "views/Page.js";
 

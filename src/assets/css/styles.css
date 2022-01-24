@@ -122,7 +122,7 @@
 
 .book-card-container {
   border-top: 1px solid #eae8e4;
-  border-bottom:  1px solid #eae8e4;
+  border-bottom: 1px solid #eae8e4;
   border-left: 1px solid #eae8e4;
 }
 
@@ -160,16 +160,16 @@
   background-color: #fff;
 }
 .category-title {
-      width: 250px;
-    font-weight: 500;
-    margin: 0;
+  width: 250px;
+  font-weight: 500;
+  margin: 0;
 }
 .category-subtitle {
-  font-family: "Inter",Helvetica,Arial,sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    text-align: left;
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
 }
 .book-card-price {
   font-size: 1.125rem;
@@ -202,7 +202,7 @@
   height: 100%;
 }
 .footer {
-      overflow: hidden;
+  overflow: hidden;
 }
 .footer-links {
   display: inline-block;
@@ -218,4 +218,44 @@
   text-decoration: none;
   background-color: transparent;
   transition: all 0.2s ease-in-out;
+}
+
+.slick-next:before {
+  content: "\003E" !important;
+  color: black !important;
+  line-height: 0.5 !important;
+}
+
+.slick-prev:before {
+  content: "\003C" !important;
+  color: black !important;
+
+  line-height: 0.5 !important;
+}
+.slick-prev {
+  z-index: 1 !important;
+  width: 2.813rem !important;
+  height: 2.813rem !important;
+  cursor: pointer !important;
+  transition: 0.3s !important;
+  border: 1px solid #b6b5 !important;
+  border-radius: 0 !important;
+  left: -60px !important;
+}
+.slick-next {
+  z-index: 1 !important;
+  width: 2.813rem !important;
+  height: 2.813rem !important;
+  cursor: pointer !important;
+  transition: 0.3s !important;
+  border: 1px solid #b6b5 !important;
+  border-radius: 0 !important;
+  right: -60px !important;
+}
+
+.slick-arrow:hover {
+  background: black !important; 
+}
+.slick-prev:hover:before, .slick-next:hover:before {
+  color:rgba(246, 247, 251, 1) !important;
 }
