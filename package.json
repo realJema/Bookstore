@@ -1,11 +1,11 @@
 {
-  "name": "self-made",
+  "name": "100Pages",
   "version": "1.1.0",
-  "description": "Self Made, Nobody else will do it for you",
+  "description": "Read It, Love It",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/realJema/De_lheure.git"
+    "url": "https://github.com/realJema/Bookstore.git"
   },
   "keywords": [
     "react",
@@ -25,9 +25,9 @@
   "author": "realjema",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/realJema/De_lheure.git/issues"
+    "url": "https://github.com/realJema/Bookstore.git/issues"
   },
-  "homepage": "https://github.com/realJema/De_lheure.git",
+  "homepage": "https://github.com/realJema/Bookstore.git",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && gulp licenses",
@@ -58,7 +58,6 @@
     "normalize.css": "^8.0.1",
     "nouislider": "14.1.1",
     "react": "16.12.0",
-    "react-alice-carousel": "^2.5.1",
     "react-animated-slider": "^2.0.0",
     "react-datetime": "2.16.3",
     "react-dom": "16.12.0",
