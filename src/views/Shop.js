@@ -1,29 +1,43 @@
 import React from "react";
+import Select from "react-select";
 
 // reactstrap components
-import { Button, Container, Row, Col, NavItem, NavLink, Nav } from "reactstrap";
+import { Button, Container, Row, Col } from "reactstrap";
 
 // core components
 // import Footer from "components/Footers/Footer";
 import MainNavbar from "components/Navbars/MainNavbar";
 import Topbar from "components/Navbars/Topbar";
-// import Adslider from "components/Elements/Slider";
 import BookCard from "components/Elements/BookCard";
-// import BookCardLarge from "components/Elements/BookCardLarge";
 import RecommendedBooks from "components/Elements/RecommendedBooks";
-// import FavoriteAuthorsSlider from "components/Elements/FavoriteAuthorsSlider";
 import Footer from "components/Footers/Footer"; 
 
 
 
 class Shop extends React.Component {
   render() {
+    const options = [
+      { value: "chocolate", label: "Chocolate" },
+      { value: "strawberry", label: "Strawberry" },
+      { value: "vanilla", label: "Vanilla" },
+    ];
     return (
       <>
         <Topbar />
         <MainNavbar />
         <main>
-          <h2>hello world</h2>
+          <section className="section section-components mb-5 pb-3 pt-0 bb-3">
+            \
+            <Container className="col-md-11 col-lg-11">
+              <Row>
+                <Col>
+                  <h6>
+                    <small>Home > Shop</small>
+                  </h6>
+                </Col>
+              </Row>
+            </Container>
+          </section>
           {/* Filer shop*/}
           <section className="section section-lg pt-lg-0">
             <Container className="col-md-11 col-lg-11">
@@ -112,6 +126,20 @@ class Shop extends React.Component {
                         <h2 className="mb-5 display-4">Recommended Books</h2>
                       </Row>
                       <RecommendedBooks />
+
+                      <Row className="row-grid justify-content-between align-items-end">
+                        <Col lg="8">
+                          <h6 className="mt-md mb-2 display-6">
+                            Showing 1–12 of 89 results
+                          </h6>
+                        </Col>
+                        <Col lg="2">
+                          <Select options={options} />
+                        </Col>
+                        <Col lg="2">
+                          <Select options={options} />
+                        </Col>
+                      </Row>
                       <Row className="row-grid mt-5">
                         <BookCard size="3" />
                         <BookCard size="3" />
@@ -199,5 +227,7 @@ class FilterElement extends React.Component {
     );
   }
 }
+
+
 
 export default Shop;
