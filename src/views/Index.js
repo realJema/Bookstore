@@ -19,7 +19,8 @@ import Topbar from "components/Navbars/Topbar";
 import Adslider from "components/Elements/Slider";
 import BookCard from "components/Elements/BookCard";
 import BookCardLarge from "components/Elements/BookCardLarge";
-import CardSlider from "components/Elements/CardSlider";
+import BestSellersSlider from "components/Elements/BestSellersSlider";
+import FavoriteAuthorsSlider from "components/Elements/FavoriteAuthorsSlider";
 import Footer from "components/Footers/Footer"; 
 
 class Billboard extends React.Component {
@@ -41,9 +42,7 @@ class Billboard extends React.Component {
           <section className="section section-components pb-0 pt-0">
             <Container className="col-md-11 col-lg-11">
               <Row className="row-grid justify-content-between align-items-end">
-                <h2 className="mt-md mb-5 display-4">
-                  Featured Categories
-                </h2>
+                <h2 className="mt-md mb-5 display-4">Featured Categories</h2>
                 <h6 className="mt-lg mb-5">
                   <span>All Categories</span>{" "}
                   <i className="fa fa-chevron-right"></i>
@@ -67,7 +66,9 @@ class Billboard extends React.Component {
                           <h6 className="category-title text-uppercase">
                             Arts & Photography
                           </h6>
-                          <p className="text-primary category-subtitle">Shop Now</p>
+                          <p className="text-primary category-subtitle">
+                            Shop Now
+                          </p>
                         </CardBody>
                       </Card>
                     </Col>
@@ -86,7 +87,9 @@ class Billboard extends React.Component {
                           <h6 className="category-title text-uppercase">
                             Food & Drink
                           </h6>
-                          <p className="text-primary category-subtitle">Shop Now</p>
+                          <p className="text-primary category-subtitle">
+                            Shop Now
+                          </p>
                         </CardBody>
                       </Card>
                     </Col>
@@ -164,14 +167,12 @@ class Billboard extends React.Component {
           <section className="section section-lg pt-lg-0">
             <Container className="col-md-11 col-lg-11">
               <Row className="row-grid justify-content-between align-items-end">
-                <h2 className="mt-md mb-5 display-4">
-                  Bestselling Books
-                </h2>
+                <h2 className="mt-md mb-5 display-4">Bestselling Books</h2>
                 <h6 className="mt-lg mb-5">
                   <span>View All</span> <i className="fa fa-chevron-right"></i>
                 </h6>
               </Row>
-              <CardSlider />
+              <BestSellersSlider />
             </Container>
           </section>
           {/* End Best Sellers books  */}
@@ -180,9 +181,7 @@ class Billboard extends React.Component {
           <section className="section section-lg pt-lg-0">
             <Container className="col-md-11 col-lg-11">
               <Row className="row-grid justify-content-center align-items-center">
-                <h2 className="mt-md display-4">
-                  Featured Books
-                </h2>
+                <h2 className="mt-md display-4">Featured Books</h2>
               </Row>
               <Row className="row-grid justify-content-center text-center mt-3 mb-5">
                 <Col lg="2">
@@ -228,9 +227,7 @@ class Billboard extends React.Component {
             <Container className="col-md-11 col-lg-11">
               <Row className="row-grid justify-content-between align-items-end">
                 <Col lg="4">
-                  <h2 className="mt-md mb-5 display-4">
-                    New Releases
-                  </h2>
+                  <h2 className="mt-md mb-5 display-4">New Releases</h2>
                 </Col>
                 <Col lg="3">
                   <Row className="row-grid">
@@ -309,9 +306,7 @@ class Billboard extends React.Component {
           <section className="section section-lg pt-lg-0">
             <Container className="col-md-11 col-lg-11">
               <Row className="row-grid justify-content-between align-items-end">
-                <h2 className="mt-md mb-5 display-4">
-                  Biography Books
-                </h2>
+                <h2 className="mt-md mb-5 display-4">Biography Books</h2>
                 <h6 className="mt-lg mb-5">
                   <span>View All</span> <i className="fa fa-chevron-right"></i>
                 </h6>
@@ -333,79 +328,12 @@ class Billboard extends React.Component {
           <section className="section section-lg pt-lg-0  bb-3">
             <Container className="col-md-11 col-lg-11">
               <Row className="row-grid justify-content-between align-items-end">
-                <h2 className="mt-md mb-5 display-4">
-                  Favorite Authors
-                </h2>
+                <h2 className="mt-md mb-5 display-4">Favorite Authors</h2>
                 <h6 className="mt-lg mb-5">
                   <span>View All</span> <i className="fa fa-chevron-right"></i>
                 </h6>
               </Row>
-              <Row className="justify-content-center">
-                <Col lg="12">
-                  <Row className="row-grid justify-content-center">
-                    <Col sm="3" xs="6" md="2" className="featured-category ">
-                      <center>
-                        <img
-                          alt="..."
-                          className="img-fluid rounded-circle shadow"
-                          src={require("assets/img/theme/team-2-800x800.jpg")}
-                          style={{ width: "150px" }}
-                        />
-                        <h6 className="mt-4 mb-0">Andre Aciman</h6>
-                        <small class="d-block">2 Published Book</small>
-                      </center>
-                    </Col>
-                    <Col sm="3" xs="6" md="2" className="featured-category ">
-                      <center>
-                        <img
-                          alt="..."
-                          className="img-fluid rounded-circle shadow"
-                          src={require("assets/img/theme/team-2-800x800.jpg")}
-                          style={{ width: "150px" }}
-                        />
-                        <h6 className="mt-4 mb-0">Andre Aciman</h6>
-                        <small class="d-block">2 Published Book</small>
-                      </center>
-                    </Col>
-                    <Col sm="3" xs="6" md="2" className="featured-category ">
-                      <center>
-                        <img
-                          alt="..."
-                          className="img-fluid rounded-circle shadow"
-                          src={require("assets/img/theme/team-2-800x800.jpg")}
-                          style={{ width: "150px" }}
-                        />
-                        <h6 className="mt-4 mb-0">Andre Aciman</h6>
-                        <small class="d-block">2 Published Book</small>
-                      </center>
-                    </Col>
-                    <Col sm="3" xs="6" md="2" className="featured-category ">
-                      <center>
-                        <img
-                          alt="..."
-                          className="img-fluid rounded-circle shadow"
-                          src={require("assets/img/theme/team-2-800x800.jpg")}
-                          style={{ width: "150px" }}
-                        />
-                        <h6 className="mt-4 mb-0">Andre Aciman</h6>
-                        <small class="d-block">2 Published Book</small>
-                      </center>
-                    </Col>
-                    <Col sm="3" xs="6" md="2" className="featured-category ">
-                      <center>
-                        <img
-                          alt="..."
-                          className="img-fluid rounded-circle shadow"
-                          src={require("assets/img/theme/team-2-800x800.jpg")}
-                          style={{ width: "150px" }}
-                        />
-                        <h6 className="mt-4 mb-0">Andre Aciman</h6>
-                        <small class="d-block">2 Published Book</small>
-                      </center>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
+              <FavoriteAuthorsSlider />
             </Container>
           </section>
           {/* End Favorite Authors*/}
@@ -426,18 +354,23 @@ class Billboard extends React.Component {
               </Row>
               <Row className="row-grid justify-content-center">
                 <Col lg="6">
-                 <input type="email" className="newsletter-input" placeholder="Enter email for weekly newsletter." required=""/>
+                  <input
+                    type="email"
+                    className="newsletter-input"
+                    placeholder="Enter email for weekly newsletter."
+                    required=""
+                  />
                 </Col>
                 <Col lg="2">
-                    <Button
-                      block
-                      className="btn-round newsletter-submit"
-                      color="default"
-                      size="lg"
-                      type="button"
-                    >
-                      Send Message
-                    </Button>
+                  <Button
+                    block
+                    className="btn-round newsletter-submit"
+                    color="default"
+                    size="lg"
+                    type="button"
+                  >
+                    Send Message
+                  </Button>
                 </Col>
               </Row>
             </Container>

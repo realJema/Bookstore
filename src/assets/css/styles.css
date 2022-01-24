@@ -221,13 +221,13 @@
 }
 
 .slick-next:before {
-  content: "\003E" !important;
+  content: "\203A" !important;
   color: black !important;
   line-height: 0.5 !important;
 }
 
 .slick-prev:before {
-  content: "\003C" !important;
+  content: "\2039" !important;
   color: black !important;
 
   line-height: 0.5 !important;

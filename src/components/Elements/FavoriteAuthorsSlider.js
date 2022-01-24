@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import BookCard from "./BookCard";
+// reactstrap components
+import {
+  Col,
+} from "reactstrap";
+import AuthorCard from "./AurhorCard";
 
 
-export default class CardSlider extends Component {
+export default class FavoriteAuthorsSlider extends Component {
   render() {
     var settings = {
-      dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 5,
@@ -40,18 +43,18 @@ export default class CardSlider extends Component {
       ],
     };
     return (
-      <div className="book-card-container">
+      <div >
         <Slider {...settings}>
-          <BookCard size="12" />
-          <BookCard size="12" />
-          <BookCard size="12" />
-          <BookCard size="12" />
-          <BookCard size="12" />
-          <BookCard size="12" />
-          <BookCard size="12" />
-          <BookCard size="12" />
-          <BookCard size="12" />
-          <BookCard size="12" />
+          <AuthorCard />
+          <AuthorCard />
+          <AuthorCard />
+          <AuthorCard />
+          <AuthorCard />
+          <AuthorCard />
+          <AuthorCard />
+          <AuthorCard />
+          <AuthorCard />
+          <AuthorCard />
         </Slider>
       </div>
     );
