@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import AuthorCard from "./AurhorCard";
+import BookCard from "./BookCard";
 
 
-export default class FavoriteAuthorsSlider extends Component {
+export default class RecommendedBooks extends Component {
   render() {
     var settings = {
       infinite: true,
       speed: 500,
-      slidesToShow: 5,
+      slidesToShow: 3,
       slidesToScroll: 1,
       initialSlide: 0,
         swipeToSlide: true,
@@ -39,18 +39,18 @@ export default class FavoriteAuthorsSlider extends Component {
       ],
     };
     return (
-      <div >
+      <div className="">
         <Slider {...settings}>
-          <AuthorCard />
-          <AuthorCard />
-          <AuthorCard />
-          <AuthorCard />
-          <AuthorCard />
-          <AuthorCard />
-          <AuthorCard />
-          <AuthorCard />
-          <AuthorCard />
-          <AuthorCard />
+          <BookCard size="12" />
+          <BookCard size="12" />
+          <BookCard size="12" />
+          <BookCard size="12" />
+          <BookCard size="12" />
+          <BookCard size="12" />
+          <BookCard size="12" />
+          <BookCard size="12" />
+          <BookCard size="12" />
+          <BookCard size="12" />
         </Slider>
       </div>
     );

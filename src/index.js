@@ -16,23 +16,24 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Index from "views/Index.js";
-import Page from "views/Page.js";
+// import Page from "views/Page.js";
+import Shop from "views/Shop";
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/" exact render={(props) => <Index {...props} />} />
-      <Route
+      {/* <Route
         path="/:page"
         exact
         render={(props) => <Page {...props} />}
+      /> */}
+      <Route
+        path="/shop"
+        exact
+        render={props => <Shop {...props} />}
       />
       {/*
-      <Route
-        path="/billboard"
-        exact
-        render={props => <Billboard {...props} />}
-      />
       <Route path="/login-page" exact render={props => <Login {...props} />} />
       <Route
         path="/profile-page"

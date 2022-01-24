@@ -1,6 +1,6 @@
 import React from "react";
 // reactstrap components
-import { Card, CardBody, CardImg, Row, Col } from "reactstrap";
+import {  Col } from "reactstrap";
 
 class AuthorCard extends React.Component {
   render() {

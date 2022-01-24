@@ -108,7 +108,7 @@ class MainNavbar extends React.Component {
                     </DropdownMenu>
                   </UncontrolledDropdown>
                   <NavItem>
-                    <NavLink to="/billboard" tag={Link}>
+                    <NavLink to="/shop" tag={Link}>
                       <span className="nav-link-inner--text">Shop</span>
                     </NavLink>
                   </NavItem>

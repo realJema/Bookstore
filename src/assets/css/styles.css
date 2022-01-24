@@ -120,10 +120,8 @@
   max-width: 20% !important;
 }
 
-.book-card-container {
-  border-top: 1px solid #eae8e4;
-  border-bottom: 1px solid #eae8e4;
-  border-left: 1px solid #eae8e4;
+.book-card-container, .arb {
+  border: 1px solid #eae8e4;
 }
 
 .book-card:hover {
@@ -184,8 +182,8 @@
   height: 100%;
 }
 
-.bb-3 {
-  border-bottom: 1px solid #80808047;
+.bt-3 {
+  border-top: 1px solid #80808047;
 }
 
 .newsletter-input {
@@ -258,4 +256,30 @@
 }
 .slick-prev:hover:before, .slick-next:hover:before {
   color:rgba(246, 247, 251, 1) !important;
+}
+
+.filter-section {
+flex: 0 0 23.0136985833%;
+    max-width: 23.0136985833%;
+    margin-right: auto;
+}
+.filter {
+      list-style: none;
+    padding: 0;
+    
+}
+.filter > li{
+      display: block;
+    padding: 9px 0;
+    font-size: 14px;
+    color: #161619;
+}
+.filter > li:hover {
+      color: #f75454;
+}
+.filter-option {
+  
+    padding: 9px 0;
+    font-size: 14px;
+    color: #161619;
 }

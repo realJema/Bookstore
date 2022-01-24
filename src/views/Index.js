@@ -325,7 +325,7 @@ class Billboard extends React.Component {
           {/* End Bigoraphy Books*/}
 
           {/* Favorite Authors*/}
-          <section className="section section-lg pt-lg-0  bb-3">
+          <section className="section section-lg pt-lg-0">
             <Container className="col-md-11 col-lg-11">
               <Row className="row-grid justify-content-between align-items-end">
                 <h2 className="mt-md mb-5 display-4">Favorite Authors</h2>
@@ -339,7 +339,7 @@ class Billboard extends React.Component {
           {/* End Favorite Authors*/}
 
           {/* Join Our Newsletter*/}
-          <section className="section section-lg pt-lg-0">
+          <section className="section section-lg pt-lg-0 bt-3">
             <Container className="col-md-11 col-lg-11">
               <Row className="row-grid justify-content-center">
                 <h2 className="mt-lg mb-2 display-4">

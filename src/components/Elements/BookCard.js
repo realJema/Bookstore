@@ -11,7 +11,7 @@ import {
 class BookCard extends React.Component {
   render() {
     return (
-      <Col lg={this.props.size? this.props.size: "2"} className="book-card">
+      <Col lg={this.props.size? this.props.size: "2"} className="book-card arb">
         <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-4">
           <CardImg
             top
