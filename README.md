@@ -2,10 +2,10 @@
 A bookstore and e-reader application where authors can publish and sell books. Users purchase the books and can read the books they purchased on the platform. 
 
 ## Pages 
-[] Homepaage 
+[x] Homepaage 
 [] Sign up / Sign in 
-[] Book Details 
-[] Shop 
+[x] Book Details 
+[x] Shop 
 [] Author Dashboard 
 [] User Dashboard 
 [] Submit Book 
