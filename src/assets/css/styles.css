@@ -286,3 +286,14 @@ flex: 0 0 23.0136985833%;
     font-size: 14px;
     color: #161619;
 }
+
+.select-filter {
+  border: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+.button-filter {
+    padding-bottom: 5px;
+        padding: 14px;
+    border: 1px solid #eae8e4!important;
+}

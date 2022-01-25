@@ -2,16 +2,40 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import BookCard from "./BookCard";
 
+function NextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none", background: "red" }}
+      onClick={onClick}
+    />
+  );
+}
 
+function PrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none", background: "green" }}
+      onClick={onClick}
+    />
+  );
+}
 export default class RecommendedBooks extends Component {
   render() {
     var settings = {
+      dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 3,
+      autoplay: true,
       slidesToScroll: 1,
       initialSlide: 0,
-        swipeToSlide: true,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
+      swipeToSlide: true,
       responsive: [
         {
           breakpoint: 1024,

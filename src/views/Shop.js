@@ -133,11 +133,48 @@ class Shop extends React.Component {
                             Showing 1–12 of 89 results
                           </h6>
                         </Col>
-                        <Col lg="2">
-                          <Select options={options} />
-                        </Col>
-                        <Col lg="2">
-                          <Select options={options} />
+                        <Col lg="4" className="px-0">
+                          <Row className="row-grid justify-content-between align-items-end">
+                            <Col lg="4">
+                              <select className="select-filter">
+                                <option value="hide">Default Sorting</option>
+                                <option value="january">January</option>
+                                <option value="february">February</option>
+                                <option value="march">March</option>
+                                <option value="april">April</option>
+                                <option value="may">May</option>
+                                <option value="june">June</option>
+                                <option value="july">July</option>
+                                <option value="august">August</option>
+                                <option value="september">September</option>
+                                <option value="october">October</option>
+                                <option value="november">November</option>
+                                <option value="december">December</option>
+                              </select>
+                            </Col>
+                            <Col lg="3">
+                              <select className="select-filter">
+                                <option value="hide">Show 20</option>
+                                <option value="january">January</option>
+                                <option value="february">February</option>
+                                <option value="march">March</option>
+                                <option value="april">April</option>
+                                <option value="may">May</option>
+                                <option value="june">June</option>
+                                <option value="july">July</option>
+                                <option value="august">August</option>
+                                <option value="september">September</option>
+                                <option value="october">October</option>
+                                <option value="november">November</option>
+                                <option value="december">December</option>
+                              </select>
+                            </Col>
+
+                            <Col lg="4">
+                              <i className="fa fa-th button-filter"></i>
+                              <i className="fa fa-list button-filter"></i>
+                            </Col>
+                          </Row>
                         </Col>
                       </Row>
                       <Row className="row-grid mt-5">
