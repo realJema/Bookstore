@@ -199,6 +199,13 @@
   border-color: #161619;
   border-radius: 0;
 }
+.format-dropdown {
+  width: 100%;
+  height: 3.75rem;
+  padding: 0.844rem 1rem;
+  border-color: #161619;
+  border-radius: 0;
+}
 
 .newsletter-submit {
   height: 100%;
@@ -301,4 +308,8 @@
   text-align: center;
 
   font-size: 1.4em;
+}
+.product-image {
+  height: 449px;
+    width: 300px;
 }

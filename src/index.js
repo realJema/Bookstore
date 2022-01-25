@@ -18,6 +18,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Index from "views/Index.js";
 // import Page from "views/Page.js";
 import Shop from "views/Shop";
+import SingleProduct from "views/SingleProduct";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -33,8 +34,8 @@ ReactDOM.render(
         exact
         render={props => <Shop {...props} />}
       />
+      <Route path="/product" exact render={props => <SingleProduct {...props} />} />
       {/*
-      <Route path="/login-page" exact render={props => <Login {...props} />} />
       <Route
         path="/profile-page"
         exact

@@ -84,7 +84,7 @@ class MainNavbar extends React.Component {
                   </Row>
                 </div>
                 <Nav className="navbar-nav-hover align-items-lg-center" navbar>
-                  <UncontrolledDropdown nav>
+                  {/* <UncontrolledDropdown nav>
                     <DropdownToggle nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">
@@ -106,15 +106,15 @@ class MainNavbar extends React.Component {
                         Register
                       </DropdownItem>
                     </DropdownMenu>
-                  </UncontrolledDropdown>
+                  </UncontrolledDropdown> */}
                   <NavItem>
                     <NavLink to="/shop" tag={Link}>
                       <span className="nav-link-inner--text">Shop</span>
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink to="/billboard" tag={Link}>
-                      <span className="nav-link-inner--text">About Us</span>
+                    <NavLink to="/product" tag={Link}>
+                      <span className="nav-link-inner--text">Single Product</span>
                     </NavLink>
                   </NavItem>
                   <NavItem>
