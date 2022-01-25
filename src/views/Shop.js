@@ -10,6 +10,7 @@ import MainNavbar from "components/Navbars/MainNavbar";
 import Topbar from "components/Navbars/Topbar";
 import BookCard from "components/Elements/BookCard";
 import RecommendedBooks from "components/Elements/RecommendedBooks";
+import BookCardLarge2 from "components/Elements/BookCardLarge2";
 import Footer from "components/Footers/Footer"; 
 
 
@@ -178,22 +179,7 @@ class Shop extends React.Component {
                         </Col>
                       </Row>
                       <Row className="row-grid mt-5">
-                        <BookCard size="3" />
-                        <BookCard size="3" />
-                        <BookCard size="3" />
-                        <BookCard size="3" />
-                        <BookCard size="3" />
-                        <BookCard size="3" />
-                        <BookCard size="3" />
-                        <BookCard size="3" />
-                        <BookCard size="3" />
-                        <BookCard size="3" />
-                        <BookCard size="3" />
-                        <BookCard size="3" />
-                        <BookCard size="3" />
-                        <BookCard size="3" />
-                        <BookCard size="3" />
-                        <BookCard size="3" />
+                        <ListDisplay />
                       </Row>
                     </Container>
                   </section>
@@ -261,6 +247,46 @@ class FilterElement extends React.Component {
           <span>({this.props.qty ? this.props.qty : "0"})</span>
         </Col>
       </Row>
+    );
+  }
+}
+class GridDisplay extends React.Component {
+  render() {
+    return (
+      <>
+        <BookCard size="3" />
+        <BookCard size="3" />
+        <BookCard size="3" />
+        <BookCard size="3" />
+        <BookCard size="3" />
+        <BookCard size="3" />
+        <BookCard size="3" />
+        <BookCard size="3" />
+        <BookCard size="3" />
+        <BookCard size="3" />
+        <BookCard size="3" />
+        <BookCard size="3" />
+        <BookCard size="3" />
+        <BookCard size="3" />
+        <BookCard size="3" />
+        <BookCard size="3" />
+      </>
+    );
+  }
+}
+class ListDisplay extends React.Component {
+  render() {
+    return (
+      <>
+        <BookCardLarge2 size="12" />
+        <BookCardLarge2 size="12" />
+        <BookCardLarge2 size="12" />
+        <BookCardLarge2 size="12" />
+        <BookCardLarge2 size="12" />
+        <BookCardLarge2 size="12" />
+        <BookCardLarge2 size="12" />
+        <BookCardLarge2 size="12" />
+      </>
     );
   }
 }
