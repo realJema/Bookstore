@@ -2,12 +2,7 @@ import React from "react";
 import Select from "react-select";
 
 // reactstrap components
-import {
-  Button,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Button, Container, Row, Col } from "reactstrap";
 
 // core components
 // import Footer from "components/Footers/Footer";
@@ -16,6 +11,8 @@ import Topbar from "components/Navbars/Topbar";
 import BookCard from "components/Elements/BookCard";
 import BestSellersSlider from "components/Elements/BestSellersSlider";
 import BookCardLarge2 from "components/Elements/BookCardLarge2";
+import BookCardMin from "components/Elements/BookCardMin";
+import Amenities from "components/Elements/Amenities";
 import Footer from "components/Footers/Footer";
 
 class SingleProduct extends React.Component {
@@ -47,7 +44,7 @@ class SingleProduct extends React.Component {
           {/* End of Bread Crumbs  */}
 
           {/* Book Details */}
-          <section className="section section-lg pt-lg-0 mb-5">
+          <section className="section section-lg pt-lg-0 pb-0">
             <Container className="col-md-12 col-lg-12">
               <Row className="row-grid justify-content-center">
                 <Col lg="9">
@@ -141,17 +138,36 @@ class SingleProduct extends React.Component {
                     </Col>
                   </Row>
                 </Col>
-                <Col lg="3"></Col>
-              </Row>
-              <Row className="row-grid justify-content-center center col-md-11">
-                <h2 className="mb-5 display-4 left">Related Books</h2>
-                <Col>
-                  <BestSellersSlider />
+                <Col lg="3">
+                  <Row className="row-grid justify-content-between col-md-10 arb py-4 px-4">
+                    <Col lg="12">
+                      <BookCardMin />
+                      <BookCardMin />
+                      <BookCardMin />
+                    </Col>
+                  </Row>
+                  <Row className="row-grid justify-content-between col-md-10 arb py-4 px-2 mt-3">
+                    <Col lg="12">
+                      <Amenities />
+                      <Amenities />
+                      <Amenities />
+                    </Col>
+                  </Row>
                 </Col>
               </Row>
             </Container>
           </section>
           {/* End Book Details */}
+          {/* Related books  */}
+          <section className="section section-lg pt-lg-0">
+            <Container className="col-md-11 col-lg-11">
+              <Row className="row-grid justify-content-between align-items-end">
+                <h2 className="mt-md mb-5 display-4">Related Books</h2>
+              </Row>
+              <BestSellersSlider />
+            </Container>
+          </section>
+          {/* End Related books  */}
 
           {/* Join Our Newsletter*/}
           <section className="section section-lg pt-lg-0 bt-3">
