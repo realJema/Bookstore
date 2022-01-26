@@ -78,20 +78,18 @@ class SingleProduct extends React.Component {
                       <small>Book Format</small>
                       <Row>
                         <Col lg="8">
-                          <Select
-                            className="format-dropdown"
-                            options={options}
-                          />
+                          <select className="select-product">
+                                <option value="hide">Default Sorting</option>
+                                <option value="january">January</option>
+                                <option value="october">October</option>
+                                <option value="november">November</option>
+                                <option value="december">December</option>
+                              </select>
                         </Col>
                         <Col lg="4">
-                          <Button
-                            className="btn-1"
-                            color="primary"
-                            outline
-                            type="button"
-                          >
-                            Add to Cart
-                          </Button>
+                            <a href="#" class="btn btn-colour-1">
+                               Add to Cart
+                            </a>
                         </Col>
                       </Row>
                     </Col>

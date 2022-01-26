@@ -302,7 +302,7 @@
 .button-filter {
   padding-bottom: 5px;
   padding: 14px;
-  border: 1px solid #eae8e4 !important;
+  border: 1px solid #bdb8ad !important;
 }
 .list-option {
   text-align: center;
@@ -323,4 +323,22 @@
 }
 .book-card-min {
   height: 100%;
+}
+
+.btn-colour-1 {
+  color: #fff;
+  background-color: #004E64;
+  border-color: #004E64;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  border-radius: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.select-product {
+  border: 1px solid #bdb8ad;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
 }
