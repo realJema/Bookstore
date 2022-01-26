@@ -3,12 +3,8 @@ import { Link } from "react-router-dom";
 // reactstrap components
 import {
   UncontrolledCollapse,
-  DropdownMenu,
-  DropdownToggle,
-  UncontrolledDropdown,
   NavbarBrand,
   Navbar,
-  DropdownItem,
   NavItem,
   NavLink,
   Nav,

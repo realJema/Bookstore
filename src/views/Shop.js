@@ -1,5 +1,4 @@
 import React from "react";
-import Select from "react-select";
 
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
@@ -8,7 +7,6 @@ import { Button, Container, Row, Col } from "reactstrap";
 // import Footer from "components/Footers/Footer";
 import MainNavbar from "components/Navbars/MainNavbar";
 import Topbar from "components/Navbars/Topbar";
-import BookCard from "components/Elements/BookCard";
 import RecommendedBooks from "components/Elements/RecommendedBooks";
 import BookCardLarge2 from "components/Elements/BookCardLarge2";
 import Footer from "components/Footers/Footer"; 
@@ -17,11 +15,6 @@ import Footer from "components/Footers/Footer";
 
 class Shop extends React.Component {
   render() {
-    const options = [
-      { value: "chocolate", label: "Chocolate" },
-      { value: "strawberry", label: "Strawberry" },
-      { value: "vanilla", label: "Vanilla" },
-    ];
     return (
       <>
         <Topbar />
@@ -250,30 +243,30 @@ class FilterElement extends React.Component {
     );
   }
 }
-class GridDisplay extends React.Component {
-  render() {
-    return (
-      <>
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-      </>
-    );
-  }
-}
+// class GridDisplay extends React.Component {
+//   render() {
+//     return (
+//       <>
+//         <BookCard size="3" />
+//         <BookCard size="3" />
+//         <BookCard size="3" />
+//         <BookCard size="3" />
+//         <BookCard size="3" />
+//         <BookCard size="3" />
+//         <BookCard size="3" />
+//         <BookCard size="3" />
+//         <BookCard size="3" />
+//         <BookCard size="3" />
+//         <BookCard size="3" />
+//         <BookCard size="3" />
+//         <BookCard size="3" />
+//         <BookCard size="3" />
+//         <BookCard size="3" />
+//         <BookCard size="3" />
+//       </>
+//     );
+//   }
+// }
 class ListDisplay extends React.Component {
   render() {
     return (

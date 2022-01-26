@@ -21,14 +21,11 @@ class BookCardMin extends React.Component {
                 className="book-card-min"
               />
             </Col>
-            <Col lg="9">
-              {" "}
+            <Col lg="9" className="pr-0">
               <CardBody className="px-0 py-0 full-width">
-                <small>
-                  <span>
+                  <h6>
                     Hardcover, Kindle, Paperback
-                  </span>
-                </small>
+                  </h6>
                 <p className="book-card-author">$14.00</p>
               </CardBody>
             </Col>

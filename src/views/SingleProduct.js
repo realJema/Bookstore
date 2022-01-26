@@ -1,5 +1,4 @@
 import React from "react";
-import Select from "react-select";
 
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
@@ -8,19 +7,13 @@ import { Button, Container, Row, Col } from "reactstrap";
 // import Footer from "components/Footers/Footer";
 import MainNavbar from "components/Navbars/MainNavbar";
 import Topbar from "components/Navbars/Topbar";
-import BookCard from "components/Elements/BookCard";
 import BestSellersSlider from "components/Elements/BestSellersSlider";
-import BookCardLarge2 from "components/Elements/BookCardLarge2";
 import BookCardMin from "components/Elements/BookCardMin";
 import Amenities from "components/Elements/Amenities";
 import Footer from "components/Footers/Footer";
 
 class SingleProduct extends React.Component {
   render() {
-    const options = [
-      { value: "Hardcover", label: "Hard Cover" },
-      { value: "Kindle", label: "Kindle" },
-    ];
     return (
       <>
         <Topbar />
@@ -48,13 +41,13 @@ class SingleProduct extends React.Component {
             <Container className="col-md-12 col-lg-12">
               <Row className="row-grid justify-content-center">
                 <Col lg="9">
-                  <Row className="row-grid justify-content-between mb-5">
+                  <Row className="row-grid justify-content-center mb-5">
                     <Col lg="6">
                       <center>
                         <a
-                          href="https://www.creative-tim.com/product/argon-design-system?ref=adsr-landing-page"
-                          id="tooltip255035741"
+                          href="https://google.com"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <img
                             alt="..."
@@ -64,7 +57,7 @@ class SingleProduct extends React.Component {
                         </a>
                       </center>
                     </Col>
-                    <Col lg="6">
+                    <Col lg="5">
                       <h2 className="text-uppercase mb-0 mt-1 display-3">
                         Download Argon book buy me{" "}
                       </h2>
@@ -77,19 +70,24 @@ class SingleProduct extends React.Component {
                       </p>
                       <small>Book Format</small>
                       <Row>
-                        <Col lg="8">
+                        <Col lg="7">
                           <select className="select-product">
-                                <option value="hide">Default Sorting</option>
-                                <option value="january">January</option>
-                                <option value="october">October</option>
-                                <option value="november">November</option>
-                                <option value="december">December</option>
-                              </select>
+                            <option value="hide">Default Sorting</option>
+                            <option value="january">January</option>
+                            <option value="october">October</option>
+                            <option value="november">November</option>
+                            <option value="december">December</option>
+                          </select>
                         </Col>
-                        <Col lg="4">
-                            <a href="#" class="btn btn-colour-1">
-                               Add to Cart
-                            </a>
+                        <Col lg="5">
+                          <a
+                            href="https://google.com"
+                            class="btn btn-colour-1"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Add to Cart
+                          </a>
                         </Col>
                       </Row>
                     </Col>
@@ -212,60 +210,5 @@ class SingleProduct extends React.Component {
   }
 }
 
-class FilterElement extends React.Component {
-  render() {
-    return (
-      <Row className="filter-option">
-        <Col lg="10">
-          <span>{this.props.name}</span>
-        </Col>
-        <Col lg="2">
-          {" "}
-          <span>({this.props.qty ? this.props.qty : "0"})</span>
-        </Col>
-      </Row>
-    );
-  }
-}
-class GridDisplay extends React.Component {
-  render() {
-    return (
-      <>
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-        <BookCard size="3" />
-      </>
-    );
-  }
-}
-class ListDisplay extends React.Component {
-  render() {
-    return (
-      <>
-        <BookCardLarge2 size="12" />
-        <BookCardLarge2 size="12" />
-        <BookCardLarge2 size="12" />
-        <BookCardLarge2 size="12" />
-        <BookCardLarge2 size="12" />
-        <BookCardLarge2 size="12" />
-        <BookCardLarge2 size="12" />
-        <BookCardLarge2 size="12" />
-      </>
-    );
-  }
-}
 
 export default SingleProduct;
