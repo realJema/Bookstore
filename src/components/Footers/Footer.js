@@ -24,35 +24,35 @@ class Footer extends React.Component {
                 <h1 className="display-2 logo-brand">100Pages</h1>
               </Row>
               <Row className="mt-3">
-                <small class="d-block">
+                <small className="d-block">
                   1418 River Drive, Suite 35 Cottonhall, CA 9622 <br />
                   United States
                 </small>
               </Row>
               <Row className="mt-4 row-grid">
-                <small class="d-block">
+                <small className="d-block">
                   sale@bookworm.com <br />
                   +1 246-345-0695
                 </small>
               </Row>
               <Row className="mt-3">
                 <Col lg="1">
-                  <p class="d-block">
+                  <p className="d-block">
                     <i className="fa fa-facebook"></i>
                   </p>
                 </Col>
                 <Col lg="1">
-                  <p class="d-block">
+                  <p className="d-block">
                     <i className="fa fa-instagram"></i>
                   </p>
                 </Col>
                 <Col lg="1">
-                  <p class="d-block">
+                  <p className="d-block">
                     <i className="fa fa-youtube"></i>
                   </p>
                 </Col>
                 <Col lg="1">
-                  <p class="d-block">
+                  <p className="d-block">
                     <i className="fa fa-pinterest"></i>
                   </p>
                 </Col>

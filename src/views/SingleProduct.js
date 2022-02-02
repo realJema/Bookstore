@@ -82,7 +82,7 @@ class SingleProduct extends React.Component {
                         <Col lg="5">
                           <a
                             href="https://google.com"
-                            class="btn btn-colour-1"
+                            className="btn btn-colour-1"
                             rel="noopener noreferrer"
                             target="_blank"
                           >
@@ -174,7 +174,7 @@ class SingleProduct extends React.Component {
                 </h2>
               </Row>
               <Row className="row-grid justify-content-center mt-0">
-                <small class="d-block">
+                <small className="d-block">
                   Signup to be the first to hear about exclusive deals, special
                   offers and upcoming collections
                 </small>

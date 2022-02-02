@@ -14,7 +14,7 @@ class AuthorCard extends React.Component {
             style={{ width: "150px" }}
           />
           <h6 className="mt-4 mb-0">Andre Aciman</h6>
-          <small class="d-block">2 Published Book</small>
+          <small className="d-block">2 Published Book</small>
         </center>
       </Col>
     );

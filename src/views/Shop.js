@@ -192,7 +192,7 @@ class Shop extends React.Component {
                 </h2>
               </Row>
               <Row className="row-grid justify-content-center mt-0">
-                <small class="d-block">
+                <small className="d-block">
                   Signup to be the first to hear about exclusive deals, special
                   offers and upcoming collections
                 </small>

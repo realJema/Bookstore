@@ -23,7 +23,7 @@ import BestSellersSlider from "components/Elements/BestSellersSlider";
 import FavoriteAuthorsSlider from "components/Elements/FavoriteAuthorsSlider";
 import Footer from "components/Footers/Footer"; 
 
-class Billboard extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -347,7 +347,7 @@ class Billboard extends React.Component {
                 </h2>
               </Row>
               <Row className="row-grid justify-content-center mt-0">
-                <small class="d-block">
+                <small className="d-block">
                   Signup to be the first to hear about exclusive deals, special
                   offers and upcoming collections
                 </small>
@@ -383,4 +383,4 @@ class Billboard extends React.Component {
   }
 }
 
-export default Billboard;
+export default App;
