@@ -19,6 +19,7 @@ import Index from "views/Index.js";
 // import Page from "views/Page.js";
 import Shop from "views/Shop";
 import SingleProduct from "views/SingleProduct";
+import AuthorsList from "views/AuthorsList";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -35,12 +36,12 @@ ReactDOM.render(
         render={props => <Shop {...props} />}
       />
       <Route path="/product" exact render={props => <SingleProduct {...props} />} />
-      {/*
       <Route
-        path="/profile-page"
+        path="/authors"
         exact
-        render={props => <Profile {...props} />}
+        render={props => <AuthorsList {...props} />}
       />
+      {/*
       <Route
         path="/register-page"
         exact

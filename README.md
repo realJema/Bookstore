@@ -3,7 +3,7 @@ A bookstore and e-reader application where authors can publish and sell books. U
 
 ## Pages 
 [x] Homepaage 
-[] Sign up / Sign in 
+[x] Sign up / Sign in 
 [x] Book Details 
 [x] Shop 
 [] Author Dashboard 

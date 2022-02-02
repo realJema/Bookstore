@@ -11,6 +11,7 @@ import BestSellersSlider from "components/Elements/BestSellersSlider";
 import BookCardMin from "components/Elements/BookCardMin";
 import Amenities from "components/Elements/Amenities";
 import Footer from "components/Footers/Footer";
+import BreadCrumbs from "components/Elements/BreadCrumbs";
 
 class SingleProduct extends React.Component {
   render() {
@@ -20,20 +21,7 @@ class SingleProduct extends React.Component {
         <MainNavbar />
         <main>
           {/* Bread Crumbs */}
-          <section className="section section-components mb-5 pb-3 pt-3 bb-3">
-            <Container className="col-md-11 col-lg-11">
-              <Row>
-                <Col>
-                  <h6>
-                    <small>
-                      Home > Mystery > The Lost Colony (The Long Winter Trilogy
-                      Book 3)
-                    </small>
-                  </h6>
-                </Col>
-              </Row>
-            </Container>
-          </section>
+          <BreadCrumbs path="Home > Mystery > The Lost Colony (The Long Winter Trilogy Book 3)" />
           {/* End of Bread Crumbs  */}
 
           {/* Book Details */}
