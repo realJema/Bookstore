@@ -119,6 +119,11 @@ class MainNavbar extends React.Component {
                     </NavLink>
                   </NavItem>
                   <NavItem>
+                    <NavLink to="/author" tag={Link}>
+                      <span className="nav-link-inner--text">Author</span>
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
                     <NavLink to="/about" tag={Link}>
                       <span className="nav-link-inner--text">About Us!</span>
                     </NavLink>
