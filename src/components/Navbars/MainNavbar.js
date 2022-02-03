@@ -109,21 +109,6 @@ class MainNavbar extends React.Component {
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink to="/product" tag={Link}>
-                      <span className="nav-link-inner--text">Product</span>
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink to="/authors" tag={Link}>
-                      <span className="nav-link-inner--text">Authors</span>
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink to="/author" tag={Link}>
-                      <span className="nav-link-inner--text">Author</span>
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
                     <NavLink to="/about" tag={Link}>
                       <span className="nav-link-inner--text">About Us!</span>
                     </NavLink>
@@ -134,8 +119,8 @@ class MainNavbar extends React.Component {
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink to="/comingsoon" tag={Link}>
-                      <span className="nav-link-inner--text">Coming Soon</span>
+                    <NavLink to="/account/reader" tag={Link}>
+                      <span className="nav-link-inner--text">My Account</span>
                     </NavLink>
                   </NavItem>
                 </Nav>

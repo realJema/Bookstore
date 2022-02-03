@@ -125,7 +125,7 @@ class SubmitBook extends React.Component {
                               <Col lg="12">
                                 <input
                                   type="email"
-                                  className="newsletter-input"
+                                  className="submit-description "
                                   placeholder="Book Title"
                                   required=""
                                 />

@@ -23,6 +23,7 @@ import SingleAuthor from "views/SingleAuthor";
 import AboutUs from "views/AboutUs";
 import ComingSoon from "views/ComingSoon";
 import SubmitBook from "views/SubmitBook";
+import AccountReader from "views/AccountReader";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -58,6 +59,11 @@ ReactDOM.render(
         path="/submit"
         exact
         render={(props) => <SubmitBook {...props} />}
+      />
+      <Route
+        path="/account/reader"
+        exact
+        render={(props) => <AccountReader {...props} />}
       />
       <Redirect to="/" />
     </Switch>
