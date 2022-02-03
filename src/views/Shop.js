@@ -8,6 +8,7 @@ import { Button, Container, Row, Col } from "reactstrap";
 import MainNavbar from "components/Navbars/MainNavbar";
 import Topbar from "components/Navbars/Topbar";
 import RecommendedBooks from "components/Elements/RecommendedBooks";
+import BreadCrumbs from "components/Elements/BreadCrumbs";
 import BookCardLarge2 from "components/Elements/BookCardLarge2";
 import Footer from "components/Footers/Footer"; 
 
@@ -20,18 +21,9 @@ class Shop extends React.Component {
         <Topbar />
         <MainNavbar />
         <main>
-          <section className="section section-components mb-5 pb-3 pt-0 bb-3">
-            \
-            <Container className="col-md-11 col-lg-11">
-              <Row>
-                <Col>
-                  <h6>
-                    <small>Home > Shop</small>
-                  </h6>
-                </Col>
-              </Row>
-            </Container>
-          </section>
+          {/* Bread Crumbs */}
+          <BreadCrumbs path="Home > Shop" />
+          {/* End of Bread Crumbs  */}
           {/* Filer shop*/}
           <section className="section section-lg pt-lg-0">
             <Container className="col-md-11 col-lg-11">

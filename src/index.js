@@ -1,4 +1,3 @@
- 
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
@@ -21,31 +20,38 @@ import Shop from "views/Shop";
 import SingleProduct from "views/SingleProduct";
 import AuthorsList from "views/AuthorsList";
 import SingleAuthor from "views/SingleAuthor";
+import AboutUs from "views/AboutUs";
+import ComingSoon from "views/ComingSoon";
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/" exact render={(props) => <Index {...props} />} />
-      {/* <Route
-        path="/:page"
-        exact
-        render={(props) => <Page {...props} />}
-      /> */}
       <Route
-        path="/shop"
+        path="/about"
         exact
-        render={props => <Shop {...props} />}
+        render={(props) => <AboutUs {...props} />}
       />
-      <Route path="/product" exact render={props => <SingleProduct {...props} />} />
+      <Route path="/shop" exact render={(props) => <Shop {...props} />} />
+      <Route
+        path="/product"
+        exact
+        render={(props) => <SingleProduct {...props} />}
+      />
       <Route
         path="/authors"
         exact
-        render={props => <AuthorsList {...props} />}
+        render={(props) => <AuthorsList {...props} />}
       />
       <Route
         path="/author"
         exact
-        render={props => <SingleAuthor {...props} />}
+        render={(props) => <SingleAuthor {...props} />}
+      />
+      <Route
+        path="/comingsoon"
+        exact
+        render={(props) => <ComingSoon {...props} />}
       />
       <Redirect to="/" />
     </Switch>
