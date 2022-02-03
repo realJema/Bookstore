@@ -17,11 +17,11 @@ import MainNavbar from "components/Navbars/MainNavbar";
 import Topbar from "components/Navbars/Topbar";
 import Footer from "components/Footers/Footer";
 
-class AccountReader extends React.Component {
+class DashboardAuthor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: "books",
+      page: "library",
     };
   }
 
@@ -44,14 +44,14 @@ class AccountReader extends React.Component {
                   <Row className="row-grid justify-content-between col-md-12">
                     <Col lg="3" className="product-details">
                       <ul className="filter">
-                        <li onClick={() => this._handlePageChange("books")}>
-                          My Books
+                        <li onClick={() => this._handlePageChange("library")}>
+                          My Library
                         </li>
                         <li onClick={() => this._handlePageChange("Wishlist")}>
-                          Wishlist
+                          My Books
                         </li>
                         <li onClick={() => this._handlePageChange("prefauthors")}>
-                          Liked Authors
+                          Sales
                         </li>
                         <li onClick={() => this._handlePageChange("profile")}>
                           Edit Profile
@@ -60,7 +60,7 @@ class AccountReader extends React.Component {
                     </Col>
                     <Col lg="9">
                       {{
-                        'books': <MyBooks />,
+                        'library': <MyLibrary />,
                         'profile': <EditProfile />
                       }[this.state.page]
                       }
@@ -156,7 +156,7 @@ class BookCard extends React.Component {
     );
   }
 }
-class MyBooks extends React.Component {
+class MyLibrary extends React.Component {
   render() {
     return (
       <>
@@ -222,4 +222,4 @@ class EditProfile extends React.Component {
   }
 }
 
-export default AccountReader;
+export default DashboardAuthor;

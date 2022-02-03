@@ -417,3 +417,6 @@
 }
 
 /* end sidebar overlay  */
+.cart-modal {
+  max-width: 50% !important;
+}

@@ -6,9 +6,9 @@ A bookstore and e-reader application where authors can publish and sell books. U
 [x] Sign up / Sign in 
 [x] Book Details 
 [x] Shop 
-[] Author Dashboard 
-[] User Dashboard 
-[] Submit Book 
+[x] Author Dashboard 
+[x] User Dashboard 
+[x] Submit Book 
 [x] contact us 
 [x] authors list 
 [] cart

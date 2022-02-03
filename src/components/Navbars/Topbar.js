@@ -21,9 +21,10 @@ import {
   NavLink,
   NavItem,
   Nav,
-  UncontrolledCollapse, 
+  UncontrolledCollapse,
   Container,
   Navbar,
+  CardImg,
 } from "reactstrap";
 
 class Topbar extends React.Component {
@@ -36,24 +37,17 @@ class Topbar extends React.Component {
     };
   }
 
-  // This keeps your state in sync with the opening/closing of the menu
-  // via the default means, e.g. clicking the X, pressing the ESC key etc.
   handleStateChange(state) {
     this.setState({ menuOpen: state.isOpen });
   }
 
-  // This can be used to close the menu, e.g. when a user clicks a menu item
   closeMenu() {
     this.setState({ menuOpen: false });
   }
-  // This can be used to close the menu, e.g. when a user clicks a menu item
   closeModal() {
     this.setState((state) => ({ modal: false }));
   }
 
-  // This can be used to toggle the menu, e.g. when using a custom icon
-  // Tip: You probably want to hide either/both default icons if using a custom icon
-  // See https://github.com/negomi/react-burger-menu#custom-icons
   toggleMenu() {
     this.setState((state) => ({ menuOpen: !state.menuOpen }));
   }
@@ -184,8 +178,73 @@ class Topbar extends React.Component {
             </Card>
           </div>
         </Modal>
-
         {/* End Signup Modal  */}
+
+        {/* Cart Modal  */}
+        <Modal
+          className="cart-modal modal-dialog-centered"
+          isOpen={this.state.defaultModal}
+          toggle={() => this.toggleModal("defaultModal")}
+        >
+          <div className="modal-header">
+            <i className="fa fa-shopping-bag mr-3 lg-icon"></i>
+            <h6 className="modal-title" id="modal-title-default">
+              Your Shopping Bag (1)
+            </h6>
+            <button
+              aria-label="Close"
+              className="close"
+              data-dismiss="modal"
+              type="button"
+              onClick={() => this.toggleModal("defaultModal")}
+            >
+              <span aria-hidden={true}>×</span>
+            </button>
+          </div>
+          <div className="modal-body">
+            <Row className="justify-content-center">
+              <Col lg="12">
+                <BookCardLarge />
+                <BookCardLarge />
+                <BookCardLarge />
+              </Col>
+            </Row>
+
+            <Row className="justify-content-around bt-3 pt-3 pb-3 mt-3">
+              <Col sm="9">
+                <h4>subtotal:</h4>
+              </Col>
+              <Col sm="2">
+                <h5 className="text-right">$59.99</h5>
+              </Col>
+            </Row>
+            <Row className="row-grid justify-content-end mt-3">
+              <Col lg="6">
+                <Button
+                  block
+                  className="btn-round newsletter-submit"
+                  color="default"
+                  size="lg"
+                  type="button"
+                >
+                  View Cart
+                </Button>
+              </Col>
+              <Col lg="6">
+                <Button
+                  block
+                  className="btn-round newsletter-submit"
+                  color="default"
+                  size="lg"
+                  type="button"
+                >
+                  Check Out
+                </Button>
+              </Col>
+            </Row>
+          </div>
+        </Modal>
+        {/* End Cart Modal  */}
 
         {/* Sidebar Menu  */}
         <Menu
@@ -278,9 +337,12 @@ class Topbar extends React.Component {
                     </div>
                   </NavItem>
                   <NavItem>
-                    <NavLink className="topbar-link" to="/billboard" tag={Link}>
+                    <div
+                      className="topbar-link"
+                      onClick={() => this.toggleModal("defaultModal")}
+                    >
                       <i className="fa fa-shopping-bag mr-3 lg-icon"></i>
-                    </NavLink>
+                    </div>
                   </NavItem>
                 </Nav>
               </UncontrolledCollapse>
@@ -288,6 +350,58 @@ class Topbar extends React.Component {
           </Navbar>
         </header>
       </>
+    );
+  }
+}
+
+class BookCardLarge extends React.Component {
+  render() {
+    return (
+      <Row className="justify-content-center">
+        <Col lg="10" className="pl-0 mb-2">
+          <Card>
+            <Row className="col-12">
+              <Col lg="3">
+                <CardImg
+                  top
+                  alt="..."
+                  src={require("assets/img/theme/img-1-1200x1000.jpg")}
+                  className="book-card-img"
+                />
+              </Col>
+              <Col lg="9">
+                <CardBody className="px-0 full-width">
+                  <small>
+                    <span>
+                      Hardcover, Kindle, Paperback{" "}
+                      {this.props.size ? this.props.size : "2"}{" "}
+                    </span>
+                  </small>
+                  <h6 className="book-card-title text-uppercase mb-0 mt-1">
+                    Download Argon book buy me{" "}
+                  </h6>
+                  <p className="book-card-author">author</p>
+                  <small className="mt-2 mb-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud
+                  </small>
+                </CardBody>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+        <Col lg="2" className="list-option my-auto">
+          <Row className="justify-content-center">
+            <Col lg="6">
+              <h5 className="book-card-price">$14.5</h5>
+            </Col>
+            <Col lg="6">
+              <i className="fa fa-heart-o"></i>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
     );
   }
 }

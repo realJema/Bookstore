@@ -23,17 +23,14 @@ import SingleAuthor from "views/SingleAuthor";
 import AboutUs from "views/AboutUs";
 import ComingSoon from "views/ComingSoon";
 import SubmitBook from "views/SubmitBook";
-import AccountReader from "views/AccountReader";
+import DashboardReader from "views/DashboardReader";
+import DashboardAuthor from "views/DashboardAuthor";
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/" exact render={(props) => <Index {...props} />} />
-      <Route
-        path="/about"
-        exact
-        render={(props) => <AboutUs {...props} />}
-      />
+      <Route path="/about" exact render={(props) => <AboutUs {...props} />} />
       <Route path="/shop" exact render={(props) => <Shop {...props} />} />
       <Route
         path="/product"
@@ -61,9 +58,14 @@ ReactDOM.render(
         render={(props) => <SubmitBook {...props} />}
       />
       <Route
-        path="/account/reader"
+        path="/dashboard/reader"
         exact
-        render={(props) => <AccountReader {...props} />}
+        render={(props) => <DashboardReader {...props} />}
+      />
+      <Route
+        path="/dashboard/author"
+        exact
+        render={(props) => <DashboardAuthor {...props} />}
       />
       <Redirect to="/" />
     </Switch>
