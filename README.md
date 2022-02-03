@@ -9,8 +9,8 @@ A bookstore and e-reader application where authors can publish and sell books. U
 [] Author Dashboard 
 [] User Dashboard 
 [] Submit Book 
-[] contact us 
-[] authors list 
+[x] contact us 
+[x] authors list 
 [] cart
 
 
