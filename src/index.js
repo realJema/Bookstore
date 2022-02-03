@@ -20,6 +20,7 @@ import Index from "views/Index.js";
 import Shop from "views/Shop";
 import SingleProduct from "views/SingleProduct";
 import AuthorsList from "views/AuthorsList";
+import SingleAuthor from "views/SingleAuthor";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -41,12 +42,11 @@ ReactDOM.render(
         exact
         render={props => <AuthorsList {...props} />}
       />
-      {/*
       <Route
-        path="/register-page"
+        path="/author"
         exact
-        render={props => <Register {...props} />}
-      /> */}
+        render={props => <SingleAuthor {...props} />}
+      />
       <Redirect to="/" />
     </Switch>
   </BrowserRouter>,

@@ -7,7 +7,7 @@ import { Card, CardImg, Container, Row, Col } from "reactstrap";
 // core components
 import Footer from "components/Footers/Footer";
 import MainNavbar from "components/Navbars/MainNavbar";
-import Jumbo from "./Jumbo";
+import Jumbo from "./SingleAuthor";
 
 const BACKEND_API = "http://127.0.0.1:5000/dlheure/api/";
 

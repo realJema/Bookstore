@@ -111,13 +111,13 @@ class AuthorsList extends React.Component {
 class AuthorCard extends React.Component {
   render() {
     return (
-      <Col lg={3} className="mb-5 mt-5">
+      <Col lg={3} className="mb-5 mt-2">
         <center>
           <img
             alt="..."
             className="img-fluid rounded-circle shadow"
             src={require("assets/img/theme/team-2-800x800.jpg")}
-            style={{ width: "150px" }}
+            style={{ width: "250px" }}
           />
           <h6 className="mt-4 mb-0">Andre Aciman</h6>
           <small className="d-block">2 Published Book</small>

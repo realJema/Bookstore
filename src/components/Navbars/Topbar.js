@@ -1,27 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Menu from "react-burger-menu/lib/menus/slide";
+// nodejs library that concatenates classes
+import classnames from "classnames";
 // reactstrap components
 import {
-  UncontrolledCollapse,
-  Navbar,
-  NavItem,
-  NavLink,
-  Nav,
-  Container,
-  Row,
-  Col,
   Button,
-  Modal,
-  InputGroup,
-  InputGroupAddon,
-  InputGroupText,
-  Input,
-  Form,
-  FormGroup,
   Card,
   CardHeader,
   CardBody,
+  FormGroup,
+  Form,
+  Input,
+  InputGroupAddon,
+  InputGroupText,
+  InputGroup,
+  Modal,
+  Row,
+  Col,
+  NavLink,
+  NavItem,
+  Nav,
+  UncontrolledCollapse, 
+  Container,
+  Navbar,
 } from "reactstrap";
 
 class Topbar extends React.Component {
@@ -58,22 +60,32 @@ class Topbar extends React.Component {
   toggleModal() {
     this.setState((state) => ({ modal: !state.modal }));
   }
+  toggleModal = (state) => {
+    this.setState({
+      [state]: !this.state[state],
+    });
+  };
 
   render() {
     return (
       <>
         {/* Signup Modal  */}
-        {this.state.loggedIn ? (
-          <Modal isOpen={this.state.modal} toggle={() => this.closeModal()}>
-            <Card className="bg-secondary">
+        <Modal
+          className="modal-dialog-centered"
+          size="sm"
+          isOpen={this.state.formModal}
+          toggle={() => this.toggleModal("formModal")}
+        >
+          <div className="modal-body p-0">
+            <Card className="bg-secondary shadow border-0">
               <CardHeader className="bg-white pb-5">
                 <div className="text-muted text-center mb-3">
                   <small>Sign in with</small>
                 </div>
                 <div className="btn-wrapper text-center">
                   <Button
-                    className="btn-neutral btn-icon"
-                    color="default"
+                    className="btn-icon mt-2 mb-2"
+                    color="neutral"
                     href="#pablo"
                     onClick={(e) => e.preventDefault()}
                   >
@@ -86,8 +98,8 @@ class Topbar extends React.Component {
                     <span className="btn-inner--text">Github</span>
                   </Button>
                   <Button
-                    className="btn-neutral btn-icon ml-1"
-                    color="default"
+                    className="btn-icon mt-2 mb-2 ml-1"
+                    color="neutral"
                     href="#pablo"
                     onClick={(e) => e.preventDefault()}
                   >
@@ -106,17 +118,30 @@ class Topbar extends React.Component {
                   <small>Or sign in with credentials</small>
                 </div>
                 <Form role="form">
-                  <FormGroup className="mb-3">
+                  <FormGroup
+                    className={classnames("mb-3", {
+                      focused: this.state.emailFocused,
+                    })}
+                  >
                     <InputGroup className="input-group-alternative">
                       <InputGroupAddon addonType="prepend">
                         <InputGroupText>
                           <i className="ni ni-email-83" />
                         </InputGroupText>
                       </InputGroupAddon>
-                      <Input placeholder="Email" type="email" />
+                      <Input
+                        placeholder="Email"
+                        type="email"
+                        onFocus={(e) => this.setState({ emailFocused: true })}
+                        onBlur={(e) => this.setState({ emailFocused: false })}
+                      />
                     </InputGroup>
                   </FormGroup>
-                  <FormGroup>
+                  <FormGroup
+                    className={classnames({
+                      focused: this.state.passwordFocused,
+                    })}
+                  >
                     <InputGroup className="input-group-alternative">
                       <InputGroupAddon addonType="prepend">
                         <InputGroupText>
@@ -127,6 +152,12 @@ class Topbar extends React.Component {
                         placeholder="Password"
                         type="password"
                         autoComplete="off"
+                        onFocus={(e) =>
+                          this.setState({ passwordFocused: true })
+                        }
+                        onBlur={(e) =>
+                          this.setState({ passwordFocused: false })
+                        }
                       />
                     </InputGroup>
                   </FormGroup>
@@ -140,7 +171,7 @@ class Topbar extends React.Component {
                       className="custom-control-label"
                       htmlFor=" customCheckLogin"
                     >
-                      <span>Remember me</span>
+                      <span className="text-muted">Remember me</span>
                     </label>
                   </div>
                   <div className="text-center">
@@ -149,149 +180,10 @@ class Topbar extends React.Component {
                     </Button>
                   </div>
                 </Form>
-                <Row className="mt-3">
-                  <Col xs="6">
-                    <a
-                      className="text-light"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <small>Forgot password?</small>
-                    </a>
-                  </Col>
-                  <Col className="text-right" xs="6">
-                    <a
-                      className="text-light"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <small>Create new account</small>
-                    </a>
-                  </Col>
-                </Row>
               </CardBody>
             </Card>
-          </Modal>
-        ) : (
-          <Modal isOpen={this.state.modal} toggle={() => this.closeModal()}>
-            <Card className="bg-secondary shadow border-0">
-              <CardHeader className="bg-white pb-5">
-                <div className="text-muted text-center mb-3">
-                  <small>Sign up with</small>
-                </div>
-                <div className="text-center">
-                  <Button
-                    className="btn-neutral btn-icon mr-4"
-                    color="default"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <span className="btn-inner--icon mr-1">
-                      <img
-                        alt="..."
-                        src={require("assets/img/icons/common/github.svg")}
-                      />
-                    </span>
-                    <span className="btn-inner--text">Github</span>
-                  </Button>
-                  <Button
-                    className="btn-neutral btn-icon ml-1"
-                    color="default"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <span className="btn-inner--icon mr-1">
-                      <img
-                        alt="..."
-                        src={require("assets/img/icons/common/google.svg")}
-                      />
-                    </span>
-                    <span className="btn-inner--text">Google</span>
-                  </Button>
-                </div>
-              </CardHeader>
-              <CardBody className="px-lg-5 py-lg-5">
-                <div className="text-center text-muted mb-4">
-                  <small>Or sign up with credentials</small>
-                </div>
-                <Form role="form">
-                  <FormGroup>
-                    <InputGroup className="input-group-alternative mb-3">
-                      <InputGroupAddon addonType="prepend">
-                        <InputGroupText>
-                          <i className="ni ni-hat-3" />
-                        </InputGroupText>
-                      </InputGroupAddon>
-                      <Input placeholder="Name" type="text" />
-                    </InputGroup>
-                  </FormGroup>
-                  <FormGroup>
-                    <InputGroup className="input-group-alternative mb-3">
-                      <InputGroupAddon addonType="prepend">
-                        <InputGroupText>
-                          <i className="ni ni-email-83" />
-                        </InputGroupText>
-                      </InputGroupAddon>
-                      <Input placeholder="Email" type="email" />
-                    </InputGroup>
-                  </FormGroup>
-                  <FormGroup>
-                    <InputGroup className="input-group-alternative">
-                      <InputGroupAddon addonType="prepend">
-                        <InputGroupText>
-                          <i className="ni ni-lock-circle-open" />
-                        </InputGroupText>
-                      </InputGroupAddon>
-                      <Input
-                        placeholder="Password"
-                        type="password"
-                        autoComplete="off"
-                      />
-                    </InputGroup>
-                  </FormGroup>
-                  <div className="text-muted font-italic">
-                    <small>
-                      password strength:{" "}
-                      <span className="text-success font-weight-700">
-                        strong
-                      </span>
-                    </small>
-                  </div>
-                  <Row className="my-4">
-                    <Col xs="12">
-                      <div className="custom-control custom-control-alternative custom-checkbox">
-                        <input
-                          className="custom-control-input"
-                          id="customCheckRegister"
-                          type="checkbox"
-                        />
-                        <label
-                          className="custom-control-label"
-                          htmlFor="customCheckRegister"
-                        >
-                          <span>
-                            I agree with the{" "}
-                            <a
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              Privacy Policy
-                            </a>
-                          </span>
-                        </label>
-                      </div>
-                    </Col>
-                  </Row>
-                  <div className="text-center">
-                    <Button className="mt-4" color="primary" type="button">
-                      Create account
-                    </Button>
-                  </div>
-                </Form>
-              </CardBody>
-            </Card>
-          </Modal>
-        )}
+          </div>
+        </Modal>
 
         {/* End Signup Modal  */}
 
@@ -380,7 +272,7 @@ class Topbar extends React.Component {
                   <NavItem>
                     <div
                       className="topbar-link"
-                      onClick={() => this.toggleModal()}
+                      onClick={() => this.toggleModal("formModal")}
                     >
                       <i className="fa fa-user-o mr-3 lg-icon"></i>
                     </div>
