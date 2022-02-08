@@ -25,6 +25,8 @@ import ComingSoon from "views/ComingSoon";
 import SubmitBook from "views/SubmitBook";
 import DashboardReader from "views/DashboardReader";
 import DashboardAuthor from "views/DashboardAuthor";
+import Checkout from "views/Checkout";
+import Book from "views/Book";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -66,6 +68,16 @@ ReactDOM.render(
         path="/dashboard/author"
         exact
         render={(props) => <DashboardAuthor {...props} />}
+      />
+      <Route
+        path="/checkout"
+        exact
+        render={(props) => <Checkout {...props} />}
+      />
+      <Route
+        path="/book"
+        exact
+        render={(props) => <Book {...props} />}
       />
       <Redirect to="/" />
     </Switch>
