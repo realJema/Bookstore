@@ -12,7 +12,7 @@ import Amenities from "components/Elements/Amenities";
 import Footer from "components/Footers/Footer";
 import BreadCrumbs from "components/Elements/BreadCrumbs";
 
-class Checkout extends React.Component {
+class Cart extends React.Component {
   render() {
     return (
       <>
@@ -97,4 +97,4 @@ class Checkout extends React.Component {
 }
 
 
-export default Checkout;
+export default Cart;

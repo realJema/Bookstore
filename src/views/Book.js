@@ -13,7 +13,7 @@ const Book = () => {
       <ReactReader
         location={location}
         locationChanged={locationChanged}
-        url="https://gerhardsletten.github.io/react-reader/files/alice.epub"
+        url={require("assets/books/power.epub")}
       />
     </div>
   );
