@@ -18,7 +18,7 @@ import MainNavbar from "components/Navbars/MainNavbar";
 import Topbar from "components/Navbars/Topbar";
 import Adslider from "components/Elements/Slider";
 import BookCard from "components/Elements/BookCard";
-import BookCardLarge from "components/Elements/BookCardLarge";
+import BookCardLarge from "components/Elements/BookCard";
 import BestSellersSlider from "components/Elements/BestSellersSlider";
 import FavoriteAuthorsSlider from "components/Elements/FavoriteAuthorsSlider";
 import Footer from "components/Footers/Footer"; 
@@ -40,7 +40,7 @@ class App extends React.Component {
         <main ref="main">
           {/* Featured Categories  */}
           <section className="section section-components pb-0 pt-0">
-            <Container className="col-md-11 col-lg-11">
+            <Container className="col-md-11 col-lg-11 col-sm-11">
               <Row className="row-grid justify-content-between align-items-end">
                 <h2 className="mt-md mb-5 display-4">Featured Categories</h2>
                 <h6 className="mt-lg mb-5">
@@ -50,8 +50,8 @@ class App extends React.Component {
               </Row>
               <Row className="justify-content-center">
                 <Col lg="12">
-                  <Row className="row-grid">
-                    <Col lg="2" className="featured-category">
+                  <Row className="row row justify-content-between">
+                    <Col lg="3" sm="6" md="4">
                       <Card
                         className="col mb-5"
                         style={{
@@ -72,7 +72,7 @@ class App extends React.Component {
                         </CardBody>
                       </Card>
                     </Col>
-                    <Col lg="2" className="featured-category">
+                    <Col lg="3" sm="6" md="4">
                       <Card
                         className="col mb-5"
                         style={{
@@ -93,7 +93,7 @@ class App extends React.Component {
                         </CardBody>
                       </Card>
                     </Col>
-                    <Col lg="2" className="featured-category">
+                    <Col lg="3" sm="6" md="4">
                       <Card
                         className="col mb-5"
                         style={{
@@ -114,7 +114,7 @@ class App extends React.Component {
                         </CardBody>
                       </Card>
                     </Col>
-                    <Col lg="2" className="featured-category">
+                    <Col lg="3" sm="6" md="4">
                       <Card
                         className="col mb-5"
                         style={{
@@ -135,7 +135,7 @@ class App extends React.Component {
                         </CardBody>
                       </Card>
                     </Col>
-                    <Col lg="2" className="featured-category">
+                    <Col lg="3" sm="6" md="4">
                       <Card
                         className="col mb-5"
                         style={{
@@ -165,7 +165,7 @@ class App extends React.Component {
 
           {/* Best Sellers books  */}
           <section className="section section-lg pt-lg-0">
-            <Container className="col-md-11 col-lg-11">
+            <Container className="col-md-11 col-lg-11 col-sm-11">
               <Row className="row-grid justify-content-between align-items-end">
                 <h2 className="mt-md mb-5 display-4">Bestselling Books</h2>
                 <h6 className="mt-lg mb-5">
@@ -179,29 +179,29 @@ class App extends React.Component {
 
           {/* Featured Books */}
           <section className="section section-lg pt-lg-0">
-            <Container className="col-md-11 col-lg-11">
+            <Container className="col-md-11 col-lg-11 col-sm-11">
               <Row className="row-grid justify-content-center align-items-center">
                 <h2 className="mt-md display-4">Featured Books</h2>
               </Row>
               <Row className="row-grid justify-content-center text-center mt-3 mb-5">
-                <Col lg="2">
+                <Col lg="2" sm="4">
                   <h6 className="">
                     <span>Featured</span>
                   </h6>
                 </Col>
-                <Col lg="2">
+                <Col lg="2" sm="4">
                   <h6 className="">
                     <span>On Sale</span>
                   </h6>
                 </Col>
-                <Col lg="2">
+                <Col lg="2" sm="4">
                   <h6 className="">
                     <span>Most Viewed</span>
                   </h6>
                 </Col>
               </Row>
               <Row className="justify-content-center">
-                <Col lg="12">
+                <Col lg="12" sm="12">
                   <Row className="row-grid book-card-container">
                     <BookCard />
                     <BookCard />
@@ -224,12 +224,12 @@ class App extends React.Component {
 
           {/* New Releases*/}
           <section className="section section-lg pt-lg-0">
-            <Container className="col-md-11 col-lg-11">
+            <Container className="col-md-11 col-lg-11 col-sm-11">
               <Row className="row-grid justify-content-between align-items-end">
-                <Col lg="4">
+                <Col lg="4" sm="6">
                   <h2 className="mt-md mb-5 display-4">New Releases</h2>
                 </Col>
-                <Col lg="3">
+                <Col lg="3" sm="6">
                   <Row className="row-grid">
                     <Col className="px-0 text-right">
                       <h6 className="mt-lg mb-5 justify-content-right">
@@ -304,7 +304,7 @@ class App extends React.Component {
 
           {/* Biography Books*/}
           <section className="section section-lg pt-lg-0">
-            <Container className="col-md-11 col-lg-11">
+            <Container className="col-md-11 col-lg-11 col-sm-11">
               <Row className="row-grid justify-content-between align-items-end">
                 <h2 className="mt-md mb-5 display-4">Biography Books</h2>
                 <h6 className="mt-lg mb-5">
@@ -326,7 +326,7 @@ class App extends React.Component {
 
           {/* Favorite Authors*/}
           <section className="section section-lg pt-lg-0">
-            <Container className="col-md-11 col-lg-11">
+            <Container className="col-md-11 col-lg-11 col-sm-11">
               <Row className="row-grid justify-content-between align-items-end">
                 <h2 className="mt-md mb-5 display-4">Favorite Authors</h2>
                 <h6 className="mt-lg mb-5">
@@ -340,7 +340,7 @@ class App extends React.Component {
 
           {/* Join Our Newsletter*/}
           <section className="section section-lg pt-lg-0 bt-3">
-            <Container className="col-md-11 col-lg-11">
+            <Container className="col-md-11 col-lg-11 col-sm-11">
               <Row className="row-grid justify-content-center">
                 <h2 className="mt-lg mb-2 display-4">
                   <span>Join Our Newsletter</span>

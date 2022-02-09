@@ -9,7 +9,7 @@ import MainNavbar from "components/Navbars/MainNavbar";
 import Topbar from "components/Navbars/Topbar";
 import RecommendedBooks from "components/Elements/RecommendedBooks";
 import BreadCrumbs from "components/Elements/BreadCrumbs";
-import BookCardLarge2 from "components/Elements/BookCardLarge2";
+import BookCardLarge2 from "components/Elements/BookCard";
 import Footer from "components/Footers/Footer"; 
 
 

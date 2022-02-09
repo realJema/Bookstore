@@ -21,7 +21,6 @@ import {
   NavLink,
   NavItem,
   Nav,
-  UncontrolledCollapse,
   Container,
   Navbar,
   CardImg,
@@ -269,83 +268,71 @@ class Topbar extends React.Component {
         <header className="header-global">
           <Navbar expand="lg" id="topbar-main">
             <Container className="col-md-11 col-lg-11 col-sm-11">
-              <UncontrolledCollapse
-                toggler="#navbar_global"
+              <div className="navbar-collapse-header">
+                <Row>
+                  <Col className="collapse-brand" xs="6">
+                    <Link to="/">
+                      <img
+                        alt="..."
+                        src={require("assets/img/brand/argon-react.png")}
+                      />
+                    </Link>
+                  </Col>
+                  <Col className="collapse-close" xs="6">
+                    <button className="navbar-toggler" id="navbar_global">
+                      <span />
+                      <span />
+                    </button>
+                  </Col>
+                </Row>
+              </div>
+              <Nav
+                className="navbar-nav-hover align-items-lg-center col-sm-8"
                 navbar
-                className={this.state.collapseClasses}
-                onExiting={this.onExiting}
-                onExited={this.onExited}
               >
-                <div className="navbar-collapse-header">
-                  <Row>
-                    <Col className="collapse-brand" xs="6">
-                      <Link to="/">
-                        <img
-                          alt="..."
-                          src={require("assets/img/brand/argon-react.png")}
-                        />
-                      </Link>
-                    </Col>
-                    <Col className="collapse-close" xs="6">
-                      <button className="navbar-toggler" id="navbar_global">
-                        <span />
-                        <span />
-                      </button>
-                    </Col>
-                  </Row>
-                </div>
-                <Nav
-                  className="navbar-nav-hover align-items-lg-center col-sm-10"
-                  navbar
-                >
-                  <NavItem>
-                    <NavLink className="topbar-link" to="/billboard" tag={Link}>
-                      <span>
-                        <i className="fa fa-question-circle-o mr-2"></i> Can I
-                        help you?
-                      </span>
-                    </NavLink>
-                  </NavItem>
-                  <NavItem className="ml-5">
-                    <NavLink className="topbar-link" to="/billboard" tag={Link}>
-                      <span>
-                        <i className="fa fa-mobile mr-2"></i> +1 246-345-0695
-                      </span>
-                    </NavLink>
-                  </NavItem>
-                </Nav>
-                <Nav className="align-items-lg-center ml-lg-auto" navbar>
-                  <NavItem>
-                    <NavLink className="topbar-link" to="/billboard" tag={Link}>
-                      <i className="fa fa-heart-o mr-3 lg-icon"></i>
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <div
-                      className="topbar-link"
-                      onClick={() => this.toggleMenu()}
-                    >
-                      <i className="fa fa-user-o mr-3 lg-icon"></i>
-                    </div>
-                  </NavItem>
-                  <NavItem>
-                    <div
-                      className="topbar-link"
-                      onClick={() => this.toggleModal("formModal")}
-                    >
-                      <i className="fa fa-user-o mr-3 lg-icon"></i>
-                    </div>
-                  </NavItem>
-                  <NavItem>
-                    <div
-                      className="topbar-link"
-                      onClick={() => this.toggleModal("defaultModal")}
-                    >
-                      <i className="fa fa-shopping-bag mr-3 lg-icon"></i>
-                    </div>
-                  </NavItem>
-                </Nav>
-              </UncontrolledCollapse>
+                <NavItem>
+                  <NavLink className="topbar-link" to="/billboard" tag={Link}>
+                    <span className="mr-5">
+                      <i className="fa fa-question-circle-o mr-2"></i> Can I
+                      help you?
+                    </span>
+                    <span>
+                      <i className="fa fa-mobile mr-2"></i> +1 246-345-0695
+                    </span>
+                  </NavLink>
+                </NavItem>
+              </Nav>
+              <Nav className="align-items-lg-center ml-sm-auto ml-lg-auto col-sm-auto pr-0">
+                <NavItem>
+                  <NavLink className="topbar-link" to="/billboard" tag={Link}>
+                    <i className="fa fa-heart-o mr-3 lg-icon"></i>
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <div
+                    className="topbar-link"
+                    onClick={() => this.toggleMenu()}
+                  >
+                    <i className="fa fa-user-o mr-3 lg-icon"></i>
+                  </div>
+                </NavItem>
+                <NavItem>
+                  <div
+                    className="topbar-link"
+                    onClick={() => this.toggleModal("formModal")}
+                  >
+                    <i className="fa fa-user-o mr-3 lg-icon"></i>
+                  </div>
+                </NavItem>
+                <NavItem>
+                  <div
+                    className="topbar-link"
+                    onClick={() => this.toggleModal("defaultModal")}
+                  >
+                    <i className="fa fa-shopping-bag mr-3 lg-icon"></i>
+                  </div>
+                </NavItem>
+              </Nav>
             </Container>
           </Navbar>
         </header>

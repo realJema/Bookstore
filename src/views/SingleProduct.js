@@ -8,7 +8,7 @@ import { Button, Container, Row, Col } from "reactstrap";
 import MainNavbar from "components/Navbars/MainNavbar";
 import Topbar from "components/Navbars/Topbar";
 import BestSellersSlider from "components/Elements/BestSellersSlider";
-import BookCardMin from "components/Elements/BookCardMin";
+import BookCardMin from "components/Elements/BookCard";
 import Amenities from "components/Elements/Amenities";
 import Footer from "components/Footers/Footer";
 import BreadCrumbs from "components/Elements/BreadCrumbs";

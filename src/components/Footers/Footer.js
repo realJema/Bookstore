@@ -17,9 +17,9 @@ class Footer extends React.Component {
   render() {
     return (
       <footer className=" footer">
-        <Container className="col-md-11 col-lg-11">
-          <Row className=" row-grid mb-5">
-            <Col lg="4">
+        <Container className="col-md-11 col-lg-11 col-sm-11">
+          <Row className=" row-grid mb-5 pt-5">
+            <Col lg="4" sm="7" className="mb-5">
               <Row>
                 <h1 className="display-2 logo-brand">100Pages</h1>
               </Row>
@@ -36,29 +36,29 @@ class Footer extends React.Component {
                 </small>
               </Row>
               <Row className="mt-3">
-                <Col lg="1">
+                <Col lg="1" sm="1">
                   <p className="d-block">
                     <i className="fa fa-facebook"></i>
                   </p>
                 </Col>
-                <Col lg="1">
+                <Col lg="1" sm="1">
                   <p className="d-block">
                     <i className="fa fa-instagram"></i>
                   </p>
                 </Col>
-                <Col lg="1">
+                <Col lg="1" sm="1">
                   <p className="d-block">
                     <i className="fa fa-youtube"></i>
                   </p>
                 </Col>
-                <Col lg="1">
+                <Col lg="1" sm="1">
                   <p className="d-block">
                     <i className="fa fa-pinterest"></i>
                   </p>
                 </Col>
               </Row>
             </Col>
-            <Col lg="2">
+            <Col lg="2" sm="4" className="mb-5">
               <h6 className="design-5">Explore</h6>
               <Nav className=" nav-footer justify-content-start mt-5">
                 <NavItem>
@@ -99,7 +99,7 @@ class Footer extends React.Component {
                 </NavItem>
               </Nav>
             </Col>
-            <Col lg="2">
+            <Col lg="2" sm="4" className="mb-5">
               <h6 className="design-5">Customer Service</h6>
               <Nav className=" nav-footer justify-content-start mt-5">
                 <NavItem>
@@ -149,7 +149,7 @@ class Footer extends React.Component {
                 </NavItem>
               </Nav>
             </Col>
-            <Col lg="2">
+            <Col lg="2" sm="4">
               <h6 className="design-5">Policy</h6>
               <Nav className=" nav-footer justify-content-start mt-5">
                 <NavItem>
@@ -190,7 +190,7 @@ class Footer extends React.Component {
                 </NavItem>
               </Nav>
             </Col>
-            <Col lg="2">
+            <Col lg="2" sm="4">
               <h6 className="design-5">Categories</h6>
               <Nav className=" nav-footer justify-content-start mt-5">
                 <NavItem>
@@ -243,7 +243,7 @@ class Footer extends React.Component {
           </Row>
           <hr />
           <Row className=" align-items-center justify-content-md-between">
-            <Col md="7">
+            <Col md="7" sm="6">
               <div className=" copyright">
                 © {new Date().getFullYear()}{" "}
                 <a
@@ -255,7 +255,7 @@ class Footer extends React.Component {
                 .
               </div>
             </Col>
-            <Col lg="5" xs="4">
+            <Col lg="5" sm="6" xs="4">
               <Row>
                 <Col lg="8">
                   <a
