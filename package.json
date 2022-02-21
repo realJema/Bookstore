@@ -39,7 +39,10 @@
     "map-sass": "node-sass src/assets/scss/argon-design-system-react.scss src/assets/css/argon-design-system-react.css --source-map true"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "plugin:react/recommended"
+    ]
   },
   "browserslist": [
     ">0.2%",
@@ -78,6 +81,7 @@
     "@types/markerclustererplus": "2.1.33",
     "@types/react": "16.9.19",
     "eslint-plugin-flowtype": "3.13.0",
+    "eslint-plugin-react": "^7.28.0",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
     "jquery": "3.5.0",
