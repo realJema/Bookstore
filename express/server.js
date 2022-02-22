@@ -64,14 +64,14 @@ app.get("/100pages/api", function (req, res) {
   Type: GET
   Description: get all books data 
 */
-app.get("/100pages/data", function (req, res) {
+app.get("/100pages/api/data", function (req, res) {
  let sql = `SELECT * FROM books`;
- db.query(sql, function (err, data, fields) {
+ db.query(sql, function (err, data) {
    if (err) throw err;
    res.json({
      status: 200,
      data,
-     message: "User lists retrieved successfully",
+     message: "Books data retrieved successfully",
    });
  });
 });

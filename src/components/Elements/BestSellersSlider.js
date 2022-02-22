@@ -1,56 +1,68 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import { useRecoilState, useRecoilValue, useRecoilValueLoadable } from "recoil";
+import { booksState, errorsState, fetchUserData } from "../../states";
 
 import { Card, CardBody, CardImg, Row, Col } from "reactstrap";
-export default class BestSellersSlider extends Component {
-  render() {
-    var settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      initialSlide: 0,
-        swipeToSlide: true,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-          },
+
+function BestSellersSlider() {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
         },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2,
-          },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
         },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
-      ],
-    };
+      },
+    ],
+  };
+
+  const userDetails = useRecoilValueLoadable(fetchUserData);
+  const { state } = userDetails;
+
+  if (userDetails.state === "hasError") {
+    return <div> There is some problem! </div>;
+  }
+
+  if (state === "loading") {
+    return <div>Its DetailsWithoutSuspense loading</div>;
+  }
+
+  if (state === "hasValue") {
+    const {
+      contents: { data },
+    } = userDetails;
     return (
       <div className="book-card-container">
         <Slider {...settings}>
-          <BookCardSlide size="12" />
-          <BookCardSlide size="12" />
-          <BookCardSlide size="12" />
-          <BookCardSlide size="12" />
-          <BookCardSlide size="12" />
-          <BookCardSlide size="12" />
-          <BookCardSlide size="12" />
-          <BookCardSlide size="12" />
-          <BookCardSlide size="12" />
-          <BookCardSlide size="12" />
+          {" "}
+          {data.map((item) => (
+            <BookCardSlide key={item.id} title={item.title} price={item.price} />
+          ))}
         </Slider>
       </div>
     );
@@ -58,12 +70,13 @@ export default class BestSellersSlider extends Component {
 }
 
 
+
 class BookCardSlide extends React.Component {
   render() {
     return (
       <Col
-        lg={this.props.size ? this.props.size : "2"}
         className="book-card arb"
+        key={this.props.key}
       >
         <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-4">
           <CardImg
@@ -87,7 +100,7 @@ class BookCardSlide extends React.Component {
             <Row className="align-items-center">
               <Col sm="9">
                 <small className="text-uppercase text-muted font-weight-bold">
-                  <h5 className="book-card-price">$14.5</h5>
+                  <h5 className="book-card-price">{this.props.price} FCFA</h5>
                 </small>
               </Col>
               <Col sm="3">
@@ -100,3 +113,6 @@ class BookCardSlide extends React.Component {
     );
   }
 }
+
+
+export default BestSellersSlider;
