@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
-import { useRecoilState, useRecoilValue, useRecoilValueLoadable } from "recoil";
-import { booksState, errorsState, fetchUserData } from "../../states";
+import { useRecoilValueLoadable } from "recoil";
+import { fetchUserData } from "../../states";
 
 import { Card, CardBody, CardImg, Row, Col } from "reactstrap";
 
@@ -61,7 +61,7 @@ function BestSellersSlider() {
         <Slider {...settings}>
           {" "}
           {data.map((item) => (
-            <BookCardSlide key={item.id} title={item.title} price={item.price} />
+            <BookCardSlide key={item.id} title={item.title} price={item.price} cover={item.cover}/>
           ))}
         </Slider>
       </div>
@@ -82,7 +82,7 @@ class BookCardSlide extends React.Component {
           <CardImg
             top
             alt="..."
-            src={require("assets/img/theme/img-1-1200x1000.jpg")}
+            src={require("assets/img/covers/" + this.props.cover + ".jpg")}
             className="book-card-img"
           />
 
@@ -94,7 +94,7 @@ class BookCardSlide extends React.Component {
               </span>
             </small>
             <h6 className="book-card-title text-uppercase mb-0 mt-1">
-              Download Argon book buy me{" "}
+              {this.props.title}
             </h6>
             <p className="book-card-author">author</p>
             <Row className="align-items-center">

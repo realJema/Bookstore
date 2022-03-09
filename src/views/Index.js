@@ -22,6 +22,8 @@ import FavoriteAuthorsSlider from "components/Elements/FavoriteAuthorsSlider";
 import Footer from "components/Footers/Footer";
 
 
+import { useRecoilValueLoadable } from "recoil";
+import { fetchUserData } from "../states";
 
 export const App = (props) => {
 
@@ -195,20 +197,7 @@ export const App = (props) => {
             </Row>
             <Row className="justify-content-center">
               <Col lg="12" sm="12">
-                <Row className="row-grid book-card-container">
-                  <BookCard />
-                  <BookCard />
-                  <BookCard />
-                  <BookCard />
-                  <BookCard />
-                  <BookCard />
-                  <BookCard />
-                  <BookCard />
-                  <BookCard />
-                  <BookCard />
-                  <BookCard />
-                  <BookCard />
-                </Row>
+                   <FeaturedBooks />
               </Col>
             </Row>
           </Container>
@@ -279,16 +268,7 @@ export const App = (props) => {
                 </Card>
               </Col>
               <Col lg="7">
-                <Row className="row-grid">
-                  <BookCard size="3" />
-                  <BookCard size="3" />
-                  <BookCard size="3" />
-                  <BookCard size="3" />
-                  <BookCard size="3" />
-                  <BookCard size="3" />
-                  <BookCard size="3" />
-                  <BookCard size="3" />
-                </Row>
+                <NewReleases />
               </Col>
             </Row>
           </Container>
@@ -375,5 +355,67 @@ export const App = (props) => {
   );
 };
 
+function FeaturedBooks() {
 
+  const userDetails = useRecoilValueLoadable(fetchUserData);
+  const { state } = userDetails;
+
+  if (userDetails.state === "hasError") {
+    return <div> There is some problem! </div>;
+  }
+
+  if (state === "loading") {
+    return <div>Its DetailsWithoutSuspense loading</div>;
+  }
+
+  if (state === "hasValue") {
+    const {
+      contents: { data },
+    } = userDetails;
+    return (
+      <Row className="book-card-container">
+          {data.map((item) => (
+            <BookCard
+              key={item.id}
+              title={item.title}
+              price={item.price}
+              cover={item.cover}
+            />
+          ))}
+      </Row>
+    );
+  }
+}
+
+function NewReleases() {
+
+  const userDetails = useRecoilValueLoadable(fetchUserData);
+  const { state } = userDetails;
+
+  if (userDetails.state === "hasError") {
+    return <div> There is some problem! </div>;
+  }
+
+  if (state === "loading") {
+    return <div>Its DetailsWithoutSuspense loading</div>;
+  }
+
+  if (state === "hasValue") {
+    const {
+      contents: { data },
+    } = userDetails;
+    return (
+      <Row className="book-card-container">
+          {data.map((item) => (
+            <BookCard
+              key={item.id}
+              title={item.title}
+              price={item.price}
+              cover={item.cover}
+            />
+          ))}
+      </Row>
+    );
+  }
+}
 export default App;
