@@ -20,6 +20,7 @@ import BookCardLarge from "components/Elements/BookCard";
 import BestSellersSlider from "components/Elements/BestSellersSlider";
 import FavoriteAuthorsSlider from "components/Elements/FavoriteAuthorsSlider";
 import Footer from "components/Footers/Footer";
+import Slider from "react-slick";
 
 
 import { useRecoilValueLoadable } from "recoil";
@@ -39,7 +40,7 @@ export const App = (props) => {
             <Row className="row-grid justify-content-between align-items-end">
               <h2 className="mt-md mb-5 display-4">Featured Categories</h2>
               <h6 className="mt-lg mb-5">
-                <span>All Categories</span>{" "}
+                <span>All Categories</span>
                 <i className="fa fa-chevron-right"></i>
               </h6>
             </Row>
@@ -215,17 +216,17 @@ export const App = (props) => {
                 <Row className="row-grid">
                   <Col className="px-0 text-right">
                     <h6 className="mt-lg mb-5 justify-content-right">
-                      <span>History</span>{" "}
+                      <span>History</span>
                     </h6>
                   </Col>
                   <Col className="px-0 text-right">
                     <h6 className="mt-lg mb-5 justify-content-right">
-                      <span>Science</span>{" "}
+                      <span>Science</span>
                     </h6>
                   </Col>
                   <Col className="px-0 text-right">
                     <h6 className="mt-lg mb-5 justify-content-right">
-                      <span>Romance</span>{" "}
+                      <span>Romance</span>
                     </h6>
                   </Col>
                 </Row>
@@ -286,11 +287,7 @@ export const App = (props) => {
             </Row>
             <Row className="justify-content-center">
               <Col lg="12">
-                <Row className="row-grid book-card-container">
-                  <BookCardLarge size="4" />
-                  <BookCardLarge size="4" />
-                  <BookCardLarge size="4" />
-                </Row>
+                <Biography />
               </Col>
             </Row>
           </Container>
@@ -418,4 +415,101 @@ function NewReleases() {
     );
   }
 }
+function Biography() {
+
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+  const userDetails = useRecoilValueLoadable(fetchUserData);
+  const { state } = userDetails;
+
+  if (userDetails.state === "hasError") {
+    return <div> There is some problem! </div>;
+  }
+
+  if (state === "loading") {
+    return <div>Its DetailsWithoutSuspense loading</div>;
+  }
+
+  if (state === "hasValue") {
+    const {
+      contents: { data },
+    } = userDetails;
+    return (
+      <div className="book-card-container">
+        <Slider {...settings}>
+          {data.map((item) => (
+             <Col
+        className="book-card-large"
+        key={item.id}
+      >
+        <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-4">
+          <Row lg="12">
+            <Col lg="5">
+              <CardImg
+                top
+                alt="..."
+                src={require("assets/img/covers/" + item.cover +  ".jpg")}
+                className="book-card-img"
+              />
+            </Col>
+            <Col lg="7">
+              
+              <CardBody className="px-0 pb-0 full-width">
+                <small>
+                  <span>
+                    Hardcover, Kindle, Paperback
+                    {"2"}
+                  </span>
+                </small>
+                <h6 className="book-card-title text-uppercase mb-0 mt-1">
+                  {item.title}
+                </h6>
+                <p className="book-card-author">author</p>
+                    <small className="text-uppercase text-muted font-weight-bold">
+                      <h5 className="book-card-price">{item.price}</h5>
+                    </small>
+              </CardBody>
+            </Col>
+          </Row>
+        </Card>
+      </Col>
+          ))}
+        </Slider>
+      </div>
+    );
+  }
+}
+
 export default App;
