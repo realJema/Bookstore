@@ -1,11 +1,15 @@
 import React from "react";
 import Slider from "react-slick";
 import { useRecoilValueLoadable } from "recoil";
-import { fetchUserData } from "../../states";
+import { fetchTodos } from "../../states";
 
 import { Card, CardBody, CardImg, Row, Col } from "reactstrap";
+import { useStoreState } from "easy-peasy";
 
 function BestSellersSlider() {
+  
+  const data = useStoreState((state) => state.todos);
+
   var settings = {
     dots: true,
     infinite: true,
@@ -40,22 +44,6 @@ function BestSellersSlider() {
       },
     ],
   };
-
-  const userDetails = useRecoilValueLoadable(fetchUserData);
-  const { state } = userDetails;
-
-  if (userDetails.state === "hasError") {
-    return <div> There is some problem! </div>;
-  }
-
-  if (state === "loading") {
-    return <div>Its DetailsWithoutSuspense loading</div>;
-  }
-
-  if (state === "hasValue") {
-    const {
-      contents: { data },
-    } = userDetails;
     return (
       <div className="book-card-container">
         <Slider {...settings}>
@@ -66,7 +54,6 @@ function BestSellersSlider() {
         </Slider>
       </div>
     );
-  }
 }
 
 

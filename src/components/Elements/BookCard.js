@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 // reactstrap components
 import {
   Card,
@@ -12,7 +13,7 @@ class BookCard extends React.Component {
   render() {
     const image = this.props.cover ? this.props.cover : "Give and Take"
     return (
-      <Col className="book-card arb" key={this.props.key ? this.props.key : "1"}>
+      <Col className="book-card arb" >
         <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-4">
           <CardImg
             top

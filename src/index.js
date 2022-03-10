@@ -1,9 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import {
-  RecoilRoot,
-} from "recoil";
 
 import "assets/vendor/nucleo/css/nucleo.css";
 import "assets/vendor/font-awesome/css/font-awesome.min.css";
@@ -32,10 +29,16 @@ import Checkout from "views/Checkout";
 import Book from "views/Book";
 
 
+import model from "./states";
+import { StoreProvider, createStore } from "easy-peasy";
+
+const store = createStore(model);
+
+
 localStorage.setItem('localbooks', 'null');
 
 ReactDOM.render(
-  <RecoilRoot>
+  <StoreProvider store={store}>
     <BrowserRouter>
       <Switch>
         <Route path="/" exact render={(props) => <Index {...props} />} />
@@ -85,6 +88,6 @@ ReactDOM.render(
         <Redirect to="/" />
       </Switch>
     </BrowserRouter>
-  </RecoilRoot>,
+  </StoreProvider>,
   document.getElementById("root")
 );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment, useEffect } from "react";
 
 // reactstrap components
 import {
@@ -22,13 +22,22 @@ import FavoriteAuthorsSlider from "components/Elements/FavoriteAuthorsSlider";
 import Footer from "components/Footers/Footer";
 import Slider from "react-slick";
 
-
-import { useRecoilValueLoadable } from "recoil";
-import { fetchUserData } from "../states";
+import { useStoreState, useStoreActions } from "easy-peasy";
 
 export const App = (props) => {
+  const todos = useStoreState((state) => state.todos);
+   const { remove, toggle, fetchTodos } = useStoreActions((actions) => ({
+     remove: actions.remove,
+     toggle: actions.toggle,
+     fetchTodos: actions.fetchTodos,
+   }));
 
-  return (
+  useEffect(() => {
+    fetchTodos();
+    // eslint-disable-next-line
+  }, []);
+  
+    return (
     <>
       <Topbar />
       <MainNavbar />
@@ -198,7 +207,7 @@ export const App = (props) => {
             </Row>
             <Row className="justify-content-center">
               <Col lg="12" sm="12">
-                   <FeaturedBooks />
+                <FeaturedBooks />
               </Col>
             </Row>
           </Container>
@@ -268,9 +277,10 @@ export const App = (props) => {
                   </blockquote>
                 </Card>
               </Col>
-              <Col lg="7">
+                <Col lg="7">
+
                 <NewReleases />
-              </Col>
+                </Col>
             </Row>
           </Container>
         </section>
@@ -286,8 +296,9 @@ export const App = (props) => {
               </h6>
             </Row>
             <Row className="justify-content-center">
-              <Col lg="12">
-                <Biography />
+                <Col lg="12">
+                  
+              <Biography />
               </Col>
             </Row>
           </Container>
@@ -353,22 +364,9 @@ export const App = (props) => {
 };
 
 function FeaturedBooks() {
+  
+  const data = useStoreState((state) => state.todos);
 
-  const userDetails = useRecoilValueLoadable(fetchUserData);
-  const { state } = userDetails;
-
-  if (userDetails.state === "hasError") {
-    return <div> There is some problem! </div>;
-  }
-
-  if (state === "loading") {
-    return <div>Its DetailsWithoutSuspense loading</div>;
-  }
-
-  if (state === "hasValue") {
-    const {
-      contents: { data },
-    } = userDetails;
     return (
       <Row className="book-card-container">
           {data.map((item) => (
@@ -381,26 +379,12 @@ function FeaturedBooks() {
           ))}
       </Row>
     );
-  }
 }
 
 function NewReleases() {
+  
+  const data = useStoreState((state) => state.todos);
 
-  const userDetails = useRecoilValueLoadable(fetchUserData);
-  const { state } = userDetails;
-
-  if (userDetails.state === "hasError") {
-    return <div> There is some problem! </div>;
-  }
-
-  if (state === "loading") {
-    return <div>Its DetailsWithoutSuspense loading</div>;
-  }
-
-  if (state === "hasValue") {
-    const {
-      contents: { data },
-    } = userDetails;
     return (
       <Row className="book-card-container">
           {data.map((item) => (
@@ -413,9 +397,10 @@ function NewReleases() {
           ))}
       </Row>
     );
-  }
 }
 function Biography() {
+  
+  const data = useStoreState((state) => state.todos);
 
   var settings = {
     dots: true,
@@ -451,21 +436,6 @@ function Biography() {
       },
     ],
   };
-  const userDetails = useRecoilValueLoadable(fetchUserData);
-  const { state } = userDetails;
-
-  if (userDetails.state === "hasError") {
-    return <div> There is some problem! </div>;
-  }
-
-  if (state === "loading") {
-    return <div>Its DetailsWithoutSuspense loading</div>;
-  }
-
-  if (state === "hasValue") {
-    const {
-      contents: { data },
-    } = userDetails;
     return (
       <div className="book-card-container">
         <Slider {...settings}>
@@ -485,7 +455,7 @@ function Biography() {
               />
             </Col>
             <Col lg="7">
-              
+
               <CardBody className="px-0 pb-0 full-width">
                 <small>
                   <span>
@@ -509,7 +479,6 @@ function Biography() {
         </Slider>
       </div>
     );
-  }
 }
 
 export default App;
