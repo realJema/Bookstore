@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import AuthorCard from "./AurhorCard";
+import { Col } from "reactstrap";
+import { useStoreState } from "easy-peasy";
 
+function FavoriteAuthorsSlider() {
 
-export default class FavoriteAuthorsSlider extends Component {
-  render() {
+    const data = useStoreState((state) => state.users);
+
     var settings = {
       infinite: true,
       speed: 500,
-      slidesToShow: 5,
+      slidesToShow: 2,
       slidesToScroll: 1,
       initialSlide: 0,
         swipeToSlide: true,
@@ -39,20 +41,38 @@ export default class FavoriteAuthorsSlider extends Component {
       ],
     };
     return (
-      <div >
+      <div>
         <Slider {...settings}>
-          <AuthorCard />
-          <AuthorCard />
-          <AuthorCard />
-          <AuthorCard />
-          <AuthorCard />
-          <AuthorCard />
-          <AuthorCard />
-          <AuthorCard />
-          <AuthorCard />
-          <AuthorCard />
+          {data.map((item) => (
+            <AuthorCard
+              key={item.id}
+              full_name={item.full_name}
+              phone={item.phone}
+            />
+          ))}
         </Slider>
       </div>
     );
+}
+
+class AuthorCard extends React.Component {
+  render() {
+    return (
+      <Col lg={this.props.size ? this.props.size : "12"}>
+        <center>
+          <img
+            alt="..."
+            className="img-fluid rounded-circle shadow"
+            src={require("assets/img/theme/team-2-800x800.jpg")}
+            style={{ width: "150px" }}
+          />
+          <h6 className="mt-4 mb-0">{this.props.full_name}</h6>
+          <small className="d-block">{this.props.phone}</small>
+        </center>
+      </Col>
+    );
   }
 }
+
+
+export default FavoriteAuthorsSlider;

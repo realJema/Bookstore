@@ -25,15 +25,16 @@ import Slider from "react-slick";
 import { useStoreState, useStoreActions } from "easy-peasy";
 
 export const App = (props) => {
-  const todos = useStoreState((state) => state.todos);
-   const { remove, toggle, fetchTodos } = useStoreActions((actions) => ({
+  const books = useStoreState((state) => state.books);
+  const users = useStoreState((state) => state.users);
+   const { remove, toggle, fetchData } = useStoreActions((actions) => ({
      remove: actions.remove,
      toggle: actions.toggle,
-     fetchTodos: actions.fetchTodos,
+     fetchData: actions.fetchData,
    }));
 
   useEffect(() => {
-    fetchTodos();
+    fetchData();
     // eslint-disable-next-line
   }, []);
   
@@ -365,7 +366,7 @@ export const App = (props) => {
 
 function FeaturedBooks() {
   
-  const data = useStoreState((state) => state.todos);
+  const data = useStoreState((state) => state.books);
 
     return (
       <Row className="book-card-container">
@@ -383,7 +384,7 @@ function FeaturedBooks() {
 
 function NewReleases() {
   
-  const data = useStoreState((state) => state.todos);
+  const data = useStoreState((state) => state.books);
 
     return (
       <Row className="book-card-container">
@@ -400,7 +401,7 @@ function NewReleases() {
 }
 function Biography() {
   
-  const data = useStoreState((state) => state.todos);
+  const data = useStoreState((state) => state.books);
 
   var settings = {
     dots: true,

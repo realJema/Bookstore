@@ -60,11 +60,11 @@ app.get("/100pages/api", function (req, res) {
 });
 
 /*
-  Route: /100pages/data
+  Route: /100pages/data/books
   Type: GET
   Description: get all books data 
 */
-app.get("/100pages/api/data", function (req, res) {
+app.get("/100pages/api/data/books", function (req, res) {
  let sql = `SELECT * FROM books`;
  db.query(sql, function (err, data) {
    if (err) throw err;
@@ -72,6 +72,22 @@ app.get("/100pages/api/data", function (req, res) {
      status: 200,
      data,
      message: "Books data retrieved successfully",
+   });
+ });
+});
+/*
+  Route: /100pages/data/users
+  Type: GET
+  Description: get all users data 
+*/
+app.get("/100pages/api/data/users", function (req, res) {
+ let sql = `SELECT * FROM users`;
+ db.query(sql, function (err, data) {
+   if (err) throw err;
+   res.json({
+     status: 200,
+     data,
+     message: "users data retrieved successfully",
    });
  });
 });

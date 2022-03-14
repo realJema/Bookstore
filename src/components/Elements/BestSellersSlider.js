@@ -1,8 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-import { useRecoilValueLoadable } from "recoil";
-import { fetchTodos } from "../../states";
-
 import { Card, CardBody, CardImg, Row, Col } from "reactstrap";
 import { useStoreState } from "easy-peasy";
 

@@ -3,17 +3,36 @@ import { v4 as uuidv4 } from "uuid";
 
 export default {
   todos: [],
+  books: [],
+  users: [],
   // Thunks
-  fetchTodos: thunk(async (actions) => {
-    const res = await fetch(`http://localhost:5000/100pages/api/data`);
-    const todos = await res.json();
-    
-    actions.setTodos(todos.data);
+ 
+  // fetch book data and user data from two different api routes
+  fetchData: thunk(async (actions) => {
+    Promise.all([
+      fetch(`http://localhost:5000/100pages/api/data/books`).then((books) => books.json()),
+      fetch(`http://localhost:5000/100pages/api/data/users`).then((users) => users.json()),
+    ])
+      .then(([books, users]) => {
+        
+        // set value of both in results in state 
+        actions.setBooks(books.data);
+        actions.setUsers(users.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }),
+
+
   // Actions
-  setTodos: action((state, todos) => {
-    state.todos = todos;
+  setBooks: action((state, books) => {
+    state.books = books;
   }),
+  setUsers: action((state, users) => {
+    state.users = users;
+  }),
+
   add: action((state, todo) => {
     todo.id = uuidv4();
     state.todos = [...state.todos, todo];
