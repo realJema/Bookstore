@@ -16,7 +16,6 @@ import MainNavbar from "components/Navbars/MainNavbar";
 import Topbar from "components/Navbars/Topbar";
 import Adslider from "components/Elements/Slider";
 import BookCard from "components/Elements/BookCard";
-import BookCardLarge from "components/Elements/BookCard";
 import BestSellersSlider from "components/Elements/BestSellersSlider";
 import FavoriteAuthorsSlider from "components/Elements/FavoriteAuthorsSlider";
 import Footer from "components/Footers/Footer";
@@ -26,19 +25,19 @@ import { useStoreState, useStoreActions } from "easy-peasy";
 
 export const App = (props) => {
   const books = useStoreState((state) => state.books);
-  const users = useStoreState((state) => state.users);
-   const { remove, toggle, fetchData } = useStoreActions((actions) => ({
-     remove: actions.remove,
-     toggle: actions.toggle,
-     fetchData: actions.fetchData,
-   }));
+  const categories = useStoreState((state) => state.categories);
+  const { remove, toggle, fetchData } = useStoreActions((actions) => ({
+    remove: actions.remove,
+    toggle: actions.toggle,
+    fetchData: actions.fetchData,
+  }));
 
   useEffect(() => {
     fetchData();
     // eslint-disable-next-line
   }, []);
-  
-    return (
+
+  return (
     <>
       <Topbar />
       <MainNavbar />
@@ -57,111 +56,30 @@ export const App = (props) => {
             <Row className="justify-content-center">
               <Col lg="12">
                 <Row className="row row justify-content-between">
-                  <Col lg="3" sm="6" md="4">
-                    <Card
-                      className="col mb-5"
-                      style={{
-                        backgroundColor: "#faf1ff",
-                        border: "#faf1ff",
-                      }}
-                    >
-                      <CardBody>
-                        <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
-                          <i className="ni ni-satisfied" />
-                        </div>
-                        <h6 className="category-title text-uppercase">
-                          Arts & Photography
-                        </h6>
-                        <p className="text-primary category-subtitle">
-                          Shop Now
-                        </p>
-                      </CardBody>
-                    </Card>
-                  </Col>
-                  <Col lg="3" sm="6" md="4">
-                    <Card
-                      className="col mb-5"
-                      style={{
-                        backgroundColor: "#faf4eb",
-                        border: "#faf4eb",
-                      }}
-                    >
-                      <CardBody>
-                        <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
-                          <i className="ni ni-shop" />
-                        </div>
-                        <h6 className="category-title text-uppercase">
-                          Food & Drink
-                        </h6>
-                        <p className="text-primary category-subtitle">
-                          Shop Now
-                        </p>
-                      </CardBody>
-                    </Card>
-                  </Col>
-                  <Col lg="3" sm="6" md="4">
-                    <Card
-                      className="col mb-5"
-                      style={{
-                        backgroundColor: "#f4e6e5",
-                        border: "#f4e6e5",
-                      }}
-                    >
-                      <CardBody>
-                        <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
-                          <i className="ni ni-diamond" />
-                        </div>
-                        <h6 className="category-title text-uppercase">
-                          Romance
-                        </h6>
-                        <p className="text-primary category-subtitle">
-                          Shop Now
-                        </p>
-                      </CardBody>
-                    </Card>
-                  </Col>
-                  <Col lg="3" sm="6" md="4">
-                    <Card
-                      className="col mb-5"
-                      style={{
-                        backgroundColor: "#e6f2f4",
-                        border: "#e6f2f4",
-                      }}
-                    >
-                      <CardBody>
-                        <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
-                          <i className="ni ni-like-2" />
-                        </div>
-                        <h6 className="category-title text-uppercase">
-                          Health
-                        </h6>
-                        <p className="text-primary category-subtitle">
-                          Shop Now
-                        </p>
-                      </CardBody>
-                    </Card>
-                  </Col>
-                  <Col lg="3" sm="6" md="4">
-                    <Card
-                      className="col mb-5"
-                      style={{
-                        backgroundColor: "#fff6f6",
-                        border: "#fff6f6",
-                      }}
-                    >
-                      <CardBody>
-                        <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
-                          <i className="ni ni-hat-3" />
-                        </div>
-                        <h6 className="category-title text-uppercase">
-                          Biography
-                        </h6>
-                        <p className="text-primary category-subtitle">
-                          Shop Now
-                        </p>
-                      </CardBody>
-                    </Card>
-                  </Col>
+                  {categories.map((item, index) => (
+                    <Col lg="3" sm="6" md="4" 
+                        className="col mb-5"
+                        key={index}>
+                      <Card
+                        style={{
+                          backgroundColor: "#faf1ff",
+                          border: "#faf1ff",
+                        }}
+                      >
+                        <CardBody>
+                          <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
+                            <i className="ni ni-satisfied" />
+                          </div>
+                          <h6 className="category-title text-uppercase">
+                            {item.categories + " " + index}
+                          </h6>
+                          <p className="text-primary category-subtitle">
+                            Shop Now
+                          </p>
+                        </CardBody>
+                      </Card>
+                    </Col>
+                  ))}
                 </Row>
               </Col>
             </Row>
@@ -278,10 +196,9 @@ export const App = (props) => {
                   </blockquote>
                 </Card>
               </Col>
-                <Col lg="7">
-
+              <Col lg="7">
                 <NewReleases />
-                </Col>
+              </Col>
             </Row>
           </Container>
         </section>
@@ -297,9 +214,8 @@ export const App = (props) => {
               </h6>
             </Row>
             <Row className="justify-content-center">
-                <Col lg="12">
-                  
-              <Biography />
+              <Col lg="12">
+                <Biography />
               </Col>
             </Row>
           </Container>
@@ -365,42 +281,65 @@ export const App = (props) => {
 };
 
 function FeaturedBooks() {
-  
   const data = useStoreState((state) => state.books);
 
-    return (
-      <Row className="book-card-container">
-          {data.map((item) => (
-            <BookCard
-              key={item.id}
-              title={item.title}
-              price={item.price}
-              cover={item.cover}
-            />
-          ))}
-      </Row>
-    );
+  return (
+    <Row className="book-card-container">
+      {data.map((item) => (
+        <BookCard
+          key={item.id}
+          title={item.title}
+          price={item.price}
+          cover={item.cover}
+        />
+      ))}
+    </Row>
+  );
 }
 
 function NewReleases() {
-  
   const data = useStoreState((state) => state.books);
 
-    return (
-      <Row className="book-card-container">
-          {data.map((item) => (
-            <BookCard
-              key={item.id}
-              title={item.title}
-              price={item.price}
-              cover={item.cover}
-            />
-          ))}
-      </Row>
-    );
+  return (
+    <Row className="book-card-container">
+      {data.map((item) => (
+         <Col className="book-card arb"  md="4" key={item.id}>
+        <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-4">
+          <CardImg
+            top
+            alt="..."
+            src={require("assets/img/covers/" + item.cover + ".jpg")}
+            className="book-card-img"
+          />
+
+          <CardBody className="px-0 pb-0 full-width">
+            <small>
+              <span>
+                Hardcover, Kindle, Paperback{" "}
+              </span>
+            </small>
+            <h6 className="book-card-title text-uppercase mb-0 mt-1">
+              {item.title ? item.title : "title"}
+            </h6>
+            <p className="book-card-author">author</p>
+            <Row className="align-items-center">
+              <Col sm="9">
+                <small className="text-uppercase text-muted font-weight-bold">
+                  <h5 className="book-card-price">{item.price ? item.price : "10000"} FCFA</h5>
+                </small>
+              </Col>
+              <Col sm="3">
+                <i className="fa fa-heart-o"></i>
+              </Col>
+            </Row>
+          </CardBody>
+        </Card>
+      </Col>
+      ))}
+    </Row>
+  );
 }
 function Biography() {
-  
   const data = useStoreState((state) => state.books);
 
   var settings = {
@@ -437,49 +376,45 @@ function Biography() {
       },
     ],
   };
-    return (
-      <div className="book-card-container">
-        <Slider {...settings}>
-          {data.map((item) => (
-             <Col
-        className="book-card-large"
-        key={item.id}
-      >
-        <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-4">
-          <Row lg="12">
-            <Col lg="5">
-              <CardImg
-                top
-                alt="..."
-                src={require("assets/img/covers/" + item.cover +  ".jpg")}
-                className="book-card-img"
-              />
-            </Col>
-            <Col lg="7">
-
-              <CardBody className="px-0 pb-0 full-width">
-                <small>
-                  <span>
-                    Hardcover, Kindle, Paperback
-                    {"2"}
-                  </span>
-                </small>
-                <h6 className="book-card-title text-uppercase mb-0 mt-1">
-                  {item.title}
-                </h6>
-                <p className="book-card-author">author</p>
+  return (
+    <div className="book-card-container">
+      <Slider {...settings}>
+        {data.map((item) => (
+          <Col className="book-card-large" key={item.id}>
+            <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-4">
+              <Row lg="12">
+                <Col lg="5">
+                  <CardImg
+                    top
+                    alt="..."
+                    src={require("assets/img/covers/" + item.cover + ".jpg")}
+                    className="book-card-img"
+                  />
+                </Col>
+                <Col lg="7">
+                  <CardBody className="px-0 pb-0 full-width">
+                    <small>
+                      <span>
+                        Hardcover, Kindle, Paperback
+                        {"2"}
+                      </span>
+                    </small>
+                    <h6 className="book-card-title text-uppercase mb-0 mt-1">
+                      {item.title}
+                    </h6>
+                    <p className="book-card-author">author</p>
                     <small className="text-uppercase text-muted font-weight-bold">
                       <h5 className="book-card-price">{item.price}</h5>
                     </small>
-              </CardBody>
-            </Col>
-          </Row>
-        </Card>
-      </Col>
-          ))}
-        </Slider>
-      </div>
-    );
+                  </CardBody>
+                </Col>
+              </Row>
+            </Card>
+          </Col>
+        ))}
+      </Slider>
+    </div>
+  );
 }
 
 export default App;

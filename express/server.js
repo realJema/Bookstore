@@ -91,6 +91,22 @@ app.get("/100pages/api/data/users", function (req, res) {
    });
  });
 });
+/*
+  Route: /100pages/data/categories
+  Type: GET
+  Description: get all categories
+*/
+app.get("/100pages/api/data/categories", function (req, res) {
+ let sql = `SELECT DISTINCT categories FROM books`;
+ db.query(sql, function (err, data) {
+   if (err) throw err;
+   res.json({
+     status: 200,
+     data,
+     message: "users data retrieved successfully",
+   });
+ });
+});
 
 app.post("/100pages/insert", function (req, res) {
  let sql = `INSERT INTO users(name, gender) VALUES (?)`;

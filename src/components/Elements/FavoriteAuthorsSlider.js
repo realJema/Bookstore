@@ -48,6 +48,7 @@ function FavoriteAuthorsSlider() {
               key={item.id}
               full_name={item.full_name}
               phone={item.phone}
+              profile={item.profile}
             />
           ))}
         </Slider>
@@ -63,7 +64,7 @@ class AuthorCard extends React.Component {
           <img
             alt="..."
             className="img-fluid rounded-circle shadow"
-            src={require("assets/img/theme/team-2-800x800.jpg")}
+            src={require("assets/img/users/" + this.props.profile + ".jpg")}
             style={{ width: "150px" }}
           />
           <h6 className="mt-4 mb-0">{this.props.full_name}</h6>

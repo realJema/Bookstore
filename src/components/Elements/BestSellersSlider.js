@@ -5,7 +5,7 @@ import { useStoreState } from "easy-peasy";
 
 function BestSellersSlider() {
   
-  const data = useStoreState((state) => state.todos);
+  const data = useStoreState((state) => state.books);
 
   var settings = {
     dots: true,

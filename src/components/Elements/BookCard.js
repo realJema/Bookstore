@@ -13,7 +13,7 @@ class BookCard extends React.Component {
   render() {
     const image = this.props.cover ? this.props.cover : "Give and Take"
     return (
-      <Col className="book-card arb" >
+      <Col className="book-card arb">
         <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-4">
           <CardImg
             top

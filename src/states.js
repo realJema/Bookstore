@@ -5,6 +5,7 @@ export default {
   todos: [],
   books: [],
   users: [],
+  categories: [],
   // Thunks
  
   // fetch book data and user data from two different api routes
@@ -12,12 +13,14 @@ export default {
     Promise.all([
       fetch(`http://localhost:5000/100pages/api/data/books`).then((books) => books.json()),
       fetch(`http://localhost:5000/100pages/api/data/users`).then((users) => users.json()),
+      fetch(`http://localhost:5000/100pages/api/data/categories`).then((categories) => categories.json()),
     ])
-      .then(([books, users]) => {
-        
+      .then(([books, users, categories]) => {
+
         // set value of both in results in state 
         actions.setBooks(books.data);
         actions.setUsers(users.data);
+        actions.setCategories(categories.data);
       })
       .catch((err) => {
         console.log(err);
@@ -31,6 +34,9 @@ export default {
   }),
   setUsers: action((state, users) => {
     state.users = users;
+  }),
+  setCategories: action((state, categories) => {
+    state.categories = categories;
   }),
 
   add: action((state, todo) => {
