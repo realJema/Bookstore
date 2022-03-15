@@ -23,15 +23,22 @@ import Footer from "components/Footers/Footer";
 function Shop() {
   const settings = useStoreState((state) => state.settings);
   const books = useStoreState((state) => state.books);
-  const { fetchData, toggleDisplay } = useStoreActions((actions) => ({
-    fetchData: actions.fetchData,
-    toggleDisplay: actions.toggleDisplay,
-  }));
+  const users = useStoreState((state) => state.users);
+  const categories = useStoreState((state) => state.categories);
+  const { fetchData, toggleDisplay, toggleFilterCat, clearCatFilter } =
+    useStoreActions((actions) => ({
+      fetchData: actions.fetchData,
+      toggleDisplay: actions.toggleDisplay,
+      toggleFilterCat: actions.toggleFilterCat,
+      clearCatFilter: actions.clearCatFilter,
+    }));
 
   useEffect(() => {
     fetchData();
     // eslint-disable-next-line
   }, []);
+
+  console.log(settings.filters);
 
   return (
     <>
@@ -45,81 +52,44 @@ function Shop() {
         <section className="section section-lg pt-lg-0">
           <Container className="col-md-11 col-lg-11">
             <Row className="row-grid justify-content-center">
-              <Col lg="3" className="arb px-4 filter-section">
-                <h4 className="mt-4 mb-2 display-5">
-                  <b>Categories</b>
-                </h4>
-                <ul className="filter">
-                  <li>Arts & Photography</li>
-                  <li>Baby</li>
-                  <li>Biographies & Memoirs</li>
-                  <li>Biography</li>
-                  <li>Business & Money</li>
-                  <li>BWafts</li>
-                  <li>Children</li>
-                  <li>Christian Books & Bibles</li>
-                  <li>Cookbooks</li>
-                  <li>Food & Drink</li>
-                  <li>Food & Wine</li>
-                  <li>Health</li>
-                  <li>History</li>
-                  <li>Hobbies & Home</li>
-                  <li>Humor & Entertainment</li>
-                  <li>Literature & Fiction</li>
-                  <li>Love</li>
-                  <li>Mystery</li>
-                  <li>Politics & Social Sciences</li>
-                  <li>Reference</li>
-                  <li>Religion & Spirituality</li>
-                  <li>Research & Publishing Guides</li>
-                  <li>Romance</li>
-                  <li>Sports</li>
-                  <li>Sports & Outdoors</li>
-                  <li>Thriller & Suspense</li>
-                  <li>Uncategorized</li>
-                </ul>
-                <h4 className="pt-4 mb-2 display-5 bt-3">
-                  <b>Authors</b>
-                </h4>
-                <FilterElement name="Andre Aciman" />
-                <FilterElement name="Anna Banks" />
-                <FilterElement name="Anna Burns" />
-                <FilterElement name="Ashlee Vance" />
-                <FilterElement name="Barbara O'Neal" />
-                <FilterElement name="Blake Crouch" />
-                <FilterElement name="Boo Walker" />
-                <FilterElement name="Brian Greene" />
-                <FilterElement name="Britney King" />
-                <FilterElement name="Colleen Hoover" />
-                <FilterElement name="Conn Iggulden" />
-                <FilterElement name="Dean Nicholson" />
-                <FilterElement name="Delia Owens" />
-                <FilterElement name="Donna Kauffman" />
-                <FilterElement name="Dorothea Benton Frank" />
-                <FilterElement name="Edward Lee" />
-                <FilterElement name="Emily March" />
-                <FilterElement name="G.K. Parks" />
-                <FilterElement name="Gordon Corera" />
-                <FilterElement name="Hilarie Burton" />
-                <FilterElement name="J. D. Robb" />
-                <FilterElement name="James Patterson" />
-                <FilterElement name="James Wallace" />
-                <FilterElement name="Jay Shetty" />
-                <FilterElement name="Jessica Simpson" />
-                <FilterElement name="John Grisham" />
-                <FilterElement name="Joshua Whitehead" />
-                <FilterElement name="Kelly Harms" />
-                <FilterElement name="Kendra Elliot" />
-                <FilterElement name="Kristin Hannah" />
-                <FilterElement name="L T Vargus" />
-                <FilterElement name="L.J. Shen" />
-                <FilterElement name="Luanne Rice" />
-                <FilterElement name="Mary Beth Keane" />
-                <FilterElement name="Max Lucado" />
-                <FilterElement name="Mitch Weiss" />
-                <FilterElement name="Nicole Chung" />
-                <FilterElement name="Nora Roberts" />
-                <FilterElement name="Patrick Taylor" />
+              <Col lg="3" className="filter-section">
+                <div className="arb px-4 py-4">
+                  <h4 className="mt-4 mb-2 display-5">
+                    <b>Categories</b>
+                  </h4>
+                  <ul className="filter">
+                    <li  onClick={() => clearCatFilter()}>
+                      All
+                    </li>
+                    {categories.map((item, index) => (
+                      <li
+                        key={index}
+                        onClick={() => toggleFilterCat(item.categories)}
+                        className={ settings.filters.categories.indexOf(item.categories) >
+                          -1
+                            ? "filterOn"
+                            : ""
+                        }
+                      >
+                        {item.categories}
+                      </li>
+                    ))}
+                  </ul>
+                  <h4 className="pt-4 mb-2 display-5 bt-3">
+                    <b>Authors</b>
+                  </h4>
+                  {users.map((item, index) => (
+                    <Row className="filter-option" key={index} id={item.id}>
+                      <Col lg="10">
+                        <span>{item.full_name}</span>
+                      </Col>
+                      <Col lg="2">
+                        {" "}
+                        <span>({item.qty ? item.qty : "0"})</span>
+                      </Col>
+                    </Row>
+                  ))}
+                </div>
               </Col>
               <Col lg="9">
                 {/* Best Sellers books  */}
@@ -242,22 +212,6 @@ function Shop() {
       <Footer />
     </>
   );
-}
-
-class FilterElement extends React.Component {
-  render() {
-    return (
-      <Row className="filter-option">
-        <Col lg="10">
-          <span>{this.props.name}</span>
-        </Col>
-        <Col lg="2">
-          {" "}
-          <span>({this.props.qty ? this.props.qty : "0"})</span>
-        </Col>
-      </Row>
-    );
-  }
 }
 
 function ListDisplay() {

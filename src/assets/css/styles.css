@@ -295,6 +295,7 @@
 }
 .filter > li:hover {
   color: #f75454;
+  cursor: pointer;
 }
 .filter-option {
   padding: 9px 0;
@@ -420,3 +421,10 @@
 .cart-modal {
   max-width: 50% !important;
 }
+
+
+/* filter on  */
+.filterOn {
+      color: #f75454 !important;
+}
+
