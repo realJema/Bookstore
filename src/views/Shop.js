@@ -126,9 +126,9 @@ function Shop() {
                 <section className="section section-lg pt-lg-0">
                   <Container className="col-md-12 col-lg-12">
                     <Row className="row-grid justify-content-between align-items-end">
-                      <h2 className="mb-5 display-4">Recommended Books</h2>
+                      <h2 className="mb-3 display-4">Recommended Books</h2>
                     </Row>
-                    <RecommendedBooks />
+                    <RecommendedBooks data={books} />
 
                     <Row className="row-grid justify-content-between align-items-end">
                       <Col lg="8">
@@ -175,9 +175,9 @@ function Shop() {
                           <Col lg="2">
                             <div onClick={() => toggleDisplay()}>
                               {settings.display === "grid" ? (
-                                <i className="fa fa-th button-filter"></i>
-                              ) : (
                                 <i className="fa fa-list button-filter"></i>
+                              ) : (
+                                <i className="fa fa-th button-filter"></i>
                               )}
                             </div>
                           </Col>

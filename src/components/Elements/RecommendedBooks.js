@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import BookCard from "./BookCard";
+import { useStoreState, useStoreActions } from "easy-peasy";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -23,8 +24,8 @@ function PrevArrow(props) {
     />
   );
 }
-export default class RecommendedBooks extends Component {
-  render() {
+function RecommendedBooks() {
+  const books = useStoreState((state) => state.books);
     var settings = {
       dots: true,
       infinite: true,
@@ -63,20 +64,21 @@ export default class RecommendedBooks extends Component {
       ],
     };
     return (
-      <div className="">
+      <div className="book-card-container">
         <Slider {...settings}>
-          <BookCard size="12" />
-          <BookCard size="12" />
-          <BookCard size="12" />
-          <BookCard size="12" />
-          <BookCard size="12" />
-          <BookCard size="12" />
-          <BookCard size="12" />
-          <BookCard size="12" />
-          <BookCard size="12" />
-          <BookCard size="12" />
+          {books.map((item) => (
+            <BookCard
+              key={item.id}
+              title={item.title}
+              price={item.price}
+              cover={item.cover}
+              size="12"
+            />
+          ))}
         </Slider>
       </div>
     );
-  }
 }
+
+
+export default RecommendedBooks;
