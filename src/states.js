@@ -6,6 +6,10 @@ export default {
   books: [],
   users: [],
   categories: [],
+  settings: {
+    display: "grid", 
+  
+  },
   // Thunks
  
   // fetch book data and user data from two different api routes
@@ -43,13 +47,13 @@ export default {
     todo.id = uuidv4();
     state.todos = [...state.todos, todo];
   }),
-  toggle: action((state, id) => {
-    state.todos.map((todo) => {
-      if (todo.id === id) {
-        todo.completed = !todo.completed;
+  toggleDisplay: action((state) => {
+      if (state.settings.display === "grid") {
+        state.settings.display = "list";
       }
-      return todo;
-    });
+      else {
+        state.settings.display = "grid"; 
+      }
   }),
   remove: action((state, id) => {
     state.todos = state.todos.filter((todo) => todo.id !== id);

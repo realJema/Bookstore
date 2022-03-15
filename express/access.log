@@ -61,3 +61,6 @@
 ::1 - - [14/Mar/2022:10:59:48 +0000] "GET /100pages/api/data/books HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36"
 ::1 - - [14/Mar/2022:10:59:48 +0000] "GET /100pages/api/data/users HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36"
 ::1 - - [14/Mar/2022:10:59:48 +0000] "GET /100pages/api/data/categories HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36"
+::1 - - [15/Mar/2022:13:10:51 +0000] "GET /100pages/api/data/books HTTP/1.1" 200 2169 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36"
+::1 - - [15/Mar/2022:13:10:51 +0000] "GET /100pages/api/data/users HTTP/1.1" 200 465 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36"
+::1 - - [15/Mar/2022:13:10:51 +0000] "GET /100pages/api/data/categories HTTP/1.1" 200 141 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36"
