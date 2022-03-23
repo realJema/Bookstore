@@ -45,7 +45,7 @@ ReactDOM.render(
         <Route path="/about" exact render={(props) => <AboutUs {...props} />} />
         <Route path="/shop" exact render={(props) => <Shop {...props} />} />
         <Route
-          path="/product"
+          path="/product/:id"
           exact
           render={(props) => <SingleProduct {...props} />}
         />

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import { Link } from "react-router-dom";
 // reactstrap components
 import {
   Button,
@@ -37,8 +37,6 @@ function Shop() {
     fetchData();
     // eslint-disable-next-line
   }, []);
-
-  console.log(settings.filters);
 
   return (
     <>
@@ -216,11 +214,19 @@ function Shop() {
 
 function ListDisplay() {
   const data = useStoreState((state) => state.books);
-  const filterCategories = useStoreState((state) => state.settings.filters.categories);
+  const filterCategories = useStoreState(
+    (state) => state.settings.filters.categories
+  );
   return (
     <Row className="book-card-container col-md-12 px-0">
+      {/* filter checks if categories is empty and filters through given the categories in array */}
       {data
-        .filter((books) => filterCategories.includes(books.categories))
+        .filter((books) => {
+          if (filterCategories.length === 0) {
+            return books;
+          }
+          return filterCategories.includes(books.categories);
+        })
         .map((item) => (
           <Col lg="12" key={item.id} className="book-card-large arb">
             <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-4">
@@ -273,46 +279,53 @@ function GridDisplay() {
   );
   return (
     <Row className="book-card-container col-md-12 px-0">
+      {/* filter checks if categories is empty and filters through given the categories in array */}
       {data
-        .filter((books) =>
-        {
-        if (filterCategories.length === 0) {
-          return books;
-        }
-          return  filterCategories.includes(books.categories)
+        .filter((books) => {
+          if (filterCategories.length === 0) {
+            return books;
+          }
+          return filterCategories.includes(books.categories);
         })
         .map((item) => (
           <Col className="book-card arb" md="3" key={item.id}>
-            <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-4">
-              <CardImg
-                top
-                alt="..."
-                src={require("assets/img/covers/" + item.cover + ".jpg")}
-                className="book-card-img"
-              />
+            <Link
+              to={{
+                pathname: '/product/' + item.title.replace(/\s/g, "-"),
+                state: { bookId: item.id }
+              }}
+            >
+              <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-4">
+                <CardImg
+                  top
+                  alt="..."
+                  src={require("assets/img/covers/" + item.cover + ".jpg")}
+                  className="book-card-img"
+                />
 
-              <CardBody className="px-0 pb-0 full-width">
-                <small>
-                  <span>Hardcover, Kindle, Paperback </span>
-                </small>
-                <h6 className="book-card-title text-uppercase mb-0 mt-1">
-                  {item.title ? item.title : "title"}
-                </h6>
-                <p className="book-card-author">author</p>
-                <Row className="align-items-center">
-                  <Col sm="9">
-                    <small className="text-uppercase text-muted font-weight-bold">
-                      <h5 className="book-card-price">
-                        {item.price ? item.price : "10000"} FCFA
-                      </h5>
-                    </small>
-                  </Col>
-                  <Col sm="3">
-                    <i className="fa fa-heart-o"></i>
-                  </Col>
-                </Row>
-              </CardBody>
-            </Card>
+                <CardBody className="px-0 pb-0 full-width">
+                  <small>
+                    <span>Hardcover, Kindle, Paperback </span>
+                  </small>
+                  <h6 className="book-card-title text-uppercase mb-0 mt-1">
+                    {item.title ? item.title : "title"}
+                  </h6>
+                  <p className="book-card-author">author</p>
+                  <Row className="align-items-center">
+                    <Col sm="9">
+                      <small className="text-uppercase text-muted font-weight-bold">
+                        <h5 className="book-card-price">
+                          {item.price ? item.price : "10000"} FCFA
+                        </h5>
+                      </small>
+                    </Col>
+                    <Col sm="3">
+                      <i className="fa fa-heart-o"></i>
+                    </Col>
+                  </Row>
+                </CardBody>
+              </Card>
+            </Link>
           </Col>
         ))}
     </Row>

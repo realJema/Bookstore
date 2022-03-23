@@ -1,4 +1,5 @@
 import React from "react";
+import { useStoreState, useStoreActions } from "easy-peasy";
 
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
@@ -13,8 +14,9 @@ import Amenities from "components/Elements/Amenities";
 import Footer from "components/Footers/Footer";
 import BreadCrumbs from "components/Elements/BreadCrumbs";
 
-class SingleProduct extends React.Component {
-  render() {
+function SingleProduct(props) {
+    const books = useStoreState((state) => state.books);
+    let thebook = books.find((book) => book.id === props.location.state.bookId);
     return (
       <>
         <Topbar />
@@ -40,22 +42,18 @@ class SingleProduct extends React.Component {
                           <img
                             alt="..."
                             className="product-image"
-                            src={require("assets/img/theme/img-1-1200x1000.jpg")}
+                            src={require("assets/img/covers/" + thebook.cover + ".jpg")}
                           />
                         </a>
                       </center>
                     </Col>
                     <Col lg="5">
                       <h2 className="text-uppercase mb-0 mt-1 display-3">
-                        Download Argon book buy me{" "}
+                        {thebook.title}
                       </h2>
                       <span>Hardcover, Kindle, Paperback</span>
-                      <h5 className="display-4 mt-3 mb-3">$14.5</h5>
-                      <p className="mt-2 mb-5">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                      </p>
+                      <h5 className="display-4 mt-3 mb-3">{thebook.price} FCFA</h5>
+                      <p className="mt-2 mb-5">{thebook.subtitle}</p>
                       <small>Book Format</small>
                       <Row>
                         <Col lg="7">
@@ -91,33 +89,7 @@ class SingleProduct extends React.Component {
                     </Col>
                     <Col lg="8" className="product-details-descr">
                       <p>
-                        We aim to show you accurate product information.
-                        Manufacturers, suppliers and others provide what you see
-                        here, and we have not verified it. See our disclaimer #1
-                        New York Times Bestseller A Reese Witherspoon x Hello
-                        Sunshine Book Club Pick “I can’t even express how much I
-                        love this book! I didn’t want this story to end!”–Reese
-                        Witherspoon “Painfully beautiful.”–The New York Times
-                        Book Review “Perfect for fans of Barbara
-                        Kingsolver.”–Bustle For years, rumors of the “Marsh
-                        Girl” have haunted Barkley Cove, a quiet town on the
-                        North Carolina coast. So in late 1969, when handsome
-                        Chase Andrews is found dead, the locals immediately
-                        suspect Kya Clark, the so-called Marsh Girl. But Kya is
-                        not what they say. Sensitive and intelligent, she has
-                        survived for years alone in the marsh that she calls
-                        home, finding friends in the gulls and lessons in the
-                        sand. Then the time comes when she yearns to be touched
-                        and loved. When two young men from town become intrigued
-                        by her wild beauty, Kya opens herself to a new
-                        life–until the unthinkable happens. Perfect for fans of
-                        Barbara Kingsolver and Karen Russell, Where the Crawdads
-                        Sing is at once an exquisite ode to the natural world, a
-                        heartbreaking coming-of-age story, and a surprising tale
-                        of possible murder. Owens reminds us that we are forever
-                        shaped by the children we once were, and that we are all
-                        subject to the beautiful and violent secrets that nature
-                        keeps WHERE THE CRAWDADS LP
+                        {thebook.description}
                       </p>
                     </Col>
                   </Row>
@@ -195,7 +167,6 @@ class SingleProduct extends React.Component {
         <Footer />
       </>
     );
-  }
 }
 
 

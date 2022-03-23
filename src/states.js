@@ -9,7 +9,7 @@ export default {
   settings: {
     display: "grid",
     filters: {
-      categories: ["Kids"],
+      categories: [],
       authors: [],
     },
   },
