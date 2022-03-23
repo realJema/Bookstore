@@ -58,14 +58,13 @@ function Shop() {
                     <b>Categories</b>
                   </h4>
                   <ul className="filter">
-                    <li  onClick={() => clearCatFilter()}>
-                      All
-                    </li>
+                    <li onClick={() => clearCatFilter()}>All</li>
                     {categories.map((item, index) => (
                       <li
                         key={index}
                         onClick={() => toggleFilterCat(item.categories)}
-                        className={ settings.filters.categories.indexOf(item.categories) >
+                        className={
+                          settings.filters.categories.indexOf(item.categories) >
                           -1
                             ? "filterOn"
                             : ""
@@ -106,52 +105,53 @@ function Shop() {
                           {books.length} results
                         </h6>
                       </Col>
-                      <Col lg="4" className="px-0">
-                        <Row className="row-grid justify-content-around align-items-end">
-                          <Col lg="5">
-                            <select className="select-filter">
-                              <option value="hide">Default Sorting</option>
-                              <option value="january">January</option>
-                              <option value="february">February</option>
-                              <option value="march">March</option>
-                              <option value="april">April</option>
-                              <option value="may">May</option>
-                              <option value="june">June</option>
-                              <option value="july">July</option>
-                              <option value="august">August</option>
-                              <option value="september">September</option>
-                              <option value="october">October</option>
-                              <option value="november">November</option>
-                              <option value="december">December</option>
-                            </select>
-                          </Col>
-                          <Col lg="4">
-                            <select className="select-filter">
-                              <option value="hide">Show 20</option>
-                              <option value="january">January</option>
-                              <option value="february">February</option>
-                              <option value="march">March</option>
-                              <option value="april">April</option>
-                              <option value="may">May</option>
-                              <option value="june">June</option>
-                              <option value="july">July</option>
-                              <option value="august">August</option>
-                              <option value="september">September</option>
-                              <option value="october">October</option>
-                              <option value="november">November</option>
-                              <option value="december">December</option>
-                            </select>
-                          </Col>
-                          <Col lg="2">
-                            <div onClick={() => toggleDisplay()}>
-                              {settings.display === "grid" ? (
-                                <i className="fa fa-list button-filter"></i>
-                              ) : (
-                                <i className="fa fa-th button-filter"></i>
-                              )}
-                            </div>
-                          </Col>
-                        </Row>
+                      <Col
+                        lg="4"
+                        className="px-0 align-items-end col-lg-4 d-inline-flex p-2"
+                      >
+                        <Col lg="5">
+                          <select className="select-filter">
+                            <option value="hide">Default Sorting</option>
+                            <option value="january">January</option>
+                            <option value="february">February</option>
+                            <option value="march">March</option>
+                            <option value="april">April</option>
+                            <option value="may">May</option>
+                            <option value="june">June</option>
+                            <option value="july">July</option>
+                            <option value="august">August</option>
+                            <option value="september">September</option>
+                            <option value="october">October</option>
+                            <option value="november">November</option>
+                            <option value="december">December</option>
+                          </select>
+                        </Col>
+                        <Col lg="4">
+                          <select className="select-filter">
+                            <option value="hide">Show 20</option>
+                            <option value="january">January</option>
+                            <option value="february">February</option>
+                            <option value="march">March</option>
+                            <option value="april">April</option>
+                            <option value="may">May</option>
+                            <option value="june">June</option>
+                            <option value="july">July</option>
+                            <option value="august">August</option>
+                            <option value="september">September</option>
+                            <option value="october">October</option>
+                            <option value="november">November</option>
+                            <option value="december">December</option>
+                          </select>
+                        </Col>
+                        <Col lg="2">
+                          <div onClick={() => toggleDisplay()}>
+                            {settings.display === "grid" ? (
+                              <i className="fa fa-list button-filter"></i>
+                            ) : (
+                              <i className="fa fa-th button-filter"></i>
+                            )}
+                          </div>
+                        </Col>
                       </Col>
                     </Row>
                     <Row className="row-grid mt-3">
@@ -216,91 +216,105 @@ function Shop() {
 
 function ListDisplay() {
   const data = useStoreState((state) => state.books);
+  const filterCategories = useStoreState((state) => state.settings.filters.categories);
   return (
-    <Row className="book-card-container">
-      {data.map((item) => (
-        <Col lg="12" key={item.id} className="book-card-large arb">
-          <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-4">
-            <Row className="col-12">
-              <Col lg="2">
-                <CardImg
-                  top
-                  alt="..."
-                  src={require("assets/img/covers/" + item.cover + ".jpg")}
-                  className="book-card-img"
-                />
-              </Col>
-              <Col lg="7">
-                <CardBody className="px-0 pb-0 full-width">
-                  <small>
-                    <span>Hardcover, Kindle, Paperback </span>
-                  </small>
-                  <h6 className="book-card-title text-uppercase mb-0 mt-1">
-                    {item.title ? item.title : "title"}
-                  </h6>
-                  <p className="book-card-author">author</p>
-                  <small className="mt-2 mb-2">
-                    {item.description ? item.description : "description"}
-                  </small>
-                  <Row className="align-items-center">
-                    <Col sm="9">
-                      <small className="text-uppercase text-muted font-weight-bold">
-                        <h5 className="book-card-price">
-                          {item.price ? item.price : "price"} FCFA
-                        </h5>
-                      </small>
-                    </Col>
-                  </Row>
-                </CardBody>
-              </Col>
-              <Col sm="3" className="list-option my-auto">
-                <i className="fa fa-heart-o"></i>
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-      ))}
+    <Row className="book-card-container col-md-12 px-0">
+      {data
+        .filter((books) => filterCategories.includes(books.categories))
+        .map((item) => (
+          <Col lg="12" key={item.id} className="book-card-large arb">
+            <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-4">
+              <Row className="col-12">
+                <Col lg="2">
+                  <CardImg
+                    top
+                    alt="..."
+                    src={require("assets/img/covers/" + item.cover + ".jpg")}
+                    className="book-card-img"
+                  />
+                </Col>
+                <Col lg="7">
+                  <CardBody className="px-0 pb-0 full-width">
+                    <small>
+                      <span>Hardcover, Kindle, Paperback </span>
+                    </small>
+                    <h6 className="book-card-title text-uppercase mb-0 mt-1">
+                      {item.title ? item.title : "title"}
+                    </h6>
+                    <p className="book-card-author">author</p>
+                    <small className="mt-2 mb-2">
+                      {item.description ? item.description : "description"}
+                    </small>
+                    <Row className="align-items-center">
+                      <Col sm="9">
+                        <small className="text-uppercase text-muted font-weight-bold">
+                          <h5 className="book-card-price">
+                            {item.price ? item.price : "price"} FCFA
+                          </h5>
+                        </small>
+                      </Col>
+                    </Row>
+                  </CardBody>
+                </Col>
+                <Col sm="3" className="list-option my-auto">
+                  <i className="fa fa-heart-o"></i>
+                </Col>
+              </Row>
+            </Card>
+          </Col>
+        ))}
     </Row>
   );
 }
 function GridDisplay() {
   const data = useStoreState((state) => state.books);
+  const filterCategories = useStoreState(
+    (state) => state.settings.filters.categories
+  );
   return (
-    <Row className="book-card-container">
-      {data.map((item) => (
-        <Col className="book-card arb" md="3" key={item.id}>
-          <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-4">
-            <CardImg
-              top
-              alt="..."
-              src={require("assets/img/covers/" + item.cover + ".jpg")}
-              className="book-card-img"
-            />
+    <Row className="book-card-container col-md-12 px-0">
+      {data
+        .filter((books) =>
+        {
+        if (filterCategories.length === 0) {
+          return books;
+        }
+          return  filterCategories.includes(books.categories)
+        })
+        .map((item) => (
+          <Col className="book-card arb" md="3" key={item.id}>
+            <Card className="border-0 col mb-2 justify-content-between align-items-center py-3 px-4">
+              <CardImg
+                top
+                alt="..."
+                src={require("assets/img/covers/" + item.cover + ".jpg")}
+                className="book-card-img"
+              />
 
-            <CardBody className="px-0 pb-0 full-width">
-              <small>
-                <span>Hardcover, Kindle, Paperback </span>
-              </small>
-              <h6 className="book-card-title text-uppercase mb-0 mt-1">
-                {item.title ? item.title : "title"}
-              </h6>
-              <p className="book-card-author">author</p>
-              <Row className="align-items-center">
-                <Col sm="9">
-                  <small className="text-uppercase text-muted font-weight-bold">
-                    <h5 className="book-card-price">
-                      {item.price ? item.price : "10000"} FCFA
-                    </h5>
-                  </small>
-                </Col>
-                <Col sm="3">
-                  <i className="fa fa-heart-o"></i>
-                </Col>
-              </Row>
-            </CardBody>
-          </Card>
-        </Col>
-      ))}
+              <CardBody className="px-0 pb-0 full-width">
+                <small>
+                  <span>Hardcover, Kindle, Paperback </span>
+                </small>
+                <h6 className="book-card-title text-uppercase mb-0 mt-1">
+                  {item.title ? item.title : "title"}
+                </h6>
+                <p className="book-card-author">author</p>
+                <Row className="align-items-center">
+                  <Col sm="9">
+                    <small className="text-uppercase text-muted font-weight-bold">
+                      <h5 className="book-card-price">
+                        {item.price ? item.price : "10000"} FCFA
+                      </h5>
+                    </small>
+                  </Col>
+                  <Col sm="3">
+                    <i className="fa fa-heart-o"></i>
+                  </Col>
+                </Row>
+              </CardBody>
+            </Card>
+          </Col>
+        ))}
     </Row>
   );
 }
